@@ -12,7 +12,7 @@
         {
             if (Utility.IsOpeningForm("fPhanLopHoc"))
                 return;
-            fPhanLopHoc f = new fPhanLopHoc();
+            var f = new fPhanLopHoc();
             f.MdiParent = this;
             f.Show();
         }
