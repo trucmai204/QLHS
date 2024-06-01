@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Functions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace QLHS
 {
     public partial class fNewDiem : Form
     {
+        private GradeScope gradeScope;
         public fNewDiem()
         {
             InitializeComponent();
+
         }
     }
 }

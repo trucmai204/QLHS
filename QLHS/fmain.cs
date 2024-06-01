@@ -1,4 +1,6 @@
-﻿namespace QLHS
+﻿using Functions;
+
+namespace QLHS
 {
     public partial class fmain : Form
     {
@@ -10,11 +12,13 @@
 
         private void phânLớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fPhanLopHoc"))
-                return;
-            var f = new fPhanLopHoc();
-            f.MdiParent = this;
-            f.Show();
+            var gradeScope = new GradeScope();
+            MessageBox.Show(gradeScope.GetAllGradeCount().ToString());
+            //if (Utility.IsOpeningForm("fPhanLopHoc"))
+            //    return;
+            //var f = new fPhanLopHoc();
+            //f.MdiParent = this;
+            //f.Show();
         }
 
         private void quảnLýĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
