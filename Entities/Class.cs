@@ -3,14 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
 {
-    public class NguoiDung
+    public class Class
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public string Name { get; set; }
+        public int GradeId { get; set; }
 
-        public string TenDangNhap { get; set; }
-
-        public string MatKhau { get; set; }
+        [ForeignKey("GradeId")]
+        public virtual Grade Grade { get; set; }
     }
 }

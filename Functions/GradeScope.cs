@@ -7,7 +7,7 @@ namespace Functions
         public AppDbContext Context { get; set; } = new AppDbContext();
         public int GetAllGradeCount()
         {
-            return Context.NguoiDung.Count();
+            return Context.User.Count();
         }
     }
 }

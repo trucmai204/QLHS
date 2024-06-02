@@ -1,17 +1,16 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace Database_Connector
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<HocSinh> HocSinh { get; set; }
-        public DbSet<MonHoc> MonHoc { get; set; }
-        public DbSet<BangDiem> BangDiem { get; set; }
-        public DbSet<LopHoc> LopHoc { get; set; }
-        public DbSet<NguoiDung> NguoiDung { get; set; }
-        public DbSet<KhoiLop> KhoiLop { get; set; }
+        public DbSet<Student> Student { get; set; }
+        public DbSet<Subject> Subject { get; set; }
+        public DbSet<Transcript> Transcript { get; set; }
+        public DbSet<Class> Class { get; set; }
+        public DbSet<Grade> Grade { get; set; }
+        public DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
