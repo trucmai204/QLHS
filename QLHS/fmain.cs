@@ -10,20 +10,18 @@ namespace QLHS
             this.IsMdiContainer = true;
         }
 
-        private void phânLớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fPhanLopHoc_Click(object sender, EventArgs e)
         {
-            var gradeScope = new GradeScope();
-            MessageBox.Show(gradeScope.GetAllGradeCount().ToString());
-            //if (Utility.IsOpeningForm("fPhanLopHoc"))
-            //    return;
-            //var f = new fPhanLopHoc();
-            //f.MdiParent = this;
-            //f.Show();
+            if (Utility.IsOpeningForm("fPhanLopHoc"))
+                return;
+            fPhanLopHoc f = new fPhanLopHoc();
+            f.MdiParent = this;
+            f.Show();
         }
 
-        private void quảnLýĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
+        private void fDiem_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fDiem"))
+            if(Utility.IsOpeningForm("fDiem"))
                 return;
             fDiem f = new fDiem();
             f.MdiParent = this;
