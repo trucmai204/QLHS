@@ -1,16 +1,11 @@
 ﻿using Database_Connector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Functions
 {
     public static class UserScope
     {
-        public static AppDbContext Db { get;set;} = new AppDbContext();
-        
+        private static AppDbContext Db { get; set; } = new AppDbContext();
+
         public static bool IsValid(string userName, string password)
         {
             //foreach(var user in Db.User) //

@@ -61,11 +61,21 @@ namespace QLHS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon icon {
+            get {
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pngtree_school_classroom_desk_textbook_background_picture_image_2270261 {
+        internal static System.Drawing.Bitmap icon1 {
             get {
-                object obj = ResourceManager.GetObject("pngtree-school-classroom-desk-textbook-background-picture-image_2270261", resourceCulture);
+                object obj = ResourceManager.GetObject("icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

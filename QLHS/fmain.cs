@@ -1,10 +1,8 @@
-﻿using Functions;
-
-namespace QLHS
+﻿namespace QLHS
 {
-    public partial class fmain : Form
+    public partial class fMain : Form
     {
-        public fmain()
+        public fMain()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
@@ -21,11 +19,16 @@ namespace QLHS
 
         private void fDiem_Click(object sender, EventArgs e)
         {
-            if(Utility.IsOpeningForm("fDiem"))
+            if (Utility.IsOpeningForm("fDiem"))
                 return;
             fDiem f = new fDiem();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void fMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

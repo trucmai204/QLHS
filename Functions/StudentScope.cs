@@ -2,7 +2,7 @@
 
 namespace Functions
 {
-    public class GradeScope
+    public class StudentScope
     {
         private AppDbContext Context { get; set; } = new AppDbContext();
     }
