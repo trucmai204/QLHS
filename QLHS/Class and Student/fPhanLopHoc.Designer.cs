@@ -60,7 +60,7 @@
             label1.TabIndex = 0;
             label1.Text = "PHÂN LỚP HỌC";
             // 
-            // dataGridView1
+            // OutputTable
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

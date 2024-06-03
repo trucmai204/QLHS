@@ -9,9 +9,6 @@ namespace Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int GradeId { get; set; }
-
-        [ForeignKey("GradeId")]
-        public virtual Grade Grade { get; set; }
+        public int Grade { get; set; }
     }
 }

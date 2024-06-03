@@ -1,14 +1,16 @@
-﻿using Functions;
-
-namespace QLHS
+﻿namespace QLHS
 {
     public partial class fNewDiem : Form
     {
-        private GradeScope gradeScope;
         public fNewDiem()
         {
             InitializeComponent();
 
+        }
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

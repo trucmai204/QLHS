@@ -220,6 +220,7 @@
             btClose.TabIndex = 68;
             btClose.Text = "Đóng";
             btClose.UseVisualStyleBackColor = true;
+            btClose.Click += btClose_Click;
             // 
             // btSave
             // 

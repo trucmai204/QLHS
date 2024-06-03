@@ -11,7 +11,13 @@ namespace QLHS
 
         private void fDiem_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = TranscriptScope.GetTranscripts();
+            OutputTable.DataSource = TranscriptScope.GetTranscripts();
+        }
+
+        private void btNew_Click(object sender, EventArgs e)
+        {
+            var addDiem = new fNewDiem();
+            addDiem.ShowDialog();
         }
     }
 }

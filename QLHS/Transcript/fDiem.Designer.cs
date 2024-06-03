@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             label2 = new Label();
             txtfind = new TextBox();
             btFind = new Button();
-            dataGridView1 = new DataGridView();
+            OutputTable = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             StudentId = new DataGridViewTextBoxColumn();
             SubjectId = new DataGridViewTextBoxColumn();
@@ -48,7 +49,7 @@
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
             btNew = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -91,16 +92,16 @@
             btFind.Text = "Tìm";
             btFind.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // OutputTable
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.ControlLight;
-            dataGridView1.BorderStyle = BorderStyle.None;
+            OutputTable.AllowUserToAddRows = false;
+            OutputTable.AllowUserToDeleteRows = false;
+            OutputTable.AllowUserToResizeColumns = false;
+            OutputTable.AllowUserToResizeRows = false;
+            OutputTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            OutputTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            OutputTable.BackgroundColor = SystemColors.ControlLight;
+            OutputTable.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.AppWorkspace;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -108,16 +109,24 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, StudentId, SubjectId, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType, Edit, Delete });
-            dataGridView1.Location = new Point(8, 148);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1712, 728);
-            dataGridView1.TabIndex = 3;
+            OutputTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            OutputTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentId, SubjectId, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType, Edit, Delete });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            OutputTable.DefaultCellStyle = dataGridViewCellStyle2;
+            OutputTable.Location = new Point(8, 148);
+            OutputTable.Name = "OutputTable";
+            OutputTable.ReadOnly = true;
+            OutputTable.RowHeadersWidth = 51;
+            OutputTable.RowTemplate.Height = 25;
+            OutputTable.Size = new Size(1712, 728);
+            OutputTable.TabIndex = 3;
             // 
             // Id
             // 
@@ -223,33 +232,35 @@
             // 
             GradeType.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             GradeType.DataPropertyName = "GradeType";
-            GradeType.HeaderText = "Loại";
+            GradeType.HeaderText = "Xếp loại";
             GradeType.MinimumWidth = 6;
             GradeType.Name = "GradeType";
             GradeType.ReadOnly = true;
-            GradeType.Width = 83;
+            GradeType.Width = 81;
             // 
             // Edit
             // 
             Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "Sửa";
+            Edit.HeaderText = "Hành động";
             Edit.MinimumWidth = 6;
             Edit.Name = "Edit";
             Edit.ReadOnly = true;
             Edit.Resizable = DataGridViewTriState.True;
             Edit.SortMode = DataGridViewColumnSortMode.Automatic;
-            Edit.Width = 80;
+            Edit.Text = "Sửa";
+            Edit.Width = 132;
             // 
             // Delete
             // 
             Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "Xóa";
+            Delete.HeaderText = "Hành động";
             Delete.MinimumWidth = 6;
             Delete.Name = "Delete";
             Delete.ReadOnly = true;
             Delete.Resizable = DataGridViewTriState.True;
             Delete.SortMode = DataGridViewColumnSortMode.Automatic;
-            Delete.Width = 81;
+            Delete.Text = "Sửa";
+            Delete.Width = 132;
             // 
             // btNew
             // 
@@ -260,6 +271,7 @@
             btNew.TabIndex = 4;
             btNew.Text = "Thêm điểm";
             btNew.UseVisualStyleBackColor = true;
+            btNew.Click += btNew_Click;
             // 
             // fDiem
             // 
@@ -267,7 +279,7 @@
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(1727, 888);
             Controls.Add(btNew);
-            Controls.Add(dataGridView1);
+            Controls.Add(OutputTable);
             Controls.Add(btFind);
             Controls.Add(txtfind);
             Controls.Add(label2);
@@ -279,7 +291,7 @@
             Text = "Quản Lý Điểm Học Sinh";
             WindowState = FormWindowState.Maximized;
             Load += fDiem_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)OutputTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -290,7 +302,8 @@
         private Label label2;
         private TextBox txtfind;
         private Button btFind;
-        private DataGridView dataGridView1;
+        private DataGridView OutputTable;
+        private Button btNew;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn StudentId;
         private DataGridViewTextBoxColumn SubjectId;
@@ -304,6 +317,5 @@
         private DataGridViewTextBoxColumn GradeType;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
-        private Button btNew;
     }
 }
