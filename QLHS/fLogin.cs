@@ -36,7 +36,7 @@ namespace QLHS
                 {
                     this.Hide();
                     var fmain = new fMain();
-                    fmain.ShowDialog(); // Dialog thuc hien xong r dong, chan hành dong 
+                    fmain.ShowDialog(); // ShowDialog() bắt buộc user phải đóng form được mở để thực hiện tiếp logic trên form hiện tại, còn với Show() thì không bắt buộc 
 
                 }
                 else
