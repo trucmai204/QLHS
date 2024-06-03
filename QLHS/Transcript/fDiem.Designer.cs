@@ -31,13 +31,12 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
-            label2 = new Label();
             txtfind = new TextBox();
             btFind = new Button();
             OutputTable = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
-            StudentId = new DataGridViewTextBoxColumn();
-            SubjectId = new DataGridViewTextBoxColumn();
+            StudentName = new DataGridViewTextBoxColumn();
+            SubjectName = new DataGridViewTextBoxColumn();
             MidtermGradeI = new DataGridViewTextBoxColumn();
             FinalGradeI = new DataGridViewTextBoxColumn();
             AverageGradeI = new DataGridViewTextBoxColumn();
@@ -49,6 +48,7 @@
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
             btNew = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
             SuspendLayout();
             // 
@@ -58,45 +58,39 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(625, 14);
+            label1.Location = new Point(601, 22);
             label1.Name = "label1";
-            label1.Size = new Size(476, 55);
+            label1.Size = new Size(525, 55);
             label1.TabIndex = 0;
-            label1.Text = "Quản Lý Điểm Học Sinh";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(12, 91);
-            label2.Name = "label2";
-            label2.Size = new Size(156, 32);
-            label2.TabIndex = 2;
-            label2.Text = "Tìm học sinh:";
+            label1.Text = "QUẢN LÝ ĐIỂM HỌC SINH";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtfind
             // 
             txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtfind.Location = new Point(174, 92);
+            txtfind.Font = new Font("Segoe UI", 11F);
+            txtfind.Location = new Point(190, 98);
             txtfind.Name = "txtfind";
-            txtfind.Size = new Size(565, 31);
+            txtfind.PlaceholderText = "  Tìm học sinh . . .";
+            txtfind.Size = new Size(1261, 37);
             txtfind.TabIndex = 1;
+            txtfind.KeyPress += txtfind_KeyPress;
             // 
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(745, 90);
+            btFind.Location = new Point(1457, 98);
             btFind.Name = "btFind";
-            btFind.Size = new Size(95, 34);
+            btFind.Size = new Size(95, 37);
             btFind.TabIndex = 2;
             btFind.Text = "Tìm";
             btFind.UseVisualStyleBackColor = true;
+            btFind.Click += btFind_Click;
             // 
             // OutputTable
             // 
             OutputTable.AllowUserToAddRows = false;
             OutputTable.AllowUserToDeleteRows = false;
-            OutputTable.AllowUserToResizeColumns = false;
             OutputTable.AllowUserToResizeRows = false;
             OutputTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             OutputTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -111,7 +105,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             OutputTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             OutputTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentId, SubjectId, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType, Edit, Delete });
+            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentName, SubjectName, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -138,25 +132,25 @@
             Id.ReadOnly = true;
             Id.Width = 156;
             // 
-            // StudentId
+            // StudentName
             // 
-            StudentId.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            StudentId.DataPropertyName = "StudentId";
-            StudentId.HeaderText = "Mã học sinh";
-            StudentId.MinimumWidth = 6;
-            StudentId.Name = "StudentId";
-            StudentId.ReadOnly = true;
-            StudentId.Width = 139;
+            StudentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            StudentName.DataPropertyName = "StudentName";
+            StudentName.HeaderText = "Tên học sinh";
+            StudentName.MinimumWidth = 6;
+            StudentName.Name = "StudentName";
+            StudentName.ReadOnly = true;
+            StudentName.Width = 142;
             // 
-            // SubjectId
+            // SubjectName
             // 
-            SubjectId.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            SubjectId.DataPropertyName = "SubjectId";
-            SubjectId.HeaderText = "Mã môn học";
-            SubjectId.MinimumWidth = 6;
-            SubjectId.Name = "SubjectId";
-            SubjectId.ReadOnly = true;
-            SubjectId.Width = 142;
+            SubjectName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            SubjectName.DataPropertyName = "SubjectName";
+            SubjectName.HeaderText = "Tên môn học";
+            SubjectName.MinimumWidth = 6;
+            SubjectName.Name = "SubjectName";
+            SubjectName.ReadOnly = true;
+            SubjectName.Width = 144;
             // 
             // MidtermGradeI
             // 
@@ -265,24 +259,34 @@
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(846, 90);
+            btNew.Location = new Point(1558, 98);
             btNew.Name = "btNew";
-            btNew.Size = new Size(157, 34);
+            btNew.Size = new Size(157, 37);
             btNew.TabIndex = 4;
-            btNew.Text = "Thêm điểm";
+            btNew.Text = "Nhập điểm";
             btNew.UseVisualStyleBackColor = true;
             btNew.Click += btNew_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(8, 101);
+            label2.Name = "label2";
+            label2.Size = new Size(174, 30);
+            label2.TabIndex = 5;
+            label2.Text = "Tra cứu học sinh";
             // 
             // fDiem
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(1727, 888);
+            Controls.Add(label2);
             Controls.Add(btNew);
             Controls.Add(OutputTable);
             Controls.Add(btFind);
             Controls.Add(txtfind);
-            Controls.Add(label2);
             Controls.Add(label1);
             DoubleBuffered = true;
             Name = "fDiem";
@@ -299,14 +303,14 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private TextBox txtfind;
         private Button btFind;
         private DataGridView OutputTable;
         private Button btNew;
+        private Label label2;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn StudentId;
-        private DataGridViewTextBoxColumn SubjectId;
+        private DataGridViewTextBoxColumn StudentName;
+        private DataGridViewTextBoxColumn SubjectName;
         private DataGridViewTextBoxColumn MidtermGradeI;
         private DataGridViewTextBoxColumn FinalGradeI;
         private DataGridViewTextBoxColumn AverageGradeI;

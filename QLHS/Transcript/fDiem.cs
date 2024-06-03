@@ -19,5 +19,18 @@ namespace QLHS
             var addDiem = new fNewDiem();
             addDiem.ShowDialog();
         }
+
+        private void btFind_Click(object sender, EventArgs e)
+        {
+            OutputTable.DataSource = StudentScope.GetStudentBy(txtfind.Text);
+        }
+
+        private void txtfind_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                OutputTable.DataSource = StudentScope.GetStudentBy(txtfind.Text);
+            }
+        }
     }
 }

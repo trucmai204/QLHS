@@ -192,6 +192,7 @@
             btClose.TabIndex = 39;
             btClose.Text = "Đóng";
             btClose.UseVisualStyleBackColor = true;
+            btClose.Click += btClose_Click;
             // 
             // btSave
             // 
@@ -205,6 +206,7 @@
             btSave.TabIndex = 38;
             btSave.Text = "Lưu";
             btSave.UseVisualStyleBackColor = false;
+            btSave.Click += btSave_Click;
             // 
             // label12
             // 

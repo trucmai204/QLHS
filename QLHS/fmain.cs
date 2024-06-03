@@ -5,25 +5,34 @@
         public fMain()
         {
             InitializeComponent();
-            this.IsMdiContainer = true;
         }
 
         private void fPhanLopHoc_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fPhanLopHoc"))
+            var openingForm = this.MdiChildren.FirstOrDefault(form => form is fPhanLopHoc);
+            if (openingForm != null)
+            {
+                openingForm.BringToFront();
                 return;
-            fPhanLopHoc f = new fPhanLopHoc();
-            f.MdiParent = this;
-            f.Show();
+            }
+
+            var form = new fPhanLopHoc();
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void fDiem_Click(object sender, EventArgs e)
         {
-            if (Utility.IsOpeningForm("fDiem"))
+            var openingForm = this.MdiChildren.FirstOrDefault(form => form is fDiem);
+            if (openingForm != null)
+            {
+                openingForm.BringToFront();
                 return;
-            fDiem f = new fDiem();
-            f.MdiParent = this;
-            f.Show();
+            }
+
+            var form = new fDiem();
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void fMain_FormClosing(object sender, FormClosingEventArgs e)

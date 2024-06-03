@@ -234,6 +234,7 @@
             btSave.TabIndex = 67;
             btSave.Text = "Lưu";
             btSave.UseVisualStyleBackColor = false;
+            btSave.Click += btSave_Click;
             // 
             // label12
             // 

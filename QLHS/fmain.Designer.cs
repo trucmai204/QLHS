@@ -54,7 +54,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(9, 4, 0, 4);
-            menuStrip1.Size = new Size(1821, 69);
+            menuStrip1.Size = new Size(1821, 50);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -63,7 +63,7 @@
             họcSinhToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýHọcSinhToolStripMenuItem, thêmHọcSinhToolStripMenuItem });
             họcSinhToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             họcSinhToolStripMenuItem.Name = "họcSinhToolStripMenuItem";
-            họcSinhToolStripMenuItem.Size = new Size(108, 61);
+            họcSinhToolStripMenuItem.Size = new Size(108, 42);
             họcSinhToolStripMenuItem.Text = "&Học sinh";
             // 
             // quảnLýHọcSinhToolStripMenuItem
@@ -83,7 +83,7 @@
             lớpHọcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fPhanLopHoc, thêmLớpHọcToolStripMenuItem });
             lớpHọcToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             lớpHọcToolStripMenuItem.Name = "lớpHọcToolStripMenuItem";
-            lớpHọcToolStripMenuItem.Size = new Size(101, 61);
+            lớpHọcToolStripMenuItem.Size = new Size(101, 42);
             lớpHọcToolStripMenuItem.Text = "&Lớp học";
             // 
             // fPhanLopHoc
@@ -104,7 +104,7 @@
             mônHọcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýMônHọcToolStripMenuItem, thêmMônHọcToolStripMenuItem });
             mônHọcToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             mônHọcToolStripMenuItem.Name = "mônHọcToolStripMenuItem";
-            mônHọcToolStripMenuItem.Size = new Size(109, 61);
+            mônHọcToolStripMenuItem.Size = new Size(109, 42);
             mônHọcToolStripMenuItem.Text = "&Môn học";
             // 
             // quảnLýMônHọcToolStripMenuItem
@@ -125,7 +125,7 @@
             điểmToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             điểmToolStripMenuItem.ForeColor = SystemColors.ControlText;
             điểmToolStripMenuItem.Name = "điểmToolStripMenuItem";
-            điểmToolStripMenuItem.Size = new Size(76, 61);
+            điểmToolStripMenuItem.Size = new Size(76, 42);
             điểmToolStripMenuItem.Text = "&Điểm";
             // 
             // fDiem

@@ -13,14 +13,14 @@ DROP TABLE IF EXISTS Class;
 -- Người dùng
 CREATE TABLE [User] (
     Id INT IDENTITY PRIMARY KEY,
-    Username TEXT,
-    Password TEXT
+    Username VARCHAR(255),
+    Password VARCHAR(255)
 );
 
 -- Lớp
 CREATE TABLE Class (
     Id INT IDENTITY PRIMARY KEY,
-    Name TEXT,
+    Name NVARCHAR(255),
     Grade INT
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE Student (
 -- Môn học
 CREATE TABLE Subject (
     Id INT IDENTITY PRIMARY KEY,
-    Name TEXT,
+    Name NVARCHAR(255),
     MidtermWeight FLOAT,
     FinalWeight FLOAT,
     Semester SMALLINT
@@ -55,7 +55,7 @@ CREATE TABLE Transcript (
     FinalGradeII FLOAT,
     AverageGradeII FLOAT,
     FinalAverageGrade FLOAT,
-    GradeType NVARCHAR(100),
+    GradeType NVARCHAR(150),
     FOREIGN KEY (StudentId) REFERENCES Student(Id),
     FOREIGN KEY (SubjectId) REFERENCES Subject(Id)
 );

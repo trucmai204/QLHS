@@ -1,9 +1,15 @@
 ﻿using Database_Connector;
+using Entities;
 
 namespace Functions
 {
-    public class StudentScope
+    public static class StudentScope
     {
-        private AppDbContext Context { get; set; } = new AppDbContext();
+        private static AppDbContext Db { get; set; } = new AppDbContext();
+
+        public static List<Student> GetStudentBy(string name)
+        {
+            return null; // Thay bằng code tìm học sinh theo tên chứa cụm từ trong txtfind
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Functions
             //}
             //return false;
 
-            return Db.User.Any(user => user.Username.Contains(userName) && user.Password.Contains(password)); // Trả về TRUE nếu tồn tại ít nhất 1 item thỏa mãn điều kiện
+            return Db.User.Any(user => user.Username == userName && user.Password == password); // Trả về TRUE nếu tồn tại ít nhất 1 item thỏa mãn điều kiện
         }
     }
 }
