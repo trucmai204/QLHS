@@ -1,6 +1,7 @@
 ﻿using Database_Connector;
 using Entities;
 using Functions.DTO;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Functions
 {
@@ -73,9 +74,49 @@ namespace Functions
             Db.SaveChanges();
         }
 
-        public static void UpdateTranscript(int currentTranscriptId, Transcript updatedTranscript)
+        public static void UpdateTranscript(int currentTranscriptId, double mid1Grade, double final1Grade, double mid2Grade, double final2Grade)
         {
-            // Code để cập nhật 1 bảng điểm trong cơ sở dữ liệu nếu nó tồn tại
+            var transcript = Db.Transcript.FirstOrDefault(transcript => transcript.Id == currentTranscriptId);
+            transcript.MidtermGradeI = mid1Grade;
+            transcript.MidtermGradeII = mid2Grade;
+            transcript.FinalGradeI = final1Grade;
+            transcript.FinalGradeII = final2Grade;
+
+            transcript.AverageGradeI = (mid1Grade + final1Grade) / 2;
+            transcript.AverageGradeII = (mid2Grade + final2Grade) / 2;
+            transcript.FinalAverageGrade = (transcript.AverageGradeII + transcript.AverageGradeI);
+            string gradeType;
+
+            if (transcript.FinalAverageGrade >= 0 && transcript.FinalAverageGrade < 5)
+            {
+                gradeType = "Kém";
+            }
+            else if (transcript.FinalAverageGrade >= 5 && transcript.FinalAverageGrade < 6.5)
+            {
+                gradeType = "Trung bình";
+            }
+            else if (transcript.FinalAverageGrade >= 6.5 && transcript.FinalAverageGrade < 8)
+            {
+                gradeType = "Khá";
+            }
+            else if (transcript.FinalAverageGrade >= 8 && transcript.FinalAverageGrade < 9)
+            {
+                gradeType = "Giỏi";
+            }
+            else
+            {
+                gradeType = "Xuất sắc";
+            }
+            transcript.GradeType = gradeType;
+
+            Db.Transcript.Update(transcript);
+            Db.SaveChanges();
+        }
+        public static void DeleteTranscriptById(int id)
+        {
+            var transcript = Db.Transcript.FirstOrDefault(x => x.Id == id);
+            Db.Transcript.Remove(transcript);
+            Db.SaveChanges();
         }
 
         public static List<TranscriptDTO> GetTranscriptByStudentName(string name)
@@ -97,7 +138,22 @@ namespace Functions
         }
         public static TranscriptDTO GetTranscriptById(int id)
         {
-            return null; // Code tìm bảng điểm theo ID
+            var transcript = Db.Transcript.FirstOrDefault(transcript => transcript.Id == id);
+
+            return new TranscriptDTO
+            {
+                Id = transcript.Id,
+                StudentName = Db.Student.FirstOrDefault(student => student.Id == transcript.StudentId).Name,
+                SubjectName = Db.Subject.FirstOrDefault(subject => subject.Id == transcript.SubjectId).Name,
+                MidtermGradeI = transcript.MidtermGradeI,
+                MidtermGradeII = transcript.MidtermGradeII,
+                FinalGradeI = transcript.FinalGradeI,
+                FinalGradeII = transcript.FinalGradeII,
+                AverageGradeI = transcript.AverageGradeI,
+                AverageGradeII = transcript.AverageGradeII,
+                FinalAverageGrade = transcript.FinalAverageGrade,
+                GradeType = transcript.GradeType
+            };
         }
     }
 }
