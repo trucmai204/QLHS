@@ -44,10 +44,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.OliveDrab;
-            label1.Location = new Point(205, 23);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(164, 18);
             label1.Name = "label1";
-            label1.Size = new Size(436, 48);
+            label1.Size = new Size(364, 41);
             label1.TabIndex = 0;
             label1.Text = "ĐĂNG NHẬP HỆ THỐNG";
             // 
@@ -56,10 +55,10 @@
             txtUserName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtUserName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtUserName.ForeColor = Color.Red;
-            txtUserName.Location = new Point(68, 125);
-            txtUserName.Margin = new Padding(4, 5, 4, 5);
+            txtUserName.Location = new Point(54, 100);
+            txtUserName.Margin = new Padding(3, 4, 3, 4);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(710, 39);
+            txtUserName.Size = new Size(569, 34);
             txtUserName.TabIndex = 3;
             txtUserName.TextAlign = HorizontalAlignment.Center;
             txtUserName.KeyDown += txtUserName_KeyDown;
@@ -68,12 +67,11 @@
             // 
             txtPassWord.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtPassWord.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPassWord.Location = new Point(68, 215);
-            txtPassWord.Margin = new Padding(4, 5, 4, 5);
+            txtPassWord.Location = new Point(54, 172);
+            txtPassWord.Margin = new Padding(3, 4, 3, 4);
             txtPassWord.Name = "txtPassWord";
-            txtPassWord.Size = new Size(710, 39);
+            txtPassWord.Size = new Size(569, 34);
             txtPassWord.TabIndex = 4;
-            txtPassWord.Text = "maidethuong";
             txtPassWord.TextAlign = HorizontalAlignment.Center;
             txtPassWord.UseSystemPasswordChar = true;
             // 
@@ -82,10 +80,10 @@
             btLogin.Anchor = AnchorStyles.None;
             btLogin.BackColor = Color.Cyan;
             btLogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btLogin.Location = new Point(255, 278);
-            btLogin.Margin = new Padding(4, 5, 4, 5);
+            btLogin.Location = new Point(204, 222);
+            btLogin.Margin = new Padding(3, 4, 3, 4);
             btLogin.Name = "btLogin";
-            btLogin.Size = new Size(150, 65);
+            btLogin.Size = new Size(120, 52);
             btLogin.TabIndex = 5;
             btLogin.Text = "Đăng nhập";
             btLogin.UseVisualStyleBackColor = false;
@@ -96,10 +94,10 @@
             btClose.Anchor = AnchorStyles.None;
             btClose.BackColor = Color.FromArgb(255, 192, 192);
             btClose.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btClose.Location = new Point(447, 278);
-            btClose.Margin = new Padding(4, 5, 4, 5);
+            btClose.Location = new Point(358, 222);
+            btClose.Margin = new Padding(3, 4, 3, 4);
             btClose.Name = "btClose";
-            btClose.Size = new Size(144, 65);
+            btClose.Size = new Size(115, 52);
             btClose.TabIndex = 6;
             btClose.Text = "Thoát";
             btClose.UseVisualStyleBackColor = false;
@@ -110,10 +108,9 @@
             label2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F);
-            label2.Location = new Point(68, 91);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(54, 73);
             label2.Name = "label2";
-            label2.Size = new Size(129, 25);
+            label2.Size = new Size(107, 20);
             label2.TabIndex = 1;
             label2.Text = "Tên đăng nhập";
             // 
@@ -122,18 +119,17 @@
             label3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F);
-            label3.Location = new Point(68, 181);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(54, 145);
             label3.Name = "label3";
-            label3.Size = new Size(86, 25);
+            label3.Size = new Size(70, 20);
             label3.TabIndex = 2;
             label3.Text = "Mật khẩu";
             // 
             // fLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(847, 367);
+            ClientSize = new Size(678, 294);
             Controls.Add(btClose);
             Controls.Add(btLogin);
             Controls.Add(txtPassWord);
@@ -142,7 +138,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "fLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";

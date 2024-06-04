@@ -23,16 +23,21 @@ namespace QLHS
 
         private void btFind_Click(object sender, EventArgs e)
         {
-            OutputTable.DataSource = StudentScope.GetStudentBy(txtfind.Text);
-        }
 
-        private void txtfind_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
+            if (txtfind.Text.Trim() != string.Empty)
             {
                 OutputTable.DataSource = TranscriptScope.GetTranscriptByStudentName(txtfind.Text);
             }
+
         }
+
+        //private void txtfind_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == (char)Keys.Enter)
+        //    {
+        //        OutputTable.DataSource = TranscriptScope.GetTranscriptByStudentName(txtfind.Text);
+        //    }
+        //}
 
         private void OutputTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -74,7 +79,7 @@ namespace QLHS
                 DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
                 if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
                 {
-                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa học sinh không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa bảng điểm của học sinh không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
                         DataGridViewCell cell = row.Cells[0];

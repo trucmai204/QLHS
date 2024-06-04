@@ -9,7 +9,8 @@ namespace Functions
 
         public static List<Student> GetStudentBy(string name)
         {
-            return null; // Thay bằng code tìm học sinh theo tên chứa cụm từ trong txtfind
+            return null;            
+
         }
     }
 }

@@ -72,7 +72,7 @@
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
             txtfind.Size = new Size(1261, 37);
             txtfind.TabIndex = 1;
-            txtfind.KeyPress += txtfind_KeyPress;
+        
             // 
             // btFind
             // 
