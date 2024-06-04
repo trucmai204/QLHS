@@ -30,8 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             label14 = new Label();
-            txtLop = new TextBox();
-            label13 = new Label();
             txtLoai = new TextBox();
             txtDiemTBHK2 = new TextBox();
             txtDiemTBHK1 = new TextBox();
@@ -42,8 +40,6 @@
             txtDiemGK1 = new TextBox();
             txtTenMonHoc = new TextBox();
             txtTenhs = new TextBox();
-            txtMahs = new TextBox();
-            txtMaBangDiem = new TextBox();
             btClose = new Button();
             btSave = new Button();
             label12 = new Label();
@@ -56,8 +52,6 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
             toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
@@ -72,26 +66,6 @@
             label14.Size = new Size(351, 55);
             label14.TabIndex = 71;
             label14.Text = "NHẬP ĐIỂM MỚI";
-            // 
-            // txtLop
-            // 
-            txtLop.Anchor = AnchorStyles.None;
-            txtLop.Location = new Point(874, 137);
-            txtLop.Margin = new Padding(4, 5, 4, 5);
-            txtLop.Name = "txtLop";
-            txtLop.Size = new Size(141, 31);
-            txtLop.TabIndex = 70;
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.None;
-            label13.AutoSize = true;
-            label13.Location = new Point(823, 137);
-            label13.Margin = new Padding(4, 0, 4, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(42, 25);
-            label13.TabIndex = 69;
-            label13.Text = "Lớp";
             // 
             // txtLoai
             // 
@@ -190,24 +164,7 @@
             txtTenhs.Name = "txtTenhs";
             txtTenhs.Size = new Size(291, 31);
             txtTenhs.TabIndex = 47;
-            // 
-            // txtMahs
-            // 
-            txtMahs.Anchor = AnchorStyles.None;
-            txtMahs.Location = new Point(237, 140);
-            txtMahs.Margin = new Padding(4, 5, 4, 5);
-            txtMahs.Name = "txtMahs";
-            txtMahs.Size = new Size(141, 31);
-            txtMahs.TabIndex = 46;
-            // 
-            // txtMaBangDiem
-            // 
-            txtMaBangDiem.Anchor = AnchorStyles.None;
-            txtMaBangDiem.Location = new Point(237, 187);
-            txtMaBangDiem.Margin = new Padding(4, 5, 4, 5);
-            txtMaBangDiem.Name = "txtMaBangDiem";
-            txtMaBangDiem.Size = new Size(141, 31);
-            txtMaBangDiem.TabIndex = 43;
+            txtTenhs.Text = "y";
             // 
             // btClose
             // 
@@ -346,36 +303,12 @@
             label3.TabIndex = 48;
             label3.Text = "Tên học sinh";
             // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Location = new Point(117, 143);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(108, 25);
-            label2.TabIndex = 45;
-            label2.Text = "Mã học sinh";
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Location = new Point(84, 190);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(128, 25);
-            label1.TabIndex = 44;
-            label1.Text = "Mã bảng điểm";
-            // 
             // fNewDiem
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1098, 503);
             Controls.Add(label14);
-            Controls.Add(txtLop);
-            Controls.Add(label13);
             Controls.Add(txtLoai);
             Controls.Add(txtDiemTBHK2);
             Controls.Add(txtDiemTBHK1);
@@ -386,8 +319,6 @@
             Controls.Add(txtDiemGK1);
             Controls.Add(txtTenMonHoc);
             Controls.Add(txtTenhs);
-            Controls.Add(txtMahs);
-            Controls.Add(txtMaBangDiem);
             Controls.Add(btClose);
             Controls.Add(btSave);
             Controls.Add(label12);
@@ -400,8 +331,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "fNewDiem";
             StartPosition = FormStartPosition.CenterParent;
@@ -413,8 +342,6 @@
         #endregion
 
         private Label label14;
-        private TextBox txtLop;
-        private Label label13;
         private TextBox txtLoai;
         private TextBox txtDiemTBHK2;
         private TextBox txtDiemTBHK1;
@@ -425,8 +352,6 @@
         private TextBox txtDiemGK1;
         private TextBox txtTenMonHoc;
         private TextBox txtTenhs;
-        private TextBox txtMahs;
-        private TextBox txtMaBangDiem;
         private Button btClose;
         private Button btSave;
         private Label label12;
@@ -439,8 +364,6 @@
         private Label label5;
         private Label label4;
         private Label label3;
-        private Label label2;
-        private Label label1;
         private ToolTip toolTip1;
     }
 }

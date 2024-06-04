@@ -18,6 +18,7 @@ namespace QLHS
         {
             var addDiem = new fNewDiem();
             addDiem.ShowDialog();
+            OutputTable.DataSource = TranscriptScope.GetTranscripts();
         }
 
         private void btFind_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace QLHS
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                OutputTable.DataSource = StudentScope.GetStudentBy(txtfind.Text);
+                OutputTable.DataSource = TranscriptScope.GetTranscriptByStudentName(txtfind.Text);
             }
         }
     }
