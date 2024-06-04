@@ -45,8 +45,6 @@
             AverageGradeII = new DataGridViewTextBoxColumn();
             FinalAverageGrade = new DataGridViewTextBoxColumn();
             GradeType = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewButtonColumn();
-            Delete = new DataGridViewButtonColumn();
             btNew = new Button();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
@@ -105,7 +103,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             OutputTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             OutputTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentName, SubjectName, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType, Edit, Delete });
+            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentName, SubjectName, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -119,8 +117,12 @@
             OutputTable.ReadOnly = true;
             OutputTable.RowHeadersWidth = 51;
             OutputTable.RowTemplate.Height = 25;
+            OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             OutputTable.Size = new Size(1712, 728);
             OutputTable.TabIndex = 3;
+            OutputTable.CellContentClick += OutputTable_CellContentClick;
+            OutputTable.CellDoubleClick += OutputTable_CellDoubleClick;
+            OutputTable.Click += OutputTable_Click;
             // 
             // Id
             // 
@@ -232,30 +234,6 @@
             GradeType.ReadOnly = true;
             GradeType.Width = 81;
             // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "Hành động";
-            Edit.MinimumWidth = 6;
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Resizable = DataGridViewTriState.True;
-            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
-            Edit.Text = "Sửa";
-            Edit.Width = 132;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "Hành động";
-            Delete.MinimumWidth = 6;
-            Delete.Name = "Delete";
-            Delete.ReadOnly = true;
-            Delete.Resizable = DataGridViewTriState.True;
-            Delete.SortMode = DataGridViewColumnSortMode.Automatic;
-            Delete.Text = "Sửa";
-            Delete.Width = 132;
-            // 
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -319,7 +297,5 @@
         private DataGridViewTextBoxColumn AverageGradeII;
         private DataGridViewTextBoxColumn FinalAverageGrade;
         private DataGridViewTextBoxColumn GradeType;
-        private DataGridViewButtonColumn Edit;
-        private DataGridViewButtonColumn Delete;
     }
 }
