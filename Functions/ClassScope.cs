@@ -19,9 +19,9 @@ namespace Functions
             return Db.Class.Where(classes => classes.Name.Contains(name)).ToList();
 
         }
-        public static List<Class> GetGrade(string grade)
+        public static List<Class> GetGrade(int grade)
         {
-            return Db.Class.Where(grades => grades.Name.Contains(grade)).ToList();
+            return Db.Class.Where(classes => classes.Grade == grade).ToList();
         }
       
         public static void DeleteClassById(int Id)

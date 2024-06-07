@@ -24,17 +24,27 @@ namespace QLHS
 
         private void btNienkhoa_Click(object sender, EventArgs e)
         {
-            string gradeBy = txtNienKhoa.Text;
-            var grade = ClassScope.GetClass(gradeBy);
-            dataGridView1.DataSource = grade;
+            var grade = int.Parse(txtNienKhoa.Text);
+            var classes = ClassScope.GetGrade(grade);
+            dataGridView1.DataSource = classes;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Delete")
+            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Delete") // Kiểm tra xem row có hợp lệ hay không
             {
-                int id = (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value;
-                ClassScope.DeleteClassById(id);
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex]; // Lấy row hiện tại
+                if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                {
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa lớp không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        DataGridViewCell cell = row.Cells[0];
+
+                        ClassScope.DeleteClassById((int)cell.Value);
+                        dataGridView1.DataSource = ClassScope.GetClass;
+                    }
+                }
             }
 
         }
