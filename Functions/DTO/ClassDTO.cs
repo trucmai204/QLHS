@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Functions.DTO
 {
-    internal class ClassDTO
+    public class ClassDTO
     {
         public int Id { get; set; }
-        public int StudentId { get; set; }
-        public int SubjectId { get; set; }
-        public string SubjectName { get; set; }
+        public string StudentName { get; set; }
+        public string ClassName { get; set; }
         public int Grade { get; set; }
     }
 }
