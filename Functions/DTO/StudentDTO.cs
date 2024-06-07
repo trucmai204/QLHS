@@ -8,5 +8,6 @@ namespace Functions.DTO
 {
     internal class StudentDTO
     {
+      
     }
 }

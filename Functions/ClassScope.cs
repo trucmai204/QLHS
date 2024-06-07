@@ -14,16 +14,25 @@ namespace Functions
     public static class ClassScope
     {
         private static AppDbContext Db { get; set; } = new AppDbContext();
-        public static List<ClassDTO> GetClass(string name)
+        public static List<Class> GetClass(string name)
         {
-            return Db.Class.Where(classes => classes.Name.Contains(name)).Select(classes => new ClassDTO
-            {
-                Id = classes.Id,
-                StudentName = classes.Student.Name,
-                ClassName = classes.Name,
-                Grade = classes.Grade,
-            }).ToList;
+            return Db.Class.Where(classes => classes.Name.Contains(name)).ToList();
 
+        }
+        public static List<Class> GetGrade(string grade)
+        {
+            return Db.Class.Where(grades => grades.Name.Contains(grade)).ToList();
+        }
+      
+        public static void DeleteClassById(int Id)
+        {
+            var grade = Db.Class.FirstOrDefault(grade => grade.Id == Id);
+            if (grade != null)
+            {
+                Db.Class.Remove(grade);
+                Db.SaveChanges();
+            }
+          
         }
     }
 }
