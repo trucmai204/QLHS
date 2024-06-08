@@ -11,6 +11,7 @@ namespace Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public int Grade { get; set; }
+        public string? SchoolYear { get; set; }
    
     }
 }

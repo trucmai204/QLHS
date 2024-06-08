@@ -61,7 +61,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label14.ForeColor = Color.FromArgb(0, 0, 192);
-            label14.Location = new Point(374, 46);
+            label14.Location = new Point(392, 62);
             label14.Name = "label14";
             label14.Size = new Size(351, 55);
             label14.TabIndex = 71;
@@ -71,7 +71,7 @@
             // 
             txtLoai.Anchor = AnchorStyles.None;
             txtLoai.ForeColor = Color.Red;
-            txtLoai.Location = new Point(524, 322);
+            txtLoai.Location = new Point(542, 338);
             txtLoai.Margin = new Padding(4, 5, 4, 5);
             txtLoai.Name = "txtLoai";
             txtLoai.ReadOnly = true;
@@ -82,7 +82,7 @@
             // 
             txtDiemTBHK2.Anchor = AnchorStyles.None;
             txtDiemTBHK2.ForeColor = Color.FromArgb(192, 0, 0);
-            txtDiemTBHK2.Location = new Point(874, 278);
+            txtDiemTBHK2.Location = new Point(892, 294);
             txtDiemTBHK2.Margin = new Padding(4, 5, 4, 5);
             txtDiemTBHK2.Name = "txtDiemTBHK2";
             txtDiemTBHK2.ReadOnly = true;
@@ -93,7 +93,7 @@
             // 
             txtDiemTBHK1.Anchor = AnchorStyles.None;
             txtDiemTBHK1.ForeColor = Color.FromArgb(192, 0, 0);
-            txtDiemTBHK1.Location = new Point(874, 234);
+            txtDiemTBHK1.Location = new Point(892, 250);
             txtDiemTBHK1.Margin = new Padding(4, 5, 4, 5);
             txtDiemTBHK1.Name = "txtDiemTBHK1";
             txtDiemTBHK1.ReadOnly = true;
@@ -103,7 +103,7 @@
             // txtDiemCK2
             // 
             txtDiemCK2.Anchor = AnchorStyles.None;
-            txtDiemCK2.Location = new Point(524, 278);
+            txtDiemCK2.Location = new Point(542, 294);
             txtDiemCK2.Margin = new Padding(4, 5, 4, 5);
             txtDiemCK2.Name = "txtDiemCK2";
             txtDiemCK2.Size = new Size(141, 31);
@@ -112,7 +112,7 @@
             // txtDiemCK1
             // 
             txtDiemCK1.Anchor = AnchorStyles.None;
-            txtDiemCK1.Location = new Point(524, 234);
+            txtDiemCK1.Location = new Point(542, 250);
             txtDiemCK1.Margin = new Padding(4, 5, 4, 5);
             txtDiemCK1.Name = "txtDiemCK1";
             txtDiemCK1.Size = new Size(141, 31);
@@ -122,7 +122,7 @@
             // 
             txtTongKet.Anchor = AnchorStyles.None;
             txtTongKet.ForeColor = Color.Red;
-            txtTongKet.Location = new Point(237, 322);
+            txtTongKet.Location = new Point(255, 338);
             txtTongKet.Margin = new Padding(4, 5, 4, 5);
             txtTongKet.Name = "txtTongKet";
             txtTongKet.ReadOnly = true;
@@ -132,7 +132,7 @@
             // txtDiemGK2
             // 
             txtDiemGK2.Anchor = AnchorStyles.None;
-            txtDiemGK2.Location = new Point(237, 278);
+            txtDiemGK2.Location = new Point(255, 294);
             txtDiemGK2.Margin = new Padding(4, 5, 4, 5);
             txtDiemGK2.Name = "txtDiemGK2";
             txtDiemGK2.Size = new Size(141, 31);
@@ -141,7 +141,7 @@
             // txtDiemGK1
             // 
             txtDiemGK1.Anchor = AnchorStyles.None;
-            txtDiemGK1.Location = new Point(237, 234);
+            txtDiemGK1.Location = new Point(255, 250);
             txtDiemGK1.Margin = new Padding(4, 5, 4, 5);
             txtDiemGK1.Name = "txtDiemGK1";
             txtDiemGK1.Size = new Size(141, 31);
@@ -150,7 +150,7 @@
             // txtTenMonHoc
             // 
             txtTenMonHoc.Anchor = AnchorStyles.None;
-            txtTenMonHoc.Location = new Point(524, 187);
+            txtTenMonHoc.Location = new Point(542, 203);
             txtTenMonHoc.Margin = new Padding(4, 5, 4, 5);
             txtTenMonHoc.Name = "txtTenMonHoc";
             txtTenMonHoc.Size = new Size(491, 31);
@@ -159,7 +159,7 @@
             // txtTenhs
             // 
             txtTenhs.Anchor = AnchorStyles.None;
-            txtTenhs.Location = new Point(524, 137);
+            txtTenhs.Location = new Point(542, 153);
             txtTenhs.Margin = new Padding(4, 5, 4, 5);
             txtTenhs.Name = "txtTenhs";
             txtTenhs.Size = new Size(291, 31);
@@ -170,7 +170,7 @@
             // 
             btClose.Anchor = AnchorStyles.None;
             btClose.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btClose.Location = new Point(562, 397);
+            btClose.Location = new Point(580, 413);
             btClose.Margin = new Padding(4, 5, 4, 5);
             btClose.Name = "btClose";
             btClose.Size = new Size(161, 59);
@@ -184,7 +184,7 @@
             btSave.Anchor = AnchorStyles.None;
             btSave.BackColor = SystemColors.ActiveCaption;
             btSave.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btSave.Location = new Point(376, 397);
+            btSave.Location = new Point(394, 413);
             btSave.Margin = new Padding(4, 5, 4, 5);
             btSave.Name = "btSave";
             btSave.Size = new Size(161, 59);
@@ -197,7 +197,7 @@
             // 
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
-            label12.Location = new Point(439, 325);
+            label12.Location = new Point(457, 341);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(76, 25);
@@ -208,7 +208,7 @@
             // 
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
-            label11.Location = new Point(130, 325);
+            label11.Location = new Point(148, 341);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(82, 25);
@@ -219,7 +219,7 @@
             // 
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
-            label10.Location = new Point(686, 281);
+            label10.Location = new Point(704, 297);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(180, 25);
@@ -230,7 +230,7 @@
             // 
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
-            label9.Location = new Point(390, 281);
+            label9.Location = new Point(408, 297);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(125, 25);
@@ -241,7 +241,7 @@
             // 
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
-            label8.Location = new Point(85, 281);
+            label8.Location = new Point(103, 297);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new Size(127, 25);
@@ -252,7 +252,7 @@
             // 
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
-            label7.Location = new Point(691, 237);
+            label7.Location = new Point(709, 253);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(175, 25);
@@ -263,7 +263,7 @@
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Location = new Point(395, 237);
+            label6.Location = new Point(413, 253);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(120, 25);
@@ -274,7 +274,7 @@
             // 
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
-            label5.Location = new Point(90, 237);
+            label5.Location = new Point(108, 253);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(122, 25);
@@ -285,7 +285,7 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Location = new Point(402, 190);
+            label4.Location = new Point(420, 206);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(114, 25);
@@ -296,7 +296,7 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(406, 140);
+            label3.Location = new Point(424, 156);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(109, 25);
@@ -307,7 +307,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 503);
+            ClientSize = new Size(1134, 534);
             Controls.Add(label14);
             Controls.Add(txtLoai);
             Controls.Add(txtDiemTBHK2);

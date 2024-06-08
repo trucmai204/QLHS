@@ -29,156 +29,132 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            txtId = new TextBox();
-            txtMahs = new TextBox();
-            txtMalop = new TextBox();
-            txtTenlop = new TextBox();
-            txtNienKhoa = new TextBox();
             btSave = new Button();
             btClose = new Button();
             toolTip1 = new ToolTip(components);
+            label3 = new Label();
+            numericUpDownGrade = new NumericUpDown();
+            txtNienKhoa = new TextBox();
+            txtTenlop = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownGrade).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // btSave
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(62, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 15);
-            label1.TabIndex = 0;
-            label1.Text = "ID Phân lớp:";
+            btSave.Location = new Point(206, 132);
+            btSave.Margin = new Padding(4, 5, 4, 5);
+            btSave.Name = "btSave";
+            btSave.Size = new Size(107, 38);
+            btSave.TabIndex = 5;
+            btSave.Text = "Lưu";
+            btSave.UseVisualStyleBackColor = true;
+            btSave.Click += btSave_Click;
             // 
-            // label2
+            // btClose
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(299, 38);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Mã học sinh:";
+            btClose.Location = new Point(321, 132);
+            btClose.Margin = new Padding(4, 5, 4, 5);
+            btClose.Name = "btClose";
+            btClose.Size = new Size(107, 38);
+            btClose.TabIndex = 6;
+            btClose.Text = "Đóng";
+            btClose.UseVisualStyleBackColor = true;
+            btClose.Click += btClose_Click;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(71, 95);
+            label3.Location = new Point(362, 40);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(50, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Mã lớp: ";
+            label3.Size = new Size(51, 25);
+            label3.TabIndex = 22;
+            label3.Text = "Khối:";
             // 
-            // label4
+            // numericUpDownGrade
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(314, 95);
-            label4.Name = "label4";
-            label4.Size = new Size(51, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Tên lớp: ";
+            numericUpDownGrade.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            numericUpDownGrade.Location = new Point(435, 37);
+            numericUpDownGrade.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
+            numericUpDownGrade.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDownGrade.Name = "numericUpDownGrade";
+            numericUpDownGrade.Size = new Size(123, 31);
+            numericUpDownGrade.TabIndex = 21;
+            numericUpDownGrade.TextAlign = HorizontalAlignment.Center;
+            numericUpDownGrade.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            // 
+            // txtNienKhoa
+            // 
+            txtNienKhoa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtNienKhoa.Location = new Point(194, 81);
+            txtNienKhoa.Margin = new Padding(4, 5, 4, 5);
+            txtNienKhoa.Name = "txtNienKhoa";
+            txtNienKhoa.Size = new Size(364, 31);
+            txtNienKhoa.TabIndex = 19;
+            // 
+            // txtTenlop
+            // 
+            txtTenlop.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtTenlop.Location = new Point(194, 37);
+            txtTenlop.Margin = new Padding(4, 5, 4, 5);
+            txtTenlop.Name = "txtTenlop";
+            txtTenlop.Size = new Size(146, 31);
+            txtTenlop.TabIndex = 17;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(62, 152);
+            label5.Location = new Point(76, 81);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(64, 15);
-            label5.TabIndex = 4;
+            label5.Size = new Size(96, 25);
+            label5.TabIndex = 20;
             label5.Text = "Niên khóa:";
             // 
-            // txtId
+            // label4
             // 
-            txtId.Location = new Point(139, 35);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(131, 23);
-            txtId.TabIndex = 0;
-            // 
-            // txtMahs
-            // 
-            txtMahs.Location = new Point(389, 37);
-            txtMahs.Name = "txtMahs";
-            txtMahs.Size = new Size(158, 23);
-            txtMahs.TabIndex = 1;
-            // 
-            // txtMalop
-            // 
-            txtMalop.Location = new Point(139, 95);
-            txtMalop.Name = "txtMalop";
-            txtMalop.Size = new Size(131, 23);
-            txtMalop.TabIndex = 2;
-            // 
-            // txtTenlop
-            // 
-            txtTenlop.Location = new Point(389, 97);
-            txtTenlop.Name = "txtTenlop";
-            txtTenlop.Size = new Size(158, 23);
-            txtTenlop.TabIndex = 3;
-            // 
-            // txtNienKhoa
-            // 
-            txtNienKhoa.Location = new Point(139, 152);
-            txtNienKhoa.Name = "txtNienKhoa";
-            txtNienKhoa.Size = new Size(131, 23);
-            txtNienKhoa.TabIndex = 4;
-            // 
-            // btSave
-            // 
-            btSave.Location = new Point(425, 152);
-            btSave.Name = "btSave";
-            btSave.Size = new Size(75, 23);
-            btSave.TabIndex = 5;
-            btSave.Text = "Lưu";
-            btSave.UseVisualStyleBackColor = true;
-            // 
-            // btClose
-            // 
-            btClose.Location = new Point(425, 211);
-            btClose.Name = "btClose";
-            btClose.Size = new Size(75, 23);
-            btClose.TabIndex = 6;
-            btClose.Text = "Đóng";
-            btClose.UseVisualStyleBackColor = true;
+            label4.AutoSize = true;
+            label4.Location = new Point(94, 40);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(78, 25);
+            label4.TabIndex = 18;
+            label4.Text = "Tên lớp: ";
             // 
             // fNewPhanLopHoc
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btClose);
-            Controls.Add(btSave);
+            ClientSize = new Size(635, 184);
+            Controls.Add(label3);
+            Controls.Add(numericUpDownGrade);
             Controls.Add(txtNienKhoa);
             Controls.Add(txtTenlop);
-            Controls.Add(txtMalop);
-            Controls.Add(txtMahs);
-            Controls.Add(txtId);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(btClose);
+            Controls.Add(btSave);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "fNewPhanLopHoc";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Mới phân lớp học ";
+            ((System.ComponentModel.ISupportInitialize)numericUpDownGrade).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox txtId;
-        private TextBox txtMahs;
-        private TextBox txtMalop;
-        private TextBox txtTenlop;
-        private TextBox txtNienKhoa;
         private Button btSave;
         private Button btClose;
         private ToolTip toolTip1;
+        private Label label3;
+        private NumericUpDown numericUpDownGrade;
+        private TextBox txtNienKhoa;
+        private TextBox txtTenlop;
+        private Label label5;
+        private Label label4;
     }
 }

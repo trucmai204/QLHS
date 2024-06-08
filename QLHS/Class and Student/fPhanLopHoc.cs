@@ -11,7 +11,7 @@ namespace QLHS
 
         private void fPhanLopHoc_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ClassScope.GetClass("");
+            dataGridView1.DataSource = ClassScope.GetClass();
         }
 
         private void btFind_Click(object sender, EventArgs e)
@@ -39,14 +39,36 @@ namespace QLHS
                     DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa lớp không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        DataGridViewCell cell = row.Cells[0];
+                        DataGridViewCell cell = row.Cells["IdPhanLop"];
 
                         ClassScope.DeleteClassById((int)cell.Value);
-                        dataGridView1.DataSource = ClassScope.GetClass;
+                        dataGridView1.DataSource = ClassScope.GetClass();
                     }
                 }
             }
 
+            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Edit") // Kiểm tra xem row có hợp lệ hay không
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex]; // Lấy row hiện tại
+                if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                {
+                    DataGridViewCell cell = row.Cells["IdPhanLop"];
+
+                    var fEdit = new fEditPhanLopHoc((int)cell.Value);
+                    fEdit.ShowDialog();
+                    dataGridView1.DataSource = ClassScope.GetClass();
+                }
+            }
+
+
+        }
+
+        private void btNew_Click(object sender, EventArgs e)
+        {
+            var fNewClass = new fNewPhanLopHoc();
+            fNewClass.ShowDialog();
+
+            dataGridView1.DataSource= ClassScope.GetClass();
         }
     }
 }
