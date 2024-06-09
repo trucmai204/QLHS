@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class UpdateClass_Form
+    partial class fEditPhanLopHoc
     {
         /// <summary>
         /// Required designer variable.

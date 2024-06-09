@@ -2,9 +2,9 @@
 
 namespace QLHS
 {
-    public partial class CreateTranscript_Form : Form
+    public partial class fNewDiem : Form
     {
-        public CreateTranscript_Form()
+        public fNewDiem()
         {
             InitializeComponent();
 

@@ -13,7 +13,7 @@ namespace Database_Connector
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Trusted_Connection=true;TrustServerCertificate=True;Server=TRUCMAI\\SQLEXPRESS;Database=QLHS");
+            optionsBuilder.UseSqlServer("Trusted_Connection=true;TrustServerCertificate=True;Server=PHANXUANQUANG\\SQLEXPRESS;Database=QLHS");
         }
     }
 }
