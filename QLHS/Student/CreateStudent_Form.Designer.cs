@@ -159,7 +159,7 @@
             // 
             // CreateStudent_Form
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(916, 262);
             Controls.Add(label6);

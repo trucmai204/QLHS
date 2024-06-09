@@ -306,7 +306,7 @@
             // 
             // fEditDiem
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1040, 388);
             Controls.Add(label14);
