@@ -62,7 +62,7 @@
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(1560, 91);
+            btNew.Location = new Point(710, 91);
             btNew.Margin = new Padding(2);
             btNew.Name = "btNew";
             btNew.Size = new Size(158, 38);
@@ -105,7 +105,7 @@
             OutputTable.RowHeadersWidth = 51;
             OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(1712, 728);
+            OutputTable.Size = new Size(862, 384);
             OutputTable.TabIndex = 15;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
@@ -188,7 +188,7 @@
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(1824, 116);
+            btFind.Location = new Point(974, 116);
             btFind.Margin = new Padding(4);
             btFind.Name = "btFind";
             btFind.Size = new Size(119, 46);
@@ -204,7 +204,7 @@
             txtfind.Margin = new Padding(4);
             txtfind.Name = "txtfind";
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
-            txtfind.Size = new Size(1349, 37);
+            txtfind.Size = new Size(499, 37);
             txtfind.TabIndex = 13;
             // 
             // label1
@@ -213,7 +213,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(659, 18);
+            label1.Location = new Point(234, 18);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(410, 55);
@@ -226,7 +226,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1728, 888);
+            ClientSize = new Size(878, 544);
             Controls.Add(label2);
             Controls.Add(btNew);
             Controls.Add(OutputTable);

@@ -54,7 +54,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
             label1.ForeColor = Color.Blue;
-            label1.Location = new Point(583, 15);
+            label1.Location = new Point(344, 15);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(418, 60);
@@ -75,16 +75,16 @@
             // txtFind
             // 
             txtFind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtFind.Location = new Point(789, 104);
+            txtFind.Location = new Point(712, 104);
             txtFind.Margin = new Padding(4, 5, 4, 5);
             txtFind.Name = "txtFind";
-            txtFind.Size = new Size(536, 31);
+            txtFind.Size = new Size(136, 31);
             txtFind.TabIndex = 2;
             // 
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(1452, 99);
+            btNew.Location = new Point(975, 99);
             btNew.Margin = new Padding(4, 5, 4, 5);
             btNew.Name = "btNew";
             btNew.Size = new Size(116, 40);
@@ -97,7 +97,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(576, 102);
+            label4.Location = new Point(499, 102);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(205, 32);
@@ -107,7 +107,7 @@
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(1337, 99);
+            btFind.Location = new Point(860, 99);
             btFind.Margin = new Padding(4, 5, 4, 5);
             btFind.Name = "btFind";
             btFind.Size = new Size(108, 40);
@@ -169,7 +169,7 @@
             OutputTable.RowHeadersWidth = 51;
             OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(1562, 622);
+            OutputTable.Size = new Size(1085, 414);
             OutputTable.TabIndex = 16;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
@@ -234,7 +234,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1584, 779);
+            ClientSize = new Size(1107, 571);
             Controls.Add(OutputTable);
             Controls.Add(btNienkhoa);
             Controls.Add(txtNienKhoa);
