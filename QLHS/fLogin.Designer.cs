@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class Login_Form
+    partial class fLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLogin));
             label1 = new Label();
             txtUserName = new TextBox();
             txtPassWord = new TextBox();

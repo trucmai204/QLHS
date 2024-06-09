@@ -39,7 +39,7 @@
             StudentId = new DataGridViewTextBoxColumn();
             StudentName = new DataGridViewTextBoxColumn();
             Birthdate = new DataGridViewTextBoxColumn();
-            Gender = new DataGridViewTextBoxColumn();
+            Gender = new DataGridViewCheckBoxColumn();
             ClassName = new DataGridViewTextBoxColumn();
             Grade = new DataGridViewTextBoxColumn();
             SchoolYear = new DataGridViewTextBoxColumn();
@@ -52,18 +52,20 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(10, 96);
+            label2.Location = new Point(8, 77);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(174, 30);
+            label2.Size = new Size(150, 25);
             label2.TabIndex = 17;
             label2.Text = "Tra cứu học sinh";
             // 
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(1560, 93);
+            btNew.Location = new Point(1248, 74);
+            btNew.Margin = new Padding(2);
             btNew.Name = "btNew";
-            btNew.Size = new Size(157, 37);
+            btNew.Size = new Size(126, 30);
             btNew.TabIndex = 16;
             btNew.Text = "Thêm học sinh";
             btNew.UseVisualStyleBackColor = true;
@@ -96,13 +98,14 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             OutputTable.DefaultCellStyle = dataGridViewCellStyle2;
-            OutputTable.Location = new Point(7, 143);
+            OutputTable.Location = new Point(6, 114);
+            OutputTable.Margin = new Padding(2);
             OutputTable.Name = "OutputTable";
             OutputTable.ReadOnly = true;
             OutputTable.RowHeadersWidth = 51;
             OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(1712, 728);
+            OutputTable.Size = new Size(1370, 582);
             OutputTable.TabIndex = 15;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
@@ -198,36 +201,70 @@
             // 
             // Edit
             // 
-            Edit.HeaderText = "Hành động";
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "Sửa";
             Edit.MinimumWidth = 8;
             Edit.Name = "Edit";
             Edit.ReadOnly = true;
             Edit.SortMode = DataGridViewColumnSortMode.Automatic;
             Edit.Text = "Sửa";
-            Edit.UseColumnTextForButtonValue = true;
             // 
             // Delete
             // 
-            Delete.HeaderText = "Hành động";
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "Xóa";
             Delete.MinimumWidth = 8;
             Delete.Name = "Delete";
             Delete.ReadOnly = true;
             Delete.SortMode = DataGridViewColumnSortMode.Automatic;
             Delete.Text = "Xóa";
-            Delete.UseColumnTextForButtonValue = true;
+            // 
+            // btFind
+            // 
+            btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btFind.Location = new Point(1459, 93);
+            btFind.Name = "btFind";
+            btFind.Size = new Size(95, 37);
+            btFind.TabIndex = 14;
+            btFind.Text = "Tìm";
+            btFind.UseVisualStyleBackColor = true;
+            // 
+            // txtfind
+            // 
+            txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtfind.Font = new Font("Segoe UI", 11F);
+            txtfind.Location = new Point(192, 93);
+            txtfind.Name = "txtfind";
+            txtfind.PlaceholderText = "  Tìm học sinh . . .";
+            txtfind.Size = new Size(1261, 37);
+            txtfind.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(0, 0, 192);
+            label1.Location = new Point(658, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(410, 55);
+            label1.TabIndex = 12;
+            label1.Text = "QUẢN LÝ HỌC SINH";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ManageStudent_Form
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1727, 888);
+            ClientSize = new Size(1382, 710);
             Controls.Add(label2);
             Controls.Add(btNew);
             Controls.Add(OutputTable);
             Controls.Add(btFind);
             Controls.Add(txtfind);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "ManageStudent_Form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý học sinh";
@@ -249,7 +286,7 @@
         private DataGridViewTextBoxColumn StudentId;
         private DataGridViewTextBoxColumn StudentName;
         private DataGridViewTextBoxColumn Birthdate;
-        private DataGridViewTextBoxColumn Gender;
+        private DataGridViewCheckBoxColumn Gender;
         private DataGridViewTextBoxColumn ClassName;
         private DataGridViewTextBoxColumn Grade;
         private DataGridViewTextBoxColumn SchoolYear;

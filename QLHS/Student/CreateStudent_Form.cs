@@ -17,6 +17,7 @@ namespace QLHS.Student
             var birthdate = birthdateTimePicker.Value;
 
             StudentScope.Create(studentName, birthdate, gender, classId);
+            this.Close();
         }
 
         private void btClose_Click(object sender, EventArgs e)

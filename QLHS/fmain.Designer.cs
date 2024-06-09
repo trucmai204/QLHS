@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class MainWindow
+    partial class fMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             menuStrip1 = new MenuStrip();
             họcSinhToolStripMenuItem = new ToolStripMenuItem();
             quảnLýHọcSinhToolStripMenuItem = new ToolStripMenuItem();

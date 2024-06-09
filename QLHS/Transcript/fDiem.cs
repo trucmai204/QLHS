@@ -1,10 +1,11 @@
 ﻿using Functions;
+using System.Windows.Forms;
 
 namespace QLHS
 {
-    public partial class ManageTranscript_Form : Form
+    public partial class fDiem : Form
     {
-        public ManageTranscript_Form()
+        public fDiem()
         {
             InitializeComponent();
         }
@@ -16,7 +17,7 @@ namespace QLHS
 
         private void btNew_Click(object sender, EventArgs e)
         {
-            var addDiem = new CreateTranscript_Form();
+            var addDiem = new fNewDiem();
             addDiem.ShowDialog();
             OutputTable.DataSource = TranscriptScope.FindByStudentName();
         }
@@ -31,42 +32,23 @@ namespace QLHS
 
         }
 
-        private void OutputTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void OutputTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Edit") // Kiểm tra xem row có hợp lệ hay không
             {
                 DataGridViewRow row = OutputTable.Rows[e.RowIndex];
                 if (row.Cells.Count > 0)
                 {
-                    DataGridViewCell cell = row.Cells[0];
+                    DataGridViewCell cell = row.Cells["Id"];
 
-                    var editDiem = new UpdateTranscript_Form((int)cell.Value);
+                    var editDiem = new fEditDiem((int)cell.Value);
                     editDiem.ShowDialog();
                     OutputTable.DataSource = TranscriptScope.FindByStudentName();
                 }
+                
             }
-
-
-        }
-
-        private void OutputTable_Click(object sender, EventArgs e)
-        {
-            //if (OutputTable.SelectedRows.Count > 0)
-            //{
-            //    DialogResult dialogResult = MessageBox.Show("This is your message. Do you want to proceed?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
-            //    if (dialogResult == DialogResult.Yes)
-            //    {
-            //        DataGridViewRow selectedRow = OutputTable.SelectedRows[0];
-
-            //        TranscriptScope.Delete((int)selectedRow.Cells[0].Value);
-            //        OutputTable.DataSource = TranscriptScope.FindByStudentName();
-            //    }
-            //}
-        }
-
-        private void OutputTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Kiểm tra xem row có hợp lệ hay không
+            else if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Delete")
             {
                 DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
                 if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
@@ -74,7 +56,7 @@ namespace QLHS
                     DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa bảng điểm của học sinh không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        DataGridViewCell cell = row.Cells[0];
+                        DataGridViewCell cell = row.Cells["Id"];
 
                         TranscriptScope.Delete((int)cell.Value);
                         OutputTable.DataSource = TranscriptScope.FindByStudentName();

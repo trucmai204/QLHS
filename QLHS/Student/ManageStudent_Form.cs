@@ -51,5 +51,13 @@ namespace QLHS.Student
                 }
             }
         }
+
+        private void btFind_Click(object sender, EventArgs e)
+        {
+            if (txtfind.Text.Trim() != string.Empty)
+            {
+               OutputTable.DataSource = StudentScope.FindByName(txtfind.Text);
+            }
+        }
     }
 }
