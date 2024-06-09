@@ -1,12 +1,5 @@
 ﻿using Database_Connector;
 using Entities;
-using Functions.DTO;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Functions
@@ -14,26 +7,62 @@ namespace Functions
     public static class ClassScope
     {
         private static AppDbContext Db { get; set; } = new AppDbContext();
-        public static List<Class> GetClass(string name)
+        public static List<Class> FindByName(string name = "")
         {
             return Db.Class.Where(classes => classes.Name.Contains(name)).ToList();
 
         }
-        public static List<Class> GetGrade(int grade)
+        public static List<Class> FindByGrade(int grade)
         {
             return Db.Class.Where(classes => classes.Grade == grade).ToList();
         }
-      
-        public static void DeleteClassById(int Id)
+        public static Class FindById(int id)
         {
-            var grade = Db.Class.FirstOrDefault(grade => grade.Id == Id);
+            return Db.Class.FirstOrDefault(classes => classes.Id == id);
+        }
+
+        public static void Create(string name, int grade, string schoolYear)
+        {
+            var classes = new Class
+            {
+                Name = name,
+                Grade = grade,
+                SchoolYear = schoolYear
+            };
+            Db.Class.Add(classes);
+            Db.SaveChanges();
+        }
+        public static void Update(int id, string name, int grade, string schoolYear)
+        {
+            var classes = Db.Class.FirstOrDefault(classes => classes.Id == id);
+            classes.Name = name;
+            classes.Grade = grade;
+            classes.SchoolYear = schoolYear;
+            Db.Class.Update(classes);
+            Db.SaveChanges();
+
+        }
+        public static void Delete(int id)
+        {
+            var transcripts = Db.Transcript.Where(transcript => transcript.Student.ClassId == id).ToList();
+            foreach (var transcript in transcripts)
+            {
+                Db.Transcript.Remove(transcript);
+            }
+
+            var students = Db.Student.Where(student => student.ClassId == id).ToList();
+            foreach (var student in students)
+            {
+                Db.Student.Remove(student);
+            }
+
+            var grade = Db.Class.FirstOrDefault(grade => grade.Id == id);
             if (grade != null)
             {
                 Db.Class.Remove(grade);
                 Db.SaveChanges();
             }
-          
+
         }
     }
 }
-    

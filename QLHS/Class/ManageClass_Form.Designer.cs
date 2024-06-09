@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class fPhanLopHoc
+    partial class ManageClass_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,10 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            IdPhanLop = new DataGridViewTextBoxColumn();
+            ClassId = new DataGridViewTextBoxColumn();
             Tenlop = new DataGridViewTextBoxColumn();
-            NienKhoa = new DataGridViewTextBoxColumn();
+            Grade = new DataGridViewTextBoxColumn();
+            SchoolYear = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
             label3 = new Label();
@@ -51,7 +52,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
             label1.ForeColor = Color.Blue;
-            label1.Location = new Point(290, 12);
+            label1.Location = new Point(309, 12);
             label1.Name = "label1";
             label1.Size = new Size(298, 50);
             label1.TabIndex = 0;
@@ -63,24 +64,24 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IdPhanLop, Tenlop, NienKhoa, Edit, Delete });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ClassId, Tenlop, Grade, SchoolYear, Edit, Delete });
             dataGridView1.Location = new Point(14, 126);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(836, 578);
+            dataGridView1.Size = new Size(874, 306);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // IdPhanLop
+            // ClassId
             // 
-            IdPhanLop.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            IdPhanLop.DataPropertyName = "Id";
-            IdPhanLop.HeaderText = "ID Phân Lớp";
-            IdPhanLop.MinimumWidth = 8;
-            IdPhanLop.Name = "IdPhanLop";
-            IdPhanLop.Width = 118;
+            ClassId.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            ClassId.DataPropertyName = "Id";
+            ClassId.HeaderText = "Mã lớp";
+            ClassId.MinimumWidth = 8;
+            ClassId.Name = "ClassId";
+            ClassId.Width = 85;
             // 
             // Tenlop
             // 
@@ -91,14 +92,23 @@
             Tenlop.Name = "Tenlop";
             Tenlop.Width = 87;
             // 
-            // NienKhoa
+            // Grade
             // 
-            NienKhoa.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            NienKhoa.DataPropertyName = "Grade";
-            NienKhoa.HeaderText = "Niên Khóa";
-            NienKhoa.MinimumWidth = 8;
-            NienKhoa.Name = "NienKhoa";
-            NienKhoa.Width = 107;
+            Grade.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Grade.DataPropertyName = "Grade";
+            Grade.HeaderText = "Khối Lớp";
+            Grade.MinimumWidth = 8;
+            Grade.Name = "Grade";
+            Grade.Width = 97;
+            // 
+            // SchoolYear
+            // 
+            SchoolYear.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            SchoolYear.DataPropertyName = "SchoolYear";
+            SchoolYear.HeaderText = "Niên Khóa";
+            SchoolYear.MinimumWidth = 8;
+            SchoolYear.Name = "SchoolYear";
+            SchoolYear.Width = 107;
             // 
             // Edit
             // 
@@ -130,13 +140,14 @@
             label3.Font = new Font("Segoe UI", 12F);
             label3.Location = new Point(17, 82);
             label3.Name = "label3";
-            label3.Size = new Size(105, 28);
+            label3.Size = new Size(94, 28);
             label3.TabIndex = 3;
-            label3.Text = "Niên khóa:";
+            label3.Text = "Khối Lớp:";
             // 
             // txtFind
             // 
-            txtFind.Location = new Point(538, 83);
+            txtFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtFind.Location = new Point(575, 83);
             txtFind.Margin = new Padding(3, 4, 3, 4);
             txtFind.Name = "txtFind";
             txtFind.Size = new Size(121, 27);
@@ -144,19 +155,22 @@
             // 
             // btNew
             // 
-            btNew.Location = new Point(759, 79);
+            btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btNew.Location = new Point(797, 79);
             btNew.Margin = new Padding(3, 4, 3, 4);
             btNew.Name = "btNew";
             btNew.Size = new Size(93, 32);
             btNew.TabIndex = 0;
             btNew.Text = "New";
             btNew.UseVisualStyleBackColor = true;
+            btNew.Click += btNew_Click;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(371, 82);
+            label4.Location = new Point(409, 82);
             label4.Name = "label4";
             label4.Size = new Size(166, 28);
             label4.TabIndex = 7;
@@ -164,7 +178,8 @@
             // 
             // btFind
             // 
-            btFind.Location = new Point(667, 79);
+            btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btFind.Location = new Point(705, 79);
             btFind.Margin = new Padding(3, 4, 3, 4);
             btFind.Name = "btFind";
             btFind.Size = new Size(86, 32);
@@ -192,12 +207,12 @@
             btNienkhoa.UseVisualStyleBackColor = true;
             btNienkhoa.Click += btNienkhoa_Click;
             // 
-            // fPhanLopHoc
+            // ManageClass_Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(864, 710);
+            ClientSize = new Size(902, 438);
             Controls.Add(btNienkhoa);
             Controls.Add(txtNienKhoa);
             Controls.Add(btFind);
@@ -209,8 +224,10 @@
             Controls.Add(label1);
             ForeColor = SystemColors.ActiveCaptionText;
             Margin = new Padding(3, 4, 3, 4);
-            Name = "fPhanLopHoc";
-            StartPosition = FormStartPosition.CenterParent;
+            Name = "ManageClass_Form";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Phân lớp học";
             WindowState = FormWindowState.Maximized;
             Load += fPhanLopHoc_Load;
@@ -230,9 +247,10 @@
         private Button btFind;
         private TextBox txtNienKhoa;
         private Button btNienkhoa;
-        private DataGridViewTextBoxColumn IdPhanLop;
+        private DataGridViewTextBoxColumn ClassId;
         private DataGridViewTextBoxColumn Tenlop;
-        private DataGridViewTextBoxColumn NienKhoa;
+        private DataGridViewTextBoxColumn Grade;
+        private DataGridViewTextBoxColumn SchoolYear;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
     }

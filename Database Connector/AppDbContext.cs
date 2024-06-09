@@ -15,9 +15,5 @@ namespace Database_Connector
         {
             optionsBuilder.UseSqlServer("Trusted_Connection=true;TrustServerCertificate=True;Server=TRUCMAI\\SQLEXPRESS;Database=QLHS");
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class fDiem
+    partial class ManageTranscript_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,8 @@
             txtfind = new TextBox();
             btFind = new Button();
             OutputTable = new DataGridView();
+            btNew = new Button();
+            label2 = new Label();
             Id = new DataGridViewTextBoxColumn();
             StudentName = new DataGridViewTextBoxColumn();
             SubjectName = new DataGridViewTextBoxColumn();
@@ -45,8 +47,8 @@
             AverageGradeII = new DataGridViewTextBoxColumn();
             FinalAverageGrade = new DataGridViewTextBoxColumn();
             GradeType = new DataGridViewTextBoxColumn();
-            btNew = new Button();
-            label2 = new Label();
+            Edit = new DataGridViewButtonColumn();
+            Delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
             SuspendLayout();
             // 
@@ -56,9 +58,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(601, 22);
+            label1.Location = new Point(588, 22);
             label1.Name = "label1";
-            label1.Size = new Size(525, 55);
+            label1.Size = new Size(437, 46);
             label1.TabIndex = 0;
             label1.Text = "QUẢN LÝ ĐIỂM HỌC SINH";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -70,14 +72,13 @@
             txtfind.Location = new Point(190, 98);
             txtfind.Name = "txtfind";
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
-            txtfind.Size = new Size(1261, 37);
+            txtfind.Size = new Size(1234, 32);
             txtfind.TabIndex = 1;
-        
             // 
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(1457, 98);
+            btFind.Location = new Point(1430, 98);
             btFind.Name = "btFind";
             btFind.Size = new Size(95, 37);
             btFind.TabIndex = 2;
@@ -103,7 +104,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             OutputTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             OutputTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentName, SubjectName, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType });
+            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentName, SubjectName, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -118,126 +119,15 @@
             OutputTable.RowHeadersWidth = 51;
             OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(1712, 728);
+            OutputTable.Size = new Size(1680, 728);
             OutputTable.TabIndex = 3;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
-            OutputTable.CellDoubleClick += OutputTable_CellDoubleClick;
-            OutputTable.Click += OutputTable_Click;
-            // 
-            // Id
-            // 
-            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Mã bảng điểm";
-            Id.MinimumWidth = 6;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 156;
-            // 
-            // StudentName
-            // 
-            StudentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            StudentName.DataPropertyName = "StudentName";
-            StudentName.HeaderText = "Tên học sinh";
-            StudentName.MinimumWidth = 6;
-            StudentName.Name = "StudentName";
-            StudentName.ReadOnly = true;
-            StudentName.Width = 142;
-            // 
-            // SubjectName
-            // 
-            SubjectName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            SubjectName.DataPropertyName = "SubjectName";
-            SubjectName.HeaderText = "Tên môn học";
-            SubjectName.MinimumWidth = 6;
-            SubjectName.Name = "SubjectName";
-            SubjectName.ReadOnly = true;
-            SubjectName.Width = 144;
-            // 
-            // MidtermGradeI
-            // 
-            MidtermGradeI.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            MidtermGradeI.DataPropertyName = "MidtermGradeI";
-            MidtermGradeI.HeaderText = "Điểm giữa kì I";
-            MidtermGradeI.MinimumWidth = 6;
-            MidtermGradeI.Name = "MidtermGradeI";
-            MidtermGradeI.ReadOnly = true;
-            MidtermGradeI.Width = 129;
-            // 
-            // FinalGradeI
-            // 
-            FinalGradeI.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            FinalGradeI.DataPropertyName = "FinalGradeI";
-            FinalGradeI.HeaderText = "Điểm cuối kì I";
-            FinalGradeI.MinimumWidth = 6;
-            FinalGradeI.Name = "FinalGradeI";
-            FinalGradeI.ReadOnly = true;
-            FinalGradeI.Width = 127;
-            // 
-            // AverageGradeI
-            // 
-            AverageGradeI.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            AverageGradeI.DataPropertyName = "AverageGradeI";
-            AverageGradeI.HeaderText = "Điểm trung bình HKI";
-            AverageGradeI.MinimumWidth = 6;
-            AverageGradeI.Name = "AverageGradeI";
-            AverageGradeI.ReadOnly = true;
-            AverageGradeI.Width = 176;
-            // 
-            // MidtermGradeII
-            // 
-            MidtermGradeII.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            MidtermGradeII.DataPropertyName = "MidtermGradeII";
-            MidtermGradeII.HeaderText = "Điểm giữa kì II";
-            MidtermGradeII.MinimumWidth = 6;
-            MidtermGradeII.Name = "MidtermGradeII";
-            MidtermGradeII.ReadOnly = true;
-            MidtermGradeII.Width = 129;
-            // 
-            // FinalGradeII
-            // 
-            FinalGradeII.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            FinalGradeII.DataPropertyName = "FinalGradeII";
-            FinalGradeII.HeaderText = "Điểm cuối kì II";
-            FinalGradeII.MinimumWidth = 6;
-            FinalGradeII.Name = "FinalGradeII";
-            FinalGradeII.ReadOnly = true;
-            FinalGradeII.Width = 127;
-            // 
-            // AverageGradeII
-            // 
-            AverageGradeII.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            AverageGradeII.DataPropertyName = "AverageGradeII";
-            AverageGradeII.HeaderText = "Điểm trung bình HKII";
-            AverageGradeII.MinimumWidth = 6;
-            AverageGradeII.Name = "AverageGradeII";
-            AverageGradeII.ReadOnly = true;
-            AverageGradeII.Width = 176;
-            // 
-            // FinalAverageGrade
-            // 
-            FinalAverageGrade.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            FinalAverageGrade.DataPropertyName = "FinalAverageGrade";
-            FinalAverageGrade.HeaderText = "Tổng kết";
-            FinalAverageGrade.MinimumWidth = 6;
-            FinalAverageGrade.Name = "FinalAverageGrade";
-            FinalAverageGrade.ReadOnly = true;
-            FinalAverageGrade.Width = 115;
-            // 
-            // GradeType
-            // 
-            GradeType.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            GradeType.DataPropertyName = "GradeType";
-            GradeType.HeaderText = "Xếp loại";
-            GradeType.MinimumWidth = 6;
-            GradeType.Name = "GradeType";
-            GradeType.ReadOnly = true;
-            GradeType.Width = 81;
+       
             // 
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(1558, 98);
+            btNew.Location = new Point(1531, 98);
             btNew.Name = "btNew";
             btNew.Size = new Size(157, 37);
             btNew.TabIndex = 4;
@@ -251,15 +141,147 @@
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(8, 101);
             label2.Name = "label2";
-            label2.Size = new Size(174, 30);
+            label2.Size = new Size(150, 25);
             label2.TabIndex = 5;
             label2.Text = "Tra cứu học sinh";
             // 
-            // fDiem
+            // Id
+            // 
+            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Mã bảng điểm";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 138;
+            // 
+            // StudentName
+            // 
+            StudentName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            StudentName.DataPropertyName = "StudentName";
+            StudentName.HeaderText = "Tên học sinh";
+            StudentName.MinimumWidth = 6;
+            StudentName.Name = "StudentName";
+            StudentName.ReadOnly = true;
+            StudentName.Width = 125;
+            // 
+            // SubjectName
+            // 
+            SubjectName.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            SubjectName.DataPropertyName = "SubjectName";
+            SubjectName.HeaderText = "Tên môn học";
+            SubjectName.MinimumWidth = 6;
+            SubjectName.Name = "SubjectName";
+            SubjectName.ReadOnly = true;
+            SubjectName.Width = 128;
+            // 
+            // MidtermGradeI
+            // 
+            MidtermGradeI.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            MidtermGradeI.DataPropertyName = "MidtermGradeI";
+            MidtermGradeI.HeaderText = "Điểm giữa kì I";
+            MidtermGradeI.MinimumWidth = 6;
+            MidtermGradeI.Name = "MidtermGradeI";
+            MidtermGradeI.ReadOnly = true;
+            MidtermGradeI.Width = 135;
+            // 
+            // FinalGradeI
+            // 
+            FinalGradeI.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            FinalGradeI.DataPropertyName = "FinalGradeI";
+            FinalGradeI.HeaderText = "Điểm cuối kì I";
+            FinalGradeI.MinimumWidth = 6;
+            FinalGradeI.Name = "FinalGradeI";
+            FinalGradeI.ReadOnly = true;
+            FinalGradeI.Width = 133;
+            // 
+            // AverageGradeI
+            // 
+            AverageGradeI.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            AverageGradeI.DataPropertyName = "AverageGradeI";
+            AverageGradeI.HeaderText = "Điểm trung bình HKI";
+            AverageGradeI.MinimumWidth = 6;
+            AverageGradeI.Name = "AverageGradeI";
+            AverageGradeI.ReadOnly = true;
+            AverageGradeI.Width = 144;
+            // 
+            // MidtermGradeII
+            // 
+            MidtermGradeII.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            MidtermGradeII.DataPropertyName = "MidtermGradeII";
+            MidtermGradeII.HeaderText = "Điểm giữa kì II";
+            MidtermGradeII.MinimumWidth = 6;
+            MidtermGradeII.Name = "MidtermGradeII";
+            MidtermGradeII.ReadOnly = true;
+            MidtermGradeII.Width = 105;
+            // 
+            // FinalGradeII
+            // 
+            FinalGradeII.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            FinalGradeII.DataPropertyName = "FinalGradeII";
+            FinalGradeII.HeaderText = "Điểm cuối kì II";
+            FinalGradeII.MinimumWidth = 6;
+            FinalGradeII.Name = "FinalGradeII";
+            FinalGradeII.ReadOnly = true;
+            FinalGradeII.Width = 103;
+            // 
+            // AverageGradeII
+            // 
+            AverageGradeII.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            AverageGradeII.DataPropertyName = "AverageGradeII";
+            AverageGradeII.HeaderText = "Điểm trung bình HKII";
+            AverageGradeII.MinimumWidth = 6;
+            AverageGradeII.Name = "AverageGradeII";
+            AverageGradeII.ReadOnly = true;
+            AverageGradeII.Width = 144;
+            // 
+            // FinalAverageGrade
+            // 
+            FinalAverageGrade.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            FinalAverageGrade.DataPropertyName = "FinalAverageGrade";
+            FinalAverageGrade.HeaderText = "Tổng kết";
+            FinalAverageGrade.MinimumWidth = 6;
+            FinalAverageGrade.Name = "FinalAverageGrade";
+            FinalAverageGrade.ReadOnly = true;
+            FinalAverageGrade.Width = 92;
+            // 
+            // GradeType
+            // 
+            GradeType.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            GradeType.DataPropertyName = "GradeType";
+            GradeType.HeaderText = "Xếp loại";
+            GradeType.MinimumWidth = 6;
+            GradeType.Name = "GradeType";
+            GradeType.ReadOnly = true;
+            GradeType.Width = 65;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "Edit";
+            Edit.MinimumWidth = 6;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Text = "Sửa";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 42;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "Delete";
+            Delete.MinimumWidth = 6;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Text = "Xóa";
+            Delete.UseColumnTextForButtonValue = true;
+            Delete.Width = 60;
+            // 
+            // ManageTranscript_Form
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1727, 888);
+            ClientSize = new Size(1700, 888);
             Controls.Add(label2);
             Controls.Add(btNew);
             Controls.Add(OutputTable);
@@ -267,8 +289,9 @@
             Controls.Add(txtfind);
             Controls.Add(label1);
             DoubleBuffered = true;
-            Name = "fDiem";
+            Name = "ManageTranscript_Form";
             ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lý Điểm Học Sinh";
             WindowState = FormWindowState.Maximized;
@@ -297,5 +320,7 @@
         private DataGridViewTextBoxColumn AverageGradeII;
         private DataGridViewTextBoxColumn FinalAverageGrade;
         private DataGridViewTextBoxColumn GradeType;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Delete;
     }
 }

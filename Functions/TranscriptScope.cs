@@ -1,16 +1,15 @@
 ﻿using Database_Connector;
 using Entities;
 using Functions.DTO;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Functions
 {
     public static class TranscriptScope
     {
         private static AppDbContext Db { get; set; } = new AppDbContext();
-        public static List<TranscriptDTO> GetTranscripts()
+        public static List<TranscriptDTO> FindByStudentName(string name = "")
         {
-            return Db.Transcript.Select(transcript => new TranscriptDTO
+            return Db.Transcript.Where(search => search.Student.Name.Contains(name)).Select(transcript => new TranscriptDTO
             {
                 Id = transcript.Id,
                 StudentName = transcript.Student.Name,
@@ -25,8 +24,27 @@ namespace Functions
                 GradeType = transcript.GradeType
             }).ToList();
         }
+        public static TranscriptDTO FindById(int id)
+        {
+            var transcript = Db.Transcript.FirstOrDefault(transcript => transcript.Id == id);
 
-        public static void AddTranscript(string studentName, string subjectName, double mid1Grade, double final1Grade, double mid2Grade, double final2Grade)
+            return new TranscriptDTO
+            {
+                Id = transcript.Id,
+                StudentName = Db.Student.FirstOrDefault(student => student.Id == transcript.StudentId).Name,
+                SubjectName = Db.Subject.FirstOrDefault(subject => subject.Id == transcript.SubjectId).Name,
+                MidtermGradeI = transcript.MidtermGradeI,
+                MidtermGradeII = transcript.MidtermGradeII,
+                FinalGradeI = transcript.FinalGradeI,
+                FinalGradeII = transcript.FinalGradeII,
+                AverageGradeI = transcript.AverageGradeI,
+                AverageGradeII = transcript.AverageGradeII,
+                FinalAverageGrade = transcript.FinalAverageGrade,
+                GradeType = transcript.GradeType
+            };
+        }
+
+        public static void Create(string studentName, string subjectName, double mid1Grade, double final1Grade, double mid2Grade, double final2Grade)
         {
             var studentId = Db.Student.FirstOrDefault(student => student.Name == studentName).Id;
             var subjectId = Db.Subject.First(subject => subject.Name == subjectName).Id;
@@ -73,8 +91,7 @@ namespace Functions
             Db.Transcript.Add(transcript);
             Db.SaveChanges();
         }
-
-        public static void UpdateTranscript(int currentTranscriptId, double mid1Grade, double final1Grade, double mid2Grade, double final2Grade)
+        public static void Update(int currentTranscriptId, double mid1Grade, double final1Grade, double mid2Grade, double final2Grade)
         {
             var transcript = Db.Transcript.FirstOrDefault(transcript => transcript.Id == currentTranscriptId);
             transcript.MidtermGradeI = mid1Grade;
@@ -112,48 +129,11 @@ namespace Functions
             Db.Transcript.Update(transcript);
             Db.SaveChanges();
         }
-        public static void DeleteTranscriptById(int id)
+        public static void Delete(int id)
         {
             var transcript = Db.Transcript.FirstOrDefault(x => x.Id == id);
             Db.Transcript.Remove(transcript);
             Db.SaveChanges();
-        }
-
-        public static List<TranscriptDTO> GetTranscriptByStudentName(string name)
-        {
-            return Db.Transcript.Where(search => search.Student.Name.Contains(name)).Select(transcript => new TranscriptDTO
-            {
-                Id = transcript.Id,
-                StudentName = transcript.Student.Name,
-                SubjectName = transcript.Subject.Name,
-                MidtermGradeI = transcript.MidtermGradeI,
-                MidtermGradeII = transcript.MidtermGradeII,
-                FinalGradeI = transcript.FinalGradeI,
-                FinalGradeII = transcript.FinalGradeII,
-                AverageGradeI = transcript.AverageGradeI,
-                AverageGradeII = transcript.AverageGradeII,
-                FinalAverageGrade = transcript.FinalAverageGrade,
-                GradeType = transcript.GradeType
-            }).ToList();
-        }
-        public static TranscriptDTO GetTranscriptById(int id)
-        {
-            var transcript = Db.Transcript.FirstOrDefault(transcript => transcript.Id == id);
-
-            return new TranscriptDTO
-            {
-                Id = transcript.Id,
-                StudentName = Db.Student.FirstOrDefault(student => student.Id == transcript.StudentId).Name,
-                SubjectName = Db.Subject.FirstOrDefault(subject => subject.Id == transcript.SubjectId).Name,
-                MidtermGradeI = transcript.MidtermGradeI,
-                MidtermGradeII = transcript.MidtermGradeII,
-                FinalGradeI = transcript.FinalGradeI,
-                FinalGradeII = transcript.FinalGradeII,
-                AverageGradeI = transcript.AverageGradeI,
-                AverageGradeII = transcript.AverageGradeII,
-                FinalAverageGrade = transcript.FinalAverageGrade,
-                GradeType = transcript.GradeType
-            };
         }
     }
 }
