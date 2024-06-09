@@ -52,7 +52,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(10, 95);
+            label2.Location = new Point(8, 82);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(174, 30);
@@ -62,10 +62,10 @@
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(710, 91);
+            btNew.Location = new Point(1025, 79);
             btNew.Margin = new Padding(2);
             btNew.Name = "btNew";
-            btNew.Size = new Size(158, 38);
+            btNew.Size = new Size(197, 36);
             btNew.TabIndex = 16;
             btNew.Text = "Thêm học sinh";
             btNew.UseVisualStyleBackColor = true;
@@ -98,14 +98,14 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             OutputTable.DefaultCellStyle = dataGridViewCellStyle2;
-            OutputTable.Location = new Point(8, 142);
+            OutputTable.Location = new Point(6, 136);
             OutputTable.Margin = new Padding(2);
             OutputTable.Name = "OutputTable";
             OutputTable.ReadOnly = true;
             OutputTable.RowHeadersWidth = 51;
             OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(862, 384);
+            OutputTable.Size = new Size(1217, 508);
             OutputTable.TabIndex = 15;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
@@ -188,10 +188,9 @@
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(974, 116);
-            btFind.Margin = new Padding(4);
+            btFind.Location = new Point(928, 79);
             btFind.Name = "btFind";
-            btFind.Size = new Size(119, 46);
+            btFind.Size = new Size(92, 36);
             btFind.TabIndex = 14;
             btFind.Text = "Tìm";
             btFind.UseVisualStyleBackColor = true;
@@ -200,11 +199,10 @@
             // 
             txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtfind.Font = new Font("Segoe UI", 11F);
-            txtfind.Location = new Point(190, 92);
-            txtfind.Margin = new Padding(4);
+            txtfind.Location = new Point(187, 79);
             txtfind.Name = "txtfind";
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
-            txtfind.Size = new Size(499, 37);
+            txtfind.Size = new Size(735, 37);
             txtfind.TabIndex = 13;
             // 
             // label1
@@ -213,8 +211,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(234, 18);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(409, 14);
             label1.Name = "label1";
             label1.Size = new Size(410, 55);
             label1.TabIndex = 12;
@@ -223,10 +220,10 @@
             // 
             // ManageStudent_Form
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(878, 544);
+            ClientSize = new Size(1229, 658);
             Controls.Add(label2);
             Controls.Add(btNew);
             Controls.Add(OutputTable);

@@ -37,8 +37,6 @@ namespace QLHS
             txtfind = new TextBox();
             btFind = new Button();
             OutputTable = new DataGridView();
-            btNew = new Button();
-            label2 = new Label();
             Id = new DataGridViewTextBoxColumn();
             StudentName = new DataGridViewTextBoxColumn();
             SubjectName = new DataGridViewTextBoxColumn();
@@ -52,6 +50,8 @@ namespace QLHS
             GradeType = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            btNew = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
             SuspendLayout();
             // 
@@ -61,7 +61,8 @@ namespace QLHS
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(588, 22);
+            label1.Location = new Point(427, 17);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(525, 55);
             label1.TabIndex = 0;
@@ -72,18 +73,20 @@ namespace QLHS
             // 
             txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtfind.Font = new Font("Segoe UI", 11F);
-            txtfind.Location = new Point(190, 98);
+            txtfind.Location = new Point(184, 84);
+            txtfind.Margin = new Padding(2, 2, 2, 2);
             txtfind.Name = "txtfind";
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
-            txtfind.Size = new Size(1234, 37);
+            txtfind.Size = new Size(964, 37);
             txtfind.TabIndex = 1;
             // 
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(1430, 98);
+            btFind.Location = new Point(1152, 84);
+            btFind.Margin = new Padding(2, 2, 2, 2);
             btFind.Name = "btFind";
-            btFind.Size = new Size(95, 37);
+            btFind.Size = new Size(91, 37);
             btFind.TabIndex = 2;
             btFind.Text = "Tìm";
             btFind.UseVisualStyleBackColor = true;
@@ -116,37 +119,16 @@ namespace QLHS
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             OutputTable.DefaultCellStyle = dataGridViewCellStyle2;
-            OutputTable.Location = new Point(8, 142);
+            OutputTable.Location = new Point(6, 135);
             OutputTable.Margin = new Padding(2);
             OutputTable.Name = "OutputTable";
             OutputTable.ReadOnly = true;
             OutputTable.RowHeadersWidth = 51;
             OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(1681, 728);
+            OutputTable.Size = new Size(1363, 595);
             OutputTable.TabIndex = 15;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
-            // 
-            // btNew
-            // 
-            btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(1531, 98);
-            btNew.Name = "btNew";
-            btNew.Size = new Size(157, 37);
-            btNew.TabIndex = 4;
-            btNew.Text = "Nhập điểm";
-            btNew.UseVisualStyleBackColor = true;
-            btNew.Click += btNew_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(8, 101);
-            label2.Name = "label2";
-            label2.Size = new Size(174, 30);
-            label2.TabIndex = 5;
-            label2.Text = "Tra cứu học sinh";
             // 
             // Id
             // 
@@ -254,12 +236,35 @@ namespace QLHS
             Delete.Text = "Xóa";
             Delete.UseColumnTextForButtonValue = true;
             // 
+            // btNew
+            // 
+            btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btNew.Location = new Point(1248, 84);
+            btNew.Margin = new Padding(2, 2, 2, 2);
+            btNew.Name = "btNew";
+            btNew.Size = new Size(121, 37);
+            btNew.TabIndex = 4;
+            btNew.Text = "Nhập điểm";
+            btNew.UseVisualStyleBackColor = true;
+            btNew.Click += btNew_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(6, 86);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(174, 30);
+            label2.TabIndex = 5;
+            label2.Text = "Tra cứu học sinh";
+            // 
             // ManageTranscript_Form
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1700, 888);
+            ClientSize = new Size(1378, 744);
             Controls.Add(label2);
             Controls.Add(btNew);
             Controls.Add(OutputTable);
@@ -267,6 +272,7 @@ namespace QLHS
             Controls.Add(txtfind);
             Controls.Add(label1);
             DoubleBuffered = true;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "ManageTranscript_Form";
             ShowIcon = false;
             ShowInTaskbar = false;

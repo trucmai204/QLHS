@@ -49,8 +49,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label6.Location = new Point(243, 24);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(147, 19);
             label6.Name = "label6";
             label6.Size = new Size(331, 41);
             label6.TabIndex = 59;
@@ -62,10 +61,10 @@
             btClose.Anchor = AnchorStyles.None;
             btClose.BackColor = Color.FromArgb(255, 192, 192);
             btClose.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            btClose.Location = new Point(418, 231);
-            btClose.Margin = new Padding(4, 5, 4, 5);
+            btClose.Location = new Point(322, 180);
+            btClose.Margin = new Padding(3, 4, 3, 4);
             btClose.Name = "btClose";
-            btClose.Size = new Size(143, 55);
+            btClose.Size = new Size(110, 43);
             btClose.TabIndex = 58;
             btClose.Text = "Đóng";
             btClose.UseVisualStyleBackColor = false;
@@ -76,10 +75,10 @@
             btSave.Anchor = AnchorStyles.None;
             btSave.BackColor = Color.FromArgb(192, 255, 192);
             btSave.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            btSave.Location = new Point(249, 231);
-            btSave.Margin = new Padding(4, 5, 4, 5);
+            btSave.Location = new Point(192, 180);
+            btSave.Margin = new Padding(3, 4, 3, 4);
             btSave.Name = "btSave";
-            btSave.Size = new Size(143, 55);
+            btSave.Size = new Size(110, 43);
             btSave.TabIndex = 57;
             btSave.Text = "Lưu";
             btSave.UseVisualStyleBackColor = false;
@@ -89,11 +88,12 @@
             // 
             semesterNumericUpDown.Anchor = AnchorStyles.Right;
             semesterNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-            semesterNumericUpDown.Location = new Point(593, 102);
+            semesterNumericUpDown.Location = new Point(493, 80);
+            semesterNumericUpDown.Margin = new Padding(2, 2, 2, 2);
             semesterNumericUpDown.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
             semesterNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             semesterNumericUpDown.Name = "semesterNumericUpDown";
-            semesterNumericUpDown.Size = new Size(89, 31);
+            semesterNumericUpDown.Size = new Size(68, 31);
             semesterNumericUpDown.TabIndex = 56;
             semesterNumericUpDown.TextAlign = HorizontalAlignment.Center;
             semesterNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
@@ -102,7 +102,8 @@
             // 
             label4.Anchor = AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(512, 105);
+            label4.Location = new Point(394, 82);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(71, 25);
             label4.TabIndex = 55;
@@ -113,9 +114,10 @@
             // 
             finalWeightNumericUpDown.Anchor = AnchorStyles.Right;
             finalWeightNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-            finalWeightNumericUpDown.Location = new Point(593, 154);
+            finalWeightNumericUpDown.Location = new Point(493, 120);
+            finalWeightNumericUpDown.Margin = new Padding(2, 2, 2, 2);
             finalWeightNumericUpDown.Name = "finalWeightNumericUpDown";
-            finalWeightNumericUpDown.Size = new Size(89, 31);
+            finalWeightNumericUpDown.Size = new Size(68, 31);
             finalWeightNumericUpDown.TabIndex = 54;
             finalWeightNumericUpDown.TextAlign = HorizontalAlignment.Center;
             // 
@@ -123,25 +125,28 @@
             // 
             midtermWeightNumericUpDown.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             midtermWeightNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-            midtermWeightNumericUpDown.Location = new Point(289, 154);
+            midtermWeightNumericUpDown.Location = new Point(222, 120);
+            midtermWeightNumericUpDown.Margin = new Padding(2, 2, 2, 2);
             midtermWeightNumericUpDown.Name = "midtermWeightNumericUpDown";
-            midtermWeightNumericUpDown.Size = new Size(107, 31);
+            midtermWeightNumericUpDown.Size = new Size(82, 31);
             midtermWeightNumericUpDown.TabIndex = 53;
             midtermWeightNumericUpDown.TextAlign = HorizontalAlignment.Center;
             // 
             // txtSubjectName
             // 
             txtSubjectName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtSubjectName.Location = new Point(254, 102);
+            txtSubjectName.Location = new Point(195, 80);
+            txtSubjectName.Margin = new Padding(2, 2, 2, 2);
             txtSubjectName.Name = "txtSubjectName";
-            txtSubjectName.Size = new Size(236, 31);
+            txtSubjectName.Size = new Size(182, 31);
             txtSubjectName.TabIndex = 52;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(434, 157);
+            label3.Location = new Point(334, 123);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(149, 25);
             label3.TabIndex = 51;
@@ -152,7 +157,8 @@
             // 
             label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new Point(128, 157);
+            label2.Location = new Point(68, 123);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(151, 25);
             label2.TabIndex = 50;
@@ -163,7 +169,8 @@
             // 
             label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(130, 105);
+            label1.Location = new Point(70, 82);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(118, 25);
             label1.TabIndex = 49;
@@ -172,9 +179,9 @@
             // 
             // CreateSubject_Form
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(811, 310);
+            ClientSize = new Size(624, 242);
             Controls.Add(label6);
             Controls.Add(btClose);
             Controls.Add(btSave);
@@ -186,6 +193,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "CreateSubject_Form";
             ShowIcon = false;
             ShowInTaskbar = false;
