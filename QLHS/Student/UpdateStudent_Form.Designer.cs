@@ -45,7 +45,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label6.Location = new Point(217, 51);
+            label6.Location = new Point(205, 32);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(502, 41);
@@ -57,7 +57,7 @@
             // 
             label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new Point(415, 173);
+            label2.Location = new Point(415, 154);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(95, 25);
@@ -68,18 +68,19 @@
             // birthdateTimePicker
             // 
             birthdateTimePicker.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            birthdateTimePicker.CustomFormat = "dd/MM/yyyy";
             birthdateTimePicker.DropDownAlign = LeftRightAlignment.Right;
-            birthdateTimePicker.Format = DateTimePickerFormat.Short;
-            birthdateTimePicker.Location = new Point(528, 168);
+            birthdateTimePicker.Format = DateTimePickerFormat.Custom;
+            birthdateTimePicker.Location = new Point(528, 149);
             birthdateTimePicker.Name = "birthdateTimePicker";
-            birthdateTimePicker.Size = new Size(325, 31);
+            birthdateTimePicker.Size = new Size(301, 31);
             birthdateTimePicker.TabIndex = 53;
             // 
             // genderCheckBox
             // 
             genderCheckBox.Anchor = AnchorStyles.Right;
             genderCheckBox.AutoSize = true;
-            genderCheckBox.Location = new Point(719, 121);
+            genderCheckBox.Location = new Point(695, 102);
             genderCheckBox.Name = "genderCheckBox";
             genderCheckBox.Size = new Size(144, 29);
             genderCheckBox.TabIndex = 52;
@@ -89,26 +90,26 @@
             // txtClassId
             // 
             txtClassId.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtClassId.Location = new Point(184, 168);
+            txtClassId.Location = new Point(184, 149);
             txtClassId.Margin = new Padding(4, 5, 4, 5);
             txtClassId.Name = "txtClassId";
-            txtClassId.Size = new Size(221, 31);
+            txtClassId.Size = new Size(197, 31);
             txtClassId.TabIndex = 50;
             // 
             // txtName
             // 
             txtName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtName.Location = new Point(184, 121);
+            txtName.Location = new Point(184, 102);
             txtName.Margin = new Padding(4, 5, 4, 5);
             txtName.Name = "txtName";
-            txtName.Size = new Size(517, 31);
+            txtName.Size = new Size(493, 31);
             txtName.TabIndex = 48;
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Location = new Point(94, 171);
+            label5.Location = new Point(94, 152);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(72, 25);
@@ -120,7 +121,7 @@
             // 
             label4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(73, 124);
+            label4.Location = new Point(73, 105);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(93, 25);
@@ -133,7 +134,7 @@
             btClose.Anchor = AnchorStyles.None;
             btClose.BackColor = Color.FromArgb(255, 192, 192);
             btClose.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            btClose.Location = new Point(481, 222);
+            btClose.Location = new Point(469, 203);
             btClose.Margin = new Padding(4, 5, 4, 5);
             btClose.Name = "btClose";
             btClose.Size = new Size(143, 55);
@@ -147,7 +148,7 @@
             btSave.Anchor = AnchorStyles.None;
             btSave.BackColor = Color.FromArgb(192, 255, 192);
             btSave.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            btSave.Location = new Point(312, 222);
+            btSave.Location = new Point(300, 203);
             btSave.Margin = new Padding(4, 5, 4, 5);
             btSave.Name = "btSave";
             btSave.Size = new Size(143, 55);
@@ -160,7 +161,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(936, 329);
+            ClientSize = new Size(912, 290);
             Controls.Add(label6);
             Controls.Add(label2);
             Controls.Add(birthdateTimePicker);

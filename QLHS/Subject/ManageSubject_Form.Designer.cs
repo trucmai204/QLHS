@@ -33,9 +33,6 @@
             label2 = new Label();
             btNew = new Button();
             OutputTable = new DataGridView();
-            btFind = new Button();
-            txtfind = new TextBox();
-            label1 = new Label();
             SubjectId = new DataGridViewTextBoxColumn();
             SubjectName = new DataGridViewTextBoxColumn();
             MidtermWeight = new DataGridViewTextBoxColumn();
@@ -43,6 +40,9 @@
             Semester = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            btFind = new Button();
+            txtfind = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
             SuspendLayout();
             // 
@@ -103,39 +103,6 @@
             OutputTable.Size = new Size(1712, 728);
             OutputTable.TabIndex = 15;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
-            // 
-            // btFind
-            // 
-            btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(1459, 93);
-            btFind.Name = "btFind";
-            btFind.Size = new Size(95, 37);
-            btFind.TabIndex = 14;
-            btFind.Text = "Tìm";
-            btFind.UseVisualStyleBackColor = true;
-            // 
-            // txtfind
-            // 
-            txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtfind.Font = new Font("Segoe UI", 11F);
-            txtfind.Location = new Point(192, 93);
-            txtfind.Name = "txtfind";
-            txtfind.PlaceholderText = "  Tìm môn học . . .";
-            txtfind.Size = new Size(1261, 37);
-            txtfind.TabIndex = 13;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(658, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(413, 55);
-            label1.TabIndex = 12;
-            label1.Text = "QUẢN LÝ MÔN HỌC";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SubjectId
             // 
@@ -198,6 +165,39 @@
             Delete.Text = "Xóa";
             Delete.UseColumnTextForButtonValue = true;
             // 
+            // btFind
+            // 
+            btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btFind.Location = new Point(1459, 93);
+            btFind.Name = "btFind";
+            btFind.Size = new Size(95, 37);
+            btFind.TabIndex = 14;
+            btFind.Text = "Tìm";
+            btFind.UseVisualStyleBackColor = true;
+            // 
+            // txtfind
+            // 
+            txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtfind.Font = new Font("Segoe UI", 11F);
+            txtfind.Location = new Point(192, 93);
+            txtfind.Name = "txtfind";
+            txtfind.PlaceholderText = "  Tìm môn học . . .";
+            txtfind.Size = new Size(1261, 37);
+            txtfind.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(0, 0, 192);
+            label1.Location = new Point(658, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(413, 55);
+            label1.TabIndex = 12;
+            label1.Text = "QUẢN LÝ MÔN HỌC";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ManageSubject_Form
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -210,6 +210,7 @@
             Controls.Add(btFind);
             Controls.Add(txtfind);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "ManageSubject_Form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý môn học";

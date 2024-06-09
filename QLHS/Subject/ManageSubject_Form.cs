@@ -1,4 +1,6 @@
-﻿namespace QLHS.Student
+﻿using QLHS.Subject;
+
+namespace QLHS.Student
 {
     public partial class ManageSubject_Form : Form
     {
@@ -14,7 +16,7 @@
 
         private void btNew_Click(object sender, EventArgs e)
         {
-            var createSubjectForm = new CreateClass_Form();
+            var createSubjectForm = new CreateSubject_Form();
             createSubjectForm.ShowDialog();
             // Load danh sách môn học sau khi tạo môn học mới
         }

@@ -56,7 +56,7 @@ namespace QLHS.Student
         {
             if (txtfind.Text.Trim() != string.Empty)
             {
-               OutputTable.DataSource = StudentScope.FindByName(txtfind.Text);
+                OutputTable.DataSource = StudentScope.FindByName(txtfind.Text);
             }
         }
     }

@@ -68,8 +68,9 @@
             // birthdateTimePicker
             // 
             birthdateTimePicker.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            birthdateTimePicker.CustomFormat = "dd/MM/yyyy";
             birthdateTimePicker.DropDownAlign = LeftRightAlignment.Right;
-            birthdateTimePicker.Format = DateTimePickerFormat.Short;
+            birthdateTimePicker.Format = DateTimePickerFormat.Custom;
             birthdateTimePicker.Location = new Point(518, 131);
             birthdateTimePicker.Name = "birthdateTimePicker";
             birthdateTimePicker.Size = new Size(325, 31);

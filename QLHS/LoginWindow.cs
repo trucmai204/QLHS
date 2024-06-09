@@ -2,9 +2,9 @@
 
 namespace QLHS
 {
-    public partial class fLogin : Form
+    public partial class LoginWindow : Form
     {
-        public fLogin()
+        public LoginWindow()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace QLHS
                 if (UserScope.IsValid(txtUserName.Text, txtPassWord.Text))
                 {
                     this.Hide();
-                    var fmain = new fMain();
+                    var fmain = new MainWindow();
                     fmain.ShowDialog(); // ShowDialog() bắt buộc user phải đóng form được mở để thực hiện tiếp logic trên form hiện tại, còn với Show() thì không bắt buộc 
 
                 }

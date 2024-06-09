@@ -1,11 +1,10 @@
 ﻿using Functions;
-using System.Windows.Forms;
 
 namespace QLHS
 {
-    public partial class fDiem : Form
+    public partial class ManageTranscript_Form : Form
     {
-        public fDiem()
+        public ManageTranscript_Form()
         {
             InitializeComponent();
         }
@@ -17,7 +16,7 @@ namespace QLHS
 
         private void btNew_Click(object sender, EventArgs e)
         {
-            var addDiem = new fNewDiem();
+            var addDiem = new CreateTranscript_Form();
             addDiem.ShowDialog();
             OutputTable.DataSource = TranscriptScope.FindByStudentName();
         }
@@ -42,11 +41,11 @@ namespace QLHS
                 {
                     DataGridViewCell cell = row.Cells["Id"];
 
-                    var editDiem = new fEditDiem((int)cell.Value);
+                    var editDiem = new UpdateTranscript_Form((int)cell.Value);
                     editDiem.ShowDialog();
                     OutputTable.DataSource = TranscriptScope.FindByStudentName();
                 }
-                
+
             }
             else if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Delete")
             {

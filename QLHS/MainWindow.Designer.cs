@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class fMain
+    partial class MainWindow
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             menuStrip1 = new MenuStrip();
             họcSinhToolStripMenuItem = new ToolStripMenuItem();
             quảnLýHọcSinhToolStripMenuItem = new ToolStripMenuItem();
@@ -122,6 +122,7 @@
             thêmMônHọcToolStripMenuItem.Name = "thêmMônHọcToolStripMenuItem";
             thêmMônHọcToolStripMenuItem.Size = new Size(271, 36);
             thêmMônHọcToolStripMenuItem.Text = "Thêm môn học";
+            thêmMônHọcToolStripMenuItem.Click += thêmMônHọcToolStripMenuItem_Click;
             // 
             // điểmToolStripMenuItem
             // 
@@ -150,8 +151,11 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.Background;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1821, 941);
             Controls.Add(menuStrip1);
+            DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
