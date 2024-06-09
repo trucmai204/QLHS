@@ -30,6 +30,12 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            ClassId = new DataGridViewTextBoxColumn();
+            Tenlop = new DataGridViewTextBoxColumn();
+            Grade = new DataGridViewTextBoxColumn();
+            SchoolYear = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewButtonColumn();
+            Delete = new DataGridViewButtonColumn();
             label3 = new Label();
             txtFind = new TextBox();
             btNew = new Button();
@@ -37,12 +43,6 @@
             btFind = new Button();
             txtNienKhoa = new TextBox();
             btNienkhoa = new Button();
-            IdPhanLop = new DataGridViewTextBoxColumn();
-            Tenlop = new DataGridViewTextBoxColumn();
-            Grade = new DataGridViewTextBoxColumn();
-            SchoolYear = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewButtonColumn();
-            Delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +65,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IdPhanLop, Tenlop, Grade, SchoolYear, Edit, Delete });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ClassId, Tenlop, Grade, SchoolYear, Edit, Delete });
             dataGridView1.Location = new Point(18, 158);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
@@ -74,6 +74,66 @@
             dataGridView1.Size = new Size(1093, 382);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // ClassId
+            // 
+            ClassId.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            ClassId.DataPropertyName = "Id";
+            ClassId.HeaderText = "Mã lớp";
+            ClassId.MinimumWidth = 8;
+            ClassId.Name = "ClassId";
+            ClassId.Width = 104;
+            // 
+            // Tenlop
+            // 
+            Tenlop.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Tenlop.DataPropertyName = "Name";
+            Tenlop.HeaderText = "Tên lớp";
+            Tenlop.MinimumWidth = 8;
+            Tenlop.Name = "Tenlop";
+            Tenlop.Width = 105;
+            // 
+            // Grade
+            // 
+            Grade.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Grade.DataPropertyName = "Grade";
+            Grade.HeaderText = "Khối Lớp";
+            Grade.MinimumWidth = 8;
+            Grade.Name = "Grade";
+            Grade.Width = 118;
+            // 
+            // SchoolYear
+            // 
+            SchoolYear.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            SchoolYear.DataPropertyName = "SchoolYear";
+            SchoolYear.HeaderText = "Niên Khóa";
+            SchoolYear.MinimumWidth = 8;
+            SchoolYear.Name = "SchoolYear";
+            SchoolYear.Width = 129;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "Sửa";
+            Edit.MinimumWidth = 8;
+            Edit.Name = "Edit";
+            Edit.Resizable = DataGridViewTriState.True;
+            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
+            Edit.Text = "Sửa";
+            Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 78;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "Xóa";
+            Delete.MinimumWidth = 8;
+            Delete.Name = "Delete";
+            Delete.Resizable = DataGridViewTriState.True;
+            Delete.SortMode = DataGridViewColumnSortMode.Automatic;
+            Delete.Text = "Xóa";
+            Delete.UseColumnTextForButtonValue = true;
+            Delete.Width = 79;
             // 
             // label3
             // 
@@ -150,66 +210,6 @@
             btNienkhoa.UseVisualStyleBackColor = true;
             btNienkhoa.Click += btNienkhoa_Click;
             // 
-            // IdPhanLop
-            // 
-            IdPhanLop.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            IdPhanLop.DataPropertyName = "Id";
-            IdPhanLop.HeaderText = "ID Lớp";
-            IdPhanLop.MinimumWidth = 8;
-            IdPhanLop.Name = "IdPhanLop";
-            IdPhanLop.Width = 101;
-            // 
-            // Tenlop
-            // 
-            Tenlop.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Tenlop.DataPropertyName = "Name";
-            Tenlop.HeaderText = "Tên lớp";
-            Tenlop.MinimumWidth = 8;
-            Tenlop.Name = "Tenlop";
-            Tenlop.Width = 105;
-            // 
-            // Grade
-            // 
-            Grade.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Grade.DataPropertyName = "Grade";
-            Grade.HeaderText = "Khối Lớp";
-            Grade.MinimumWidth = 8;
-            Grade.Name = "Grade";
-            Grade.Width = 118;
-            // 
-            // SchoolYear
-            // 
-            SchoolYear.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            SchoolYear.DataPropertyName = "SchoolYear";
-            SchoolYear.HeaderText = "Niên Khóa";
-            SchoolYear.MinimumWidth = 8;
-            SchoolYear.Name = "SchoolYear";
-            SchoolYear.Width = 129;
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "Sửa";
-            Edit.MinimumWidth = 8;
-            Edit.Name = "Edit";
-            Edit.Resizable = DataGridViewTriState.True;
-            Edit.SortMode = DataGridViewColumnSortMode.Automatic;
-            Edit.Text = "Sửa";
-            Edit.UseColumnTextForButtonValue = true;
-            Edit.Width = 78;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "Xóa";
-            Delete.MinimumWidth = 8;
-            Delete.Name = "Delete";
-            Delete.Resizable = DataGridViewTriState.True;
-            Delete.SortMode = DataGridViewColumnSortMode.Automatic;
-            Delete.Text = "Xóa";
-            Delete.UseColumnTextForButtonValue = true;
-            Delete.Width = 79;
-            // 
             // fPhanLopHoc
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -228,6 +228,8 @@
             ForeColor = SystemColors.ActiveCaptionText;
             Margin = new Padding(4, 5, 4, 5);
             Name = "fPhanLopHoc";
+            ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Phân lớp học";
             WindowState = FormWindowState.Maximized;
@@ -248,7 +250,7 @@
         private Button btFind;
         private TextBox txtNienKhoa;
         private Button btNienkhoa;
-        private DataGridViewTextBoxColumn IdPhanLop;
+        private DataGridViewTextBoxColumn ClassId;
         private DataGridViewTextBoxColumn Tenlop;
         private DataGridViewTextBoxColumn Grade;
         private DataGridViewTextBoxColumn SchoolYear;

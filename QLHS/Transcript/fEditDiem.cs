@@ -1,5 +1,4 @@
-﻿using Entities;
-using Functions;
+﻿using Functions;
 
 namespace QLHS
 {
@@ -44,4 +43,3 @@ namespace QLHS
         }
     }
 }
-                           

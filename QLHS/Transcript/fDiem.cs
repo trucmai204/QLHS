@@ -31,20 +31,12 @@ namespace QLHS
 
         }
 
-        //private void txtfind_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if (e.KeyChar == (char)Keys.Enter)
-        //    {
-        //        OutputTable.DataSource = TranscriptScope.GetTranscriptByStudent(txtfind.Text);
-        //    }
-        //}
-
         private void OutputTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Kiểm tra xem row có hợp lệ hay không
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
-                if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                DataGridViewRow row = OutputTable.Rows[e.RowIndex];
+                if (row.Cells.Count > 0)
                 {
                     DataGridViewCell cell = row.Cells[0];
 

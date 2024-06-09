@@ -12,6 +12,6 @@ namespace Entities
         public string Name { get; set; }
         public int Grade { get; set; }
         public string? SchoolYear { get; set; }
-   
+
     }
 }

@@ -139,8 +139,10 @@
             Controls.Add(label4);
             Margin = new Padding(4, 5, 4, 5);
             Name = "fEditPhanLopHoc";
+            ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Sửa phân lớp học";
+            Text = "Sửa thông tin lớp học";
             Load += fEditPhanLopHoc_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDownGrade).EndInit();
             ResumeLayout(false);

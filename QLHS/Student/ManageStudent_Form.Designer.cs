@@ -33,7 +33,7 @@
             label2 = new Label();
             btNew = new Button();
             OutputTable = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
+            StudentId = new DataGridViewTextBoxColumn();
             StudentName = new DataGridViewTextBoxColumn();
             Birthdate = new DataGridViewTextBoxColumn();
             Gender = new DataGridViewTextBoxColumn();
@@ -67,6 +67,7 @@
             btNew.TabIndex = 16;
             btNew.Text = "Thêm học sinh";
             btNew.UseVisualStyleBackColor = true;
+            btNew.Click += btNew_Click;
             // 
             // OutputTable
             // 
@@ -86,7 +87,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             OutputTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             OutputTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OutputTable.Columns.AddRange(new DataGridViewColumn[] { Id, StudentName, Birthdate, Gender, ClassName, Grade, SchoolYear, Edit, Delete });
+            OutputTable.Columns.AddRange(new DataGridViewColumn[] { StudentId, StudentName, Birthdate, Gender, ClassName, Grade, SchoolYear, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -103,14 +104,15 @@
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             OutputTable.Size = new Size(1712, 728);
             OutputTable.TabIndex = 15;
+            OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
-            // Id
+            // StudentId
             // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Mã học sinh";
-            Id.MinimumWidth = 8;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
+            StudentId.DataPropertyName = "Id";
+            StudentId.HeaderText = "Mã học sinh";
+            StudentId.MinimumWidth = 8;
+            StudentId.Name = "StudentId";
+            StudentId.ReadOnly = true;
             // 
             // StudentName
             // 
@@ -236,7 +238,10 @@
         private Label label2;
         private Button btNew;
         private DataGridView OutputTable;
-        private DataGridViewTextBoxColumn Id;
+        private Button btFind;
+        private TextBox txtfind;
+        private Label label1;
+        private DataGridViewTextBoxColumn StudentId;
         private DataGridViewTextBoxColumn StudentName;
         private DataGridViewTextBoxColumn Birthdate;
         private DataGridViewTextBoxColumn Gender;
@@ -245,8 +250,5 @@
         private DataGridViewTextBoxColumn SchoolYear;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
-        private Button btFind;
-        private TextBox txtfind;
-        private Label label1;
     }
 }

@@ -139,8 +139,10 @@
             Controls.Add(btSave);
             Margin = new Padding(4, 5, 4, 5);
             Name = "fNewPhanLopHoc";
+            ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Mới phân lớp học ";
+            Text = "Thêm lớp học ";
             ((System.ComponentModel.ISupportInitialize)numericUpDownGrade).EndInit();
             ResumeLayout(false);
             PerformLayout();

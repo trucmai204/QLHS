@@ -1,7 +1,6 @@
 ﻿using Database_Connector;
 using Entities;
 using Functions.DTO;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Functions
 {

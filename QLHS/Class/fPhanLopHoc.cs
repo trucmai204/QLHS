@@ -31,15 +31,15 @@ namespace QLHS
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Delete") // Kiểm tra xem row có hợp lệ hay không
+            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Delete")
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex]; // Lấy row hiện tại
-                if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                if (row.Cells.Count > 0)
                 {
                     DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa lớp không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        DataGridViewCell cell = row.Cells["IdPhanLop"];
+                        DataGridViewCell cell = row.Cells["ClassId"];
 
                         ClassScope.Delete((int)cell.Value);
                         dataGridView1.DataSource = ClassScope.FindByName();
@@ -47,20 +47,18 @@ namespace QLHS
                 }
             }
 
-            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Edit") // Kiểm tra xem row có hợp lệ hay không
+            else if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Edit")
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex]; // Lấy row hiện tại
                 if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
                 {
-                    DataGridViewCell cell = row.Cells["IdPhanLop"];
+                    DataGridViewCell cell = row.Cells["ClassId"];
 
                     var fEdit = new fEditPhanLopHoc((int)cell.Value);
                     fEdit.ShowDialog();
                     dataGridView1.DataSource = ClassScope.FindByName();
                 }
             }
-
-
         }
 
         private void btNew_Click(object sender, EventArgs e)
@@ -68,7 +66,7 @@ namespace QLHS
             var fNewClass = new fNewPhanLopHoc();
             fNewClass.ShowDialog();
 
-            dataGridView1.DataSource= ClassScope.FindByName();
+            dataGridView1.DataSource = ClassScope.FindByName();
         }
     }
 }

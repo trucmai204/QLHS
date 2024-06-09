@@ -72,7 +72,6 @@
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
             txtfind.Size = new Size(1261, 37);
             txtfind.TabIndex = 1;
-        
             // 
             // btFind
             // 
@@ -269,6 +268,7 @@
             DoubleBuffered = true;
             Name = "fDiem";
             ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lý Điểm Học Sinh";
             WindowState = FormWindowState.Maximized;

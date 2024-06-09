@@ -1,13 +1,5 @@
 ﻿using Database_Connector;
 using Entities;
-using Functions.DTO;
-using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Functions
@@ -59,10 +51,10 @@ namespace Functions
             }
 
             var students = Db.Student.Where(student => student.ClassId == id).ToList();
-            foreach (var student in students) 
+            foreach (var student in students)
             {
                 Db.Student.Remove(student);
-            } 
+            }
 
             var grade = Db.Class.FirstOrDefault(grade => grade.Id == id);
             if (grade != null)
@@ -70,8 +62,7 @@ namespace Functions
                 Db.Class.Remove(grade);
                 Db.SaveChanges();
             }
-          
+
         }
     }
 }
-    

@@ -18,7 +18,7 @@ namespace QLHS
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            var name = txtTenlop.Text;      
+            var name = txtTenlop.Text;
             var grade = (int)numericUpDownGrade.Value;
             var schoolYear = txtNienKhoa.Text;
 
@@ -28,10 +28,10 @@ namespace QLHS
 
         private void fEditPhanLopHoc_Load(object sender, EventArgs e)
         {
-           var classes = ClassScope.FindById(Id);
-           txtTenlop.Text = classes.Name;
-           txtNienKhoa.Text = classes.SchoolYear;
-           numericUpDownGrade.Value = classes.Grade;
+            var classes = ClassScope.FindById(Id);
+            txtTenlop.Text = classes.Name;
+            txtNienKhoa.Text = classes.SchoolYear;
+            numericUpDownGrade.Value = classes.Grade;
         }
     }
 }
