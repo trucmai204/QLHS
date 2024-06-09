@@ -39,10 +39,10 @@ namespace QLHS
                     DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa lớp không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        DataGridViewCell cell = row.Cells[0];
+                        DataGridViewCell cell = row.Cells["IdPhanLop"];
 
                         ClassScope.DeleteClassById((int)cell.Value);
-                        dataGridView1.DataSource = ClassScope.GetClass;
+                        dataGridView1.DataSource = ClassScope.GetClass("");
                     }
                 }
             }
