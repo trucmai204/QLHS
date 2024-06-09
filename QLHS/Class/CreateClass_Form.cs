@@ -2,9 +2,9 @@
 
 namespace QLHS
 {
-    public partial class fNewPhanLopHoc : Form
+    public partial class CreateClass_Form : Form
     {
-        public fNewPhanLopHoc()
+        public CreateClass_Form()
         {
             InitializeComponent();
         }

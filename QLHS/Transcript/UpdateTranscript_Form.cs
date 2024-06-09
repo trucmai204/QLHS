@@ -2,10 +2,10 @@
 
 namespace QLHS
 {
-    public partial class fEditDiem : Form
+    public partial class UpdateTranscript_Form : Form
     {
         int Id;
-        public fEditDiem(int id)
+        public UpdateTranscript_Form(int id)
         {
             InitializeComponent();
             Id = id;

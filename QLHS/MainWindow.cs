@@ -2,37 +2,37 @@
 
 namespace QLHS
 {
-    public partial class fMain : Form
+    public partial class MainWindow : Form
     {
-        public fMain()
+        public MainWindow()
         {
             InitializeComponent();
         }
 
         private void fPhanLopHoc_Click(object sender, EventArgs e)
         {
-            var openingForm = this.MdiChildren.FirstOrDefault(form => form is fPhanLopHoc);
+            var openingForm = this.MdiChildren.FirstOrDefault(form => form is ManageClass_Form);
             if (openingForm != null)
             {
                 openingForm.BringToFront();
                 return;
             }
 
-            var form = new fPhanLopHoc();
+            var form = new ManageClass_Form();
             form.MdiParent = this;
             form.Show();
         }
 
         private void fDiem_Click(object sender, EventArgs e)
         {
-            var openingForm = this.MdiChildren.FirstOrDefault(form => form is fDiem);
+            var openingForm = this.MdiChildren.FirstOrDefault(form => form is ManageTranscript_Form);
             if (openingForm != null)
             {
                 openingForm.BringToFront();
                 return;
             }
 
-            var form = new fDiem();
+            var form = new ManageTranscript_Form();
             form.MdiParent = this;
             form.Show();
         }
@@ -75,35 +75,35 @@ namespace QLHS
 
         private void thêmLớpHọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var openingForm = this.MdiChildren.FirstOrDefault(form => form is fPhanLopHoc);
+            var openingForm = this.MdiChildren.FirstOrDefault(form => form is ManageClass_Form);
             if (openingForm != null)
             {
                 openingForm.BringToFront();
                 return;
             }
 
-            var form = new fPhanLopHoc();
+            var form = new ManageClass_Form();
             form.MdiParent = this;
             form.Show();
 
-            var createForm = new fNewPhanLopHoc();
+            var createForm = new CreateClass_Form();
             createForm.ShowDialog();
         }
 
         private void fNewDiem_Click(object sender, EventArgs e)
         {
-            var openingForm = this.MdiChildren.FirstOrDefault(form => form is fDiem);
+            var openingForm = this.MdiChildren.FirstOrDefault(form => form is ManageTranscript_Form);
             if (openingForm != null)
             {
                 openingForm.BringToFront();
                 return;
             }
 
-            var form = new fDiem();
+            var form = new ManageTranscript_Form();
             form.MdiParent = this;
             form.Show();
 
-            var createForm = new fNewDiem();
+            var createForm = new CreateTranscript_Form();
             createForm.ShowDialog();
         }
     }

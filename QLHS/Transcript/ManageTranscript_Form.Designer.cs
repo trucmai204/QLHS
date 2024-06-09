@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class fDiem
+    partial class ManageTranscript_Form
     {
         /// <summary>
         /// Required designer variable.

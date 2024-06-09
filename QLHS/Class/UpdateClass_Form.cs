@@ -2,10 +2,10 @@
 
 namespace QLHS
 {
-    public partial class fEditPhanLopHoc : Form
+    public partial class UpdateClass_Form : Form
     {
         public int Id;
-        public fEditPhanLopHoc(int id)
+        public UpdateClass_Form(int id)
         {
             InitializeComponent();
             Id = id;

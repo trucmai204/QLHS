@@ -2,9 +2,9 @@
 
 namespace QLHS
 {
-    public partial class fPhanLopHoc : Form
+    public partial class ManageClass_Form : Form
     {
-        public fPhanLopHoc()
+        public ManageClass_Form()
         {
             InitializeComponent();
         }
@@ -54,7 +54,7 @@ namespace QLHS
                 {
                     DataGridViewCell cell = row.Cells["ClassId"];
 
-                    var fEdit = new fEditPhanLopHoc((int)cell.Value);
+                    var fEdit = new UpdateClass_Form((int)cell.Value);
                     fEdit.ShowDialog();
                     dataGridView1.DataSource = ClassScope.FindByName();
                 }
@@ -63,7 +63,7 @@ namespace QLHS
 
         private void btNew_Click(object sender, EventArgs e)
         {
-            var fNewClass = new fNewPhanLopHoc();
+            var fNewClass = new CreateClass_Form();
             fNewClass.ShowDialog();
 
             dataGridView1.DataSource = ClassScope.FindByName();
