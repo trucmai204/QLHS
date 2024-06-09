@@ -15,16 +15,21 @@ namespace Functions
     public static class ClassScope
     {
         private static AppDbContext Db { get; set; } = new AppDbContext();
-        public static List<Class> GetClass(string name = "")
+        public static List<Class> FindByName(string name = "")
         {
             return Db.Class.Where(classes => classes.Name.Contains(name)).ToList();
 
         }
-        public static List<Class> GetGrade(int grade)
+        public static List<Class> FindByGrade(int grade)
         {
             return Db.Class.Where(classes => classes.Grade == grade).ToList();
         }
-        public static void AddClass(string name, int grade, string schoolYear)
+        public static Class FindById(int id)
+        {
+            return Db.Class.FirstOrDefault(classes => classes.Id == id);
+        }
+
+        public static void Create(string name, int grade, string schoolYear)
         {
             var classes = new Class
             {
@@ -35,8 +40,7 @@ namespace Functions
             Db.Class.Add(classes);
             Db.SaveChanges();
         }
-
-        public static void EditClass(int id, string name, int grade, string schoolYear)
+        public static void Update(int id, string name, int grade, string schoolYear)
         {
             var classes = Db.Class.FirstOrDefault(classes => classes.Id == id);
             classes.Name = name;
@@ -46,13 +50,7 @@ namespace Functions
             Db.SaveChanges();
 
         }
-        public static Class GetClassById(int id) 
-        { 
-            return Db.Class.FirstOrDefault(classes => classes.Id == id);
-            
-        } 
-
-        public static void DeleteClassById(int id)
+        public static void Delete(int id)
         {
             var transcripts = Db.Transcript.Where(transcript => transcript.Student.ClassId == id).ToList();
             foreach (var transcript in transcripts)

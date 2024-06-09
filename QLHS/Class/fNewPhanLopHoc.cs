@@ -20,7 +20,7 @@ namespace QLHS
             var grade = (int)numericUpDownGrade.Value;
             var schoolYear = txtNienKhoa.Text;
 
-            ClassScope.AddClass(className, grade, schoolYear);
+            ClassScope.Create(className, grade, schoolYear);
             this.Close();
         }
     }

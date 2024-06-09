@@ -7,9 +7,9 @@ namespace Functions
     {
         private static AppDbContext Db { get; set; } = new AppDbContext();
 
-        public static List<Student> GetStudentBy(string name)
+        public static List<DTO.StudentDTO> FindByName(string name = "")
         {
-            return null;            
+            return null; // Tìm học sinh theo tên            
 
         }
     }

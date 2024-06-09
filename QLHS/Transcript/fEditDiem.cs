@@ -23,13 +23,13 @@ namespace QLHS
             var midGradeII = double.Parse(txtDiemGK2.Text);
             var finalGradeI = double.Parse(txtDiemCK1.Text);
             var finalGradeII = double.Parse(txtDiemCK2.Text);
-            TranscriptScope.UpdateTranscript(Id, midGradeI, finalGradeI, midGradeII, finalGradeII);
+            TranscriptScope.Update(Id, midGradeI, finalGradeI, midGradeII, finalGradeII);
             this.Close();
         }
 
         private void fEditDiem_Load(object sender, EventArgs e)
         {
-            var transcript = TranscriptScope.GetTranscriptById(Id);
+            var transcript = TranscriptScope.FindById(Id);
             txtTenhs.Text = transcript.StudentName;
             txtTenMonHoc.Text = transcript.SubjectName;
             txtDiemGK1.Text = transcript.MidtermGradeII.ToString();

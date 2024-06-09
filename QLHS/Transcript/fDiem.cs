@@ -11,14 +11,14 @@ namespace QLHS
 
         private void fDiem_Load(object sender, EventArgs e)
         {
-            OutputTable.DataSource = TranscriptScope.GetTranscripts();
+            OutputTable.DataSource = TranscriptScope.FindByStudentName();
         }
 
         private void btNew_Click(object sender, EventArgs e)
         {
             var addDiem = new fNewDiem();
             addDiem.ShowDialog();
-            OutputTable.DataSource = TranscriptScope.GetTranscripts();
+            OutputTable.DataSource = TranscriptScope.FindByStudentName();
         }
 
         private void btFind_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace QLHS
 
             if (txtfind.Text.Trim() != string.Empty)
             {
-                OutputTable.DataSource = TranscriptScope.GetTranscriptByStudentName(txtfind.Text);
+                OutputTable.DataSource = TranscriptScope.FindByStudentName(txtfind.Text);
             }
 
         }
@@ -35,7 +35,7 @@ namespace QLHS
         //{
         //    if (e.KeyChar == (char)Keys.Enter)
         //    {
-        //        OutputTable.DataSource = TranscriptScope.GetTranscriptByStudentName(txtfind.Text);
+        //        OutputTable.DataSource = TranscriptScope.GetTranscriptByStudent(txtfind.Text);
         //    }
         //}
 
@@ -50,7 +50,7 @@ namespace QLHS
 
                     var editDiem = new fEditDiem((int)cell.Value);
                     editDiem.ShowDialog();
-                    OutputTable.DataSource = TranscriptScope.GetTranscripts();
+                    OutputTable.DataSource = TranscriptScope.FindByStudentName();
                 }
             }
 
@@ -66,8 +66,8 @@ namespace QLHS
             //    {
             //        DataGridViewRow selectedRow = OutputTable.SelectedRows[0];
 
-            //        TranscriptScope.DeleteTranscriptById((int)selectedRow.Cells[0].Value);
-            //        OutputTable.DataSource = TranscriptScope.GetTranscripts();
+            //        TranscriptScope.Delete((int)selectedRow.Cells[0].Value);
+            //        OutputTable.DataSource = TranscriptScope.FindByStudentName();
             //    }
             //}
         }
@@ -84,8 +84,8 @@ namespace QLHS
                     {
                         DataGridViewCell cell = row.Cells[0];
 
-                        TranscriptScope.DeleteTranscriptById((int)cell.Value);
-                        OutputTable.DataSource = TranscriptScope.GetTranscripts();
+                        TranscriptScope.Delete((int)cell.Value);
+                        OutputTable.DataSource = TranscriptScope.FindByStudentName();
                     }
                 }
             }

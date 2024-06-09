@@ -22,13 +22,13 @@ namespace QLHS
             var grade = (int)numericUpDownGrade.Value;
             var schoolYear = txtNienKhoa.Text;
 
-            ClassScope.EditClass(Id, name, grade, schoolYear);
+            ClassScope.Update(Id, name, grade, schoolYear);
             this.Close();
         }
 
         private void fEditPhanLopHoc_Load(object sender, EventArgs e)
         {
-           var classes = ClassScope.GetClassById(Id);
+           var classes = ClassScope.FindById(Id);
            txtTenlop.Text = classes.Name;
            txtNienKhoa.Text = classes.SchoolYear;
            numericUpDownGrade.Value = classes.Grade;

@@ -11,13 +11,13 @@ namespace QLHS
 
         private void fPhanLopHoc_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ClassScope.GetClass();
+            dataGridView1.DataSource = ClassScope.FindByName();
         }
 
         private void btFind_Click(object sender, EventArgs e)
         {
             string classby = txtFind.Text;
-            var classes = ClassScope.GetClass(classby);
+            var classes = ClassScope.FindByName(classby);
             dataGridView1.DataSource = classes;
 
         }
@@ -25,7 +25,7 @@ namespace QLHS
         private void btNienkhoa_Click(object sender, EventArgs e)
         {
             var grade = int.Parse(txtNienKhoa.Text);
-            var classes = ClassScope.GetGrade(grade);
+            var classes = ClassScope.FindByGrade(grade);
             dataGridView1.DataSource = classes;
         }
 
@@ -41,8 +41,8 @@ namespace QLHS
                     {
                         DataGridViewCell cell = row.Cells["IdPhanLop"];
 
-                        ClassScope.DeleteClassById((int)cell.Value);
-                        dataGridView1.DataSource = ClassScope.GetClass();
+                        ClassScope.Delete((int)cell.Value);
+                        dataGridView1.DataSource = ClassScope.FindByName();
                     }
                 }
             }
@@ -56,7 +56,7 @@ namespace QLHS
 
                     var fEdit = new fEditPhanLopHoc((int)cell.Value);
                     fEdit.ShowDialog();
-                    dataGridView1.DataSource = ClassScope.GetClass();
+                    dataGridView1.DataSource = ClassScope.FindByName();
                 }
             }
 
@@ -68,7 +68,7 @@ namespace QLHS
             var fNewClass = new fNewPhanLopHoc();
             fNewClass.ShowDialog();
 
-            dataGridView1.DataSource= ClassScope.GetClass();
+            dataGridView1.DataSource= ClassScope.FindByName();
         }
     }
 }

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Functions.DTO
 {
-    internal class StudentDTO
+    public class StudentDTO
     {
-      
+        public int Id { get; }
+        public string StudentName { get; set; }
+        public DateTime Birthdate { get; set; }
+        public bool Gender { get; set; }
+        public string ClassName { get; set; }
+        public int Grade { get; set; }
+        public string? SchoolYear { get; set; }
     }
 }

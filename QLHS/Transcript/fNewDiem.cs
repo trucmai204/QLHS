@@ -22,7 +22,7 @@ namespace QLHS
             var midGradeII = double.Parse(txtDiemGK2.Text);
             var finalGradeII = double.Parse(txtDiemCK2.Text);
 
-            TranscriptScope.AddTranscript(txtTenhs.Text, txtTenMonHoc.Text, midGradeI, finalGradeI, midGradeII, finalGradeII);
+            TranscriptScope.Create(txtTenhs.Text, txtTenMonHoc.Text, midGradeI, finalGradeI, midGradeII, finalGradeII);
 
             this.Close();
         }
