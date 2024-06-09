@@ -1,6 +1,6 @@
 ﻿namespace QLHS.Student
 {
-    partial class ManageStudent_Form
+    partial class ManageSubject_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -36,13 +36,11 @@
             btFind = new Button();
             txtfind = new TextBox();
             label1 = new Label();
-            StudentId = new DataGridViewTextBoxColumn();
-            StudentName = new DataGridViewTextBoxColumn();
-            Birthdate = new DataGridViewTextBoxColumn();
-            Gender = new DataGridViewTextBoxColumn();
-            ClassName = new DataGridViewTextBoxColumn();
-            Grade = new DataGridViewTextBoxColumn();
-            SchoolYear = new DataGridViewTextBoxColumn();
+            SubjectId = new DataGridViewTextBoxColumn();
+            SubjectName = new DataGridViewTextBoxColumn();
+            MidtermWeight = new DataGridViewTextBoxColumn();
+            FinalWeight = new DataGridViewTextBoxColumn();
+            Semester = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
@@ -54,9 +52,9 @@
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(10, 96);
             label2.Name = "label2";
-            label2.Size = new Size(174, 30);
+            label2.Size = new Size(178, 30);
             label2.TabIndex = 17;
-            label2.Text = "Tra cứu học sinh";
+            label2.Text = "Tra cứu môn học";
             // 
             // btNew
             // 
@@ -65,7 +63,7 @@
             btNew.Name = "btNew";
             btNew.Size = new Size(157, 37);
             btNew.TabIndex = 16;
-            btNew.Text = "Thêm học sinh";
+            btNew.Text = "Thêm môn học";
             btNew.UseVisualStyleBackColor = true;
             btNew.Click += btNew_Click;
             // 
@@ -87,7 +85,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             OutputTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             OutputTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            OutputTable.Columns.AddRange(new DataGridViewColumn[] { StudentId, StudentName, Birthdate, Gender, ClassName, Grade, SchoolYear, Edit, Delete });
+            OutputTable.Columns.AddRange(new DataGridViewColumn[] { SubjectId, SubjectName, MidtermWeight, FinalWeight, Semester, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -122,7 +120,7 @@
             txtfind.Font = new Font("Segoe UI", 11F);
             txtfind.Location = new Point(192, 93);
             txtfind.Name = "txtfind";
-            txtfind.PlaceholderText = "  Tìm học sinh . . .";
+            txtfind.PlaceholderText = "  Tìm môn học . . .";
             txtfind.Size = new Size(1261, 37);
             txtfind.TabIndex = 13;
             // 
@@ -134,67 +132,51 @@
             label1.ForeColor = Color.FromArgb(0, 0, 192);
             label1.Location = new Point(658, 18);
             label1.Name = "label1";
-            label1.Size = new Size(410, 55);
+            label1.Size = new Size(413, 55);
             label1.TabIndex = 12;
-            label1.Text = "QUẢN LÝ HỌC SINH";
+            label1.Text = "QUẢN LÝ MÔN HỌC";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // StudentId
+            // SubjectId
             // 
-            StudentId.DataPropertyName = "Id";
-            StudentId.HeaderText = "Mã học sinh";
-            StudentId.MinimumWidth = 8;
-            StudentId.Name = "StudentId";
-            StudentId.ReadOnly = true;
+            SubjectId.DataPropertyName = "Id";
+            SubjectId.HeaderText = "Mã môn học";
+            SubjectId.MinimumWidth = 8;
+            SubjectId.Name = "SubjectId";
+            SubjectId.ReadOnly = true;
             // 
-            // StudentName
+            // SubjectName
             // 
-            StudentName.DataPropertyName = "StudentName";
-            StudentName.HeaderText = "Họ và tên";
-            StudentName.MinimumWidth = 8;
-            StudentName.Name = "StudentName";
-            StudentName.ReadOnly = true;
+            SubjectName.DataPropertyName = "Name";
+            SubjectName.HeaderText = "Tên môn học";
+            SubjectName.MinimumWidth = 8;
+            SubjectName.Name = "SubjectName";
+            SubjectName.ReadOnly = true;
             // 
-            // Birthdate
+            // MidtermWeight
             // 
-            Birthdate.DataPropertyName = "Birthdate";
-            Birthdate.HeaderText = "Ngày sinh";
-            Birthdate.MinimumWidth = 8;
-            Birthdate.Name = "Birthdate";
-            Birthdate.ReadOnly = true;
+            MidtermWeight.DataPropertyName = "MidtermWeight";
+            MidtermWeight.HeaderText = "Tỉ lệ điểm giữa kỳ";
+            MidtermWeight.MinimumWidth = 8;
+            MidtermWeight.Name = "MidtermWeight";
+            MidtermWeight.ReadOnly = true;
             // 
-            // Gender
+            // FinalWeight
             // 
-            Gender.DataPropertyName = "Gender";
-            Gender.HeaderText = "Giới tính";
-            Gender.MinimumWidth = 8;
-            Gender.Name = "Gender";
-            Gender.ReadOnly = true;
-            Gender.SortMode = DataGridViewColumnSortMode.NotSortable;
+            FinalWeight.DataPropertyName = "FinalWeight";
+            FinalWeight.HeaderText = "Tỉ lệ điểm cuối kỳ";
+            FinalWeight.MinimumWidth = 8;
+            FinalWeight.Name = "FinalWeight";
+            FinalWeight.ReadOnly = true;
+            FinalWeight.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
-            // ClassName
+            // Semester
             // 
-            ClassName.DataPropertyName = "ClassName";
-            ClassName.HeaderText = "Lớp";
-            ClassName.MinimumWidth = 8;
-            ClassName.Name = "ClassName";
-            ClassName.ReadOnly = true;
-            // 
-            // Grade
-            // 
-            Grade.DataPropertyName = "Grade";
-            Grade.HeaderText = "Khối";
-            Grade.MinimumWidth = 8;
-            Grade.Name = "Grade";
-            Grade.ReadOnly = true;
-            // 
-            // SchoolYear
-            // 
-            SchoolYear.DataPropertyName = "SchoolYear";
-            SchoolYear.HeaderText = "Niên khóa";
-            SchoolYear.MinimumWidth = 8;
-            SchoolYear.Name = "SchoolYear";
-            SchoolYear.ReadOnly = true;
+            Semester.DataPropertyName = "Semester";
+            Semester.HeaderText = "Học kỳ";
+            Semester.MinimumWidth = 8;
+            Semester.Name = "Semester";
+            Semester.ReadOnly = true;
             // 
             // Edit
             // 
@@ -216,7 +198,7 @@
             Delete.Text = "Xóa";
             Delete.UseColumnTextForButtonValue = true;
             // 
-            // ManageStudent_Form
+            // ManageSubject_Form
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -228,11 +210,11 @@
             Controls.Add(btFind);
             Controls.Add(txtfind);
             Controls.Add(label1);
-            Name = "ManageStudent_Form";
+            Name = "ManageSubject_Form";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Quản lý học sinh";
+            Text = "Quản lý môn học";
             WindowState = FormWindowState.Maximized;
-            Load += ManageStudent_Form_Load;
+            Load += ManageSubject_Form_Load;
             ((System.ComponentModel.ISupportInitialize)OutputTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -246,13 +228,11 @@
         private Button btFind;
         private TextBox txtfind;
         private Label label1;
-        private DataGridViewTextBoxColumn StudentId;
-        private DataGridViewTextBoxColumn StudentName;
-        private DataGridViewTextBoxColumn Birthdate;
-        private DataGridViewTextBoxColumn Gender;
-        private DataGridViewTextBoxColumn ClassName;
-        private DataGridViewTextBoxColumn Grade;
-        private DataGridViewTextBoxColumn SchoolYear;
+        private DataGridViewTextBoxColumn SubjectId;
+        private DataGridViewTextBoxColumn SubjectName;
+        private DataGridViewTextBoxColumn MidtermWeight;
+        private DataGridViewTextBoxColumn FinalWeight;
+        private DataGridViewTextBoxColumn Semester;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
     }

@@ -9,11 +9,6 @@ namespace QLHS.Student
             InitializeComponent();
         }
 
-        private void btClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btSave_Click(object sender, EventArgs e)
         {
             var studentName = txtName.Text;
@@ -24,7 +19,7 @@ namespace QLHS.Student
             StudentScope.Create(studentName, birthdate, gender, classId);
         }
 
-        private void btClose_Click_1(object sender, EventArgs e)
+        private void btClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

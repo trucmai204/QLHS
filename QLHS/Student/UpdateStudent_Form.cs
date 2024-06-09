@@ -11,11 +11,6 @@ namespace QLHS.Student
             Id = id;
         }
 
-        private void btClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btSave_Click(object sender, EventArgs e)
         {
             var studentName = txtName.Text;
@@ -36,6 +31,11 @@ namespace QLHS.Student
             genderCheckBox.Checked = student.Gender;
             txtClassId.Text = student.ClassId.ToString();
             birthdateTimePicker.Value = student.Birthdate;
+        }
+
+        private void btClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

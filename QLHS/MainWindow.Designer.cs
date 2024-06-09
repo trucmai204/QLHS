@@ -91,14 +91,14 @@
             // fPhanLopHoc
             // 
             fPhanLopHoc.Name = "fPhanLopHoc";
-            fPhanLopHoc.Size = new Size(270, 36);
+            fPhanLopHoc.Size = new Size(258, 36);
             fPhanLopHoc.Text = "Quản lý lớp học";
             fPhanLopHoc.Click += fPhanLopHoc_Click;
             // 
             // thêmLớpHọcToolStripMenuItem
             // 
             thêmLớpHọcToolStripMenuItem.Name = "thêmLớpHọcToolStripMenuItem";
-            thêmLớpHọcToolStripMenuItem.Size = new Size(270, 36);
+            thêmLớpHọcToolStripMenuItem.Size = new Size(258, 36);
             thêmLớpHọcToolStripMenuItem.Text = "Thêm lớp học";
             thêmLớpHọcToolStripMenuItem.Click += thêmLớpHọcToolStripMenuItem_Click;
             // 
@@ -115,6 +115,7 @@
             quảnLýMônHọcToolStripMenuItem.Name = "quảnLýMônHọcToolStripMenuItem";
             quảnLýMônHọcToolStripMenuItem.Size = new Size(271, 36);
             quảnLýMônHọcToolStripMenuItem.Text = "Quản lý môn học";
+            quảnLýMônHọcToolStripMenuItem.Click += quảnLýMônHọcToolStripMenuItem_Click;
             // 
             // thêmMônHọcToolStripMenuItem
             // 
@@ -134,18 +135,18 @@
             // fDiem
             // 
             fDiem.Name = "fDiem";
-            fDiem.Size = new Size(270, 36);
+            fDiem.Size = new Size(236, 36);
             fDiem.Text = "Quản lý điểm";
             fDiem.Click += fDiem_Click;
             // 
             // fNewDiem
             // 
             fNewDiem.Name = "fNewDiem";
-            fNewDiem.Size = new Size(270, 36);
+            fNewDiem.Size = new Size(236, 36);
             fNewDiem.Text = "Nhập điểm";
             fNewDiem.Click += fNewDiem_Click;
             // 
-            // fMain
+            // MainWindow
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -155,7 +156,7 @@
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 5, 4, 5);
-            Name = "fMain";
+            Name = "MainWindow";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý chung";
             FormClosing += fMain_FormClosing;

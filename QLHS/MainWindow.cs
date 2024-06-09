@@ -106,5 +106,19 @@ namespace QLHS
             var createForm = new CreateTranscript_Form();
             createForm.ShowDialog();
         }
+
+        private void quảnLýMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var openingForm = this.MdiChildren.FirstOrDefault(form => form is ManageSubject_Form);
+            if (openingForm != null)
+            {
+                openingForm.BringToFront();
+                return;
+            }
+
+            var form = new ManageSubject_Form();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Database_Connector;
 using Entities;
+using Functions.DTO;
 
 namespace Functions
 {
@@ -9,24 +10,59 @@ namespace Functions
 
         public static List<DTO.StudentDTO> FindByName(string name = "")
         {
-            return null; // Tìm học sinh theo tên     
+            return Db.Student.Where(student => student.Name.Contains(name)).Select(student => new StudentDTO
+            {
+                Id = student.Id,
+                StudentName = student.Name,
+                Birthdate = student.Birthdate,
+                Gender = student.Gender,
+                ClassName = student.Class.Name,
+                Grade = student.Class.Grade,
+                SchoolYear = student.Class.SchoolYear,
+            }).ToList();
         }
         public static Student FindById(int id)
         {
-            return null; // Tìm học sinh theo ID     
+            return Db.Student.FirstOrDefault(x => x.Id == id);
         }
 
         public static void Create(string name, DateTime birthdate, bool gender, int classId)
         {
-            // Tạo học sinh mới     
+            var student = new Student
+            {
+                Name = name,
+                Birthdate = birthdate,
+                Gender = gender,
+                ClassId = classId
+            };
+            Db.Student.Add(student);
+            Db.SaveChanges();
         }
         public static void Update(int id, string name, DateTime birthdate, bool gender, int classId)
         {
-            // Tìm học sinh theo ID, sau đó update thông tin hoc sinh tìm được      
+            var student = Db.Student.FirstOrDefault(students => students.Id == id);
+            student.Name = name;
+            student.Birthdate = birthdate;
+            student.Gender = gender;
+            student.ClassId = classId;
+
+            Db.Student.Update(student);
+            Db.SaveChanges();
         }
         public static void Delete(int id)
         {
-            // Tìm học sinh theo ID, sau đó xóa những bảng điểm liên quan đến học sinh, sau đó xóa học sinh     
+            var transcripts = Db.Transcript.Where(transcript => transcript.StudentId == id);
+            if (transcripts.Any())
+            {
+                Db.Transcript.RemoveRange(transcripts);
+            }
+
+            var students = Db.Student.FirstOrDefault(students => students.Id == id);
+            if (students != null)
+            {
+                Db.Student.Remove(students);
+                Db.SaveChanges();
+            }
         }
     }
 }

@@ -61,6 +61,9 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BorderStyle = BorderStyle.None;
@@ -69,6 +72,7 @@
             dataGridView1.Location = new Point(18, 158);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(1093, 382);
@@ -82,6 +86,7 @@
             ClassId.HeaderText = "Mã lớp";
             ClassId.MinimumWidth = 8;
             ClassId.Name = "ClassId";
+            ClassId.ReadOnly = true;
             ClassId.Width = 104;
             // 
             // Tenlop
@@ -91,6 +96,7 @@
             Tenlop.HeaderText = "Tên lớp";
             Tenlop.MinimumWidth = 8;
             Tenlop.Name = "Tenlop";
+            Tenlop.ReadOnly = true;
             Tenlop.Width = 105;
             // 
             // Grade
@@ -100,6 +106,7 @@
             Grade.HeaderText = "Khối Lớp";
             Grade.MinimumWidth = 8;
             Grade.Name = "Grade";
+            Grade.ReadOnly = true;
             Grade.Width = 118;
             // 
             // SchoolYear
@@ -109,6 +116,7 @@
             SchoolYear.HeaderText = "Niên Khóa";
             SchoolYear.MinimumWidth = 8;
             SchoolYear.Name = "SchoolYear";
+            SchoolYear.ReadOnly = true;
             SchoolYear.Width = 129;
             // 
             // Edit
@@ -117,6 +125,7 @@
             Edit.HeaderText = "Sửa";
             Edit.MinimumWidth = 8;
             Edit.Name = "Edit";
+            Edit.ReadOnly = true;
             Edit.Resizable = DataGridViewTriState.True;
             Edit.SortMode = DataGridViewColumnSortMode.Automatic;
             Edit.Text = "Sửa";
@@ -129,6 +138,7 @@
             Delete.HeaderText = "Xóa";
             Delete.MinimumWidth = 8;
             Delete.Name = "Delete";
+            Delete.ReadOnly = true;
             Delete.Resizable = DataGridViewTriState.True;
             Delete.SortMode = DataGridViewColumnSortMode.Automatic;
             Delete.Text = "Xóa";
@@ -210,7 +220,7 @@
             btNienkhoa.UseVisualStyleBackColor = true;
             btNienkhoa.Click += btNienkhoa_Click;
             // 
-            // fPhanLopHoc
+            // ManageClass_Form
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -227,7 +237,7 @@
             Controls.Add(label1);
             ForeColor = SystemColors.ActiveCaptionText;
             Margin = new Padding(4, 5, 4, 5);
-            Name = "fPhanLopHoc";
+            Name = "ManageClass_Form";
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
