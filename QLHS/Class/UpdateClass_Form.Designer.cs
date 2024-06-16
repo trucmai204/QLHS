@@ -32,9 +32,9 @@
             btClose = new Button();
             btSave = new Button();
             toolTip1 = new ToolTip(components);
+            comboBoxSchoolYear = new ComboBox();
             label3 = new Label();
             numericUpDownGrade = new NumericUpDown();
-            txtNienKhoa = new TextBox();
             txtTenlop = new TextBox();
             label5 = new Label();
             label4 = new Label();
@@ -43,102 +43,102 @@
             // 
             // btClose
             // 
-            btClose.Location = new Point(321, 121);
-            btClose.Margin = new Padding(4, 5, 4, 5);
+            btClose.Location = new Point(212, 79);
+            btClose.Margin = new Padding(2);
             btClose.Name = "btClose";
-            btClose.Size = new Size(107, 38);
-            btClose.TabIndex = 24;
+            btClose.Size = new Size(58, 26);
+            btClose.TabIndex = 33;
             btClose.Text = "Đóng";
             btClose.UseVisualStyleBackColor = true;
-            btClose.Click += btClose_Click;
+            btClose.Click += btClose_Click_1;
             // 
             // btSave
             // 
-            btSave.Location = new Point(206, 121);
-            btSave.Margin = new Padding(4, 5, 4, 5);
+            btSave.Location = new Point(131, 79);
+            btSave.Margin = new Padding(2);
             btSave.Name = "btSave";
-            btSave.Size = new Size(107, 38);
-            btSave.TabIndex = 23;
+            btSave.Size = new Size(58, 26);
+            btSave.TabIndex = 32;
             btSave.Text = "Lưu";
             btSave.UseVisualStyleBackColor = true;
-            btSave.Click += btSave_Click;
+            // 
+            // comboBoxSchoolYear
+            // 
+            comboBoxSchoolYear.FormattingEnabled = true;
+            comboBoxSchoolYear.Items.AddRange(new object[] { "2021-2022", "2022-2023", "2023-2024" });
+            comboBoxSchoolYear.Location = new Point(149, 51);
+            comboBoxSchoolYear.Name = "comboBoxSchoolYear";
+            comboBoxSchoolYear.Size = new Size(121, 23);
+            comboBoxSchoolYear.TabIndex = 39;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(362, 29);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(258, 21);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(51, 25);
-            label3.TabIndex = 30;
+            label3.Size = new Size(34, 15);
+            label3.TabIndex = 38;
             label3.Text = "Khối:";
             // 
             // numericUpDownGrade
             // 
             numericUpDownGrade.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            numericUpDownGrade.Location = new Point(435, 26);
+            numericUpDownGrade.Location = new Point(297, 19);
+            numericUpDownGrade.Margin = new Padding(2, 1, 2, 1);
             numericUpDownGrade.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
             numericUpDownGrade.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownGrade.Name = "numericUpDownGrade";
-            numericUpDownGrade.Size = new Size(123, 31);
-            numericUpDownGrade.TabIndex = 29;
+            numericUpDownGrade.Size = new Size(66, 23);
+            numericUpDownGrade.TabIndex = 37;
             numericUpDownGrade.TextAlign = HorizontalAlignment.Center;
             numericUpDownGrade.Value = new decimal(new int[] { 10, 0, 0, 0 });
-            // 
-            // txtNienKhoa
-            // 
-            txtNienKhoa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtNienKhoa.Location = new Point(194, 70);
-            txtNienKhoa.Margin = new Padding(4, 5, 4, 5);
-            txtNienKhoa.Name = "txtNienKhoa";
-            txtNienKhoa.Size = new Size(364, 31);
-            txtNienKhoa.TabIndex = 27;
             // 
             // txtTenlop
             // 
             txtTenlop.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtTenlop.Location = new Point(194, 26);
-            txtTenlop.Margin = new Padding(4, 5, 4, 5);
+            txtTenlop.Location = new Point(100, 19);
+            txtTenlop.Margin = new Padding(2);
             txtTenlop.Name = "txtTenlop";
-            txtTenlop.Size = new Size(146, 31);
-            txtTenlop.TabIndex = 25;
+            txtTenlop.Size = new Size(147, 23);
+            txtTenlop.TabIndex = 34;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(76, 70);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(66, 54);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(96, 25);
-            label5.TabIndex = 28;
+            label5.Size = new Size(64, 15);
+            label5.TabIndex = 36;
             label5.Text = "Niên khóa:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(94, 29);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(47, 21);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(78, 25);
-            label4.TabIndex = 26;
+            label4.Size = new Size(51, 15);
+            label4.TabIndex = 35;
             label4.Text = "Tên lớp: ";
             // 
-            // fEditPhanLopHoc
+            // UpdateClass_Form
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(635, 184);
+            ClientSize = new Size(410, 125);
             Controls.Add(btClose);
             Controls.Add(btSave);
+            Controls.Add(comboBoxSchoolYear);
             Controls.Add(label3);
             Controls.Add(numericUpDownGrade);
-            Controls.Add(txtNienKhoa);
             Controls.Add(txtTenlop);
             Controls.Add(label5);
             Controls.Add(label4);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "fEditPhanLopHoc";
+            Margin = new Padding(2);
+            Name = "UpdateClass_Form";
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
@@ -154,9 +154,9 @@
         private Button btClose;
         private Button btSave;
         private ToolTip toolTip1;
+        private ComboBox comboBoxSchoolYear;
         private Label label3;
         private NumericUpDown numericUpDownGrade;
-        private TextBox txtNienKhoa;
         private TextBox txtTenlop;
         private Label label5;
         private Label label4;

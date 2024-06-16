@@ -11,17 +11,7 @@ namespace QLHS.Student
             Id = id;
         }
 
-        private void btSave_Click(object sender, EventArgs e)
-        {
-            var studentName = txtName.Text;
-            var gender = genderCheckBox.Checked;
-            var classId = int.Parse(txtClassId.Text);
-            var birthdate = birthdateTimePicker.Value;
 
-            StudentScope.Update(Id, studentName, birthdate, gender, classId);
-
-            this.Close();
-        }
 
         private void UpdateStudent_Form_Load(object sender, EventArgs e)
         {
@@ -29,11 +19,23 @@ namespace QLHS.Student
 
             txtName.Text = student.Name;
             genderCheckBox.Checked = student.Gender;
-            txtClassId.Text = student.ClassId.ToString();
+            comboBoxClassId.Text = student.ClassId.ToString();
             birthdateTimePicker.Value = student.Birthdate;
         }
 
-        private void btClose_Click(object sender, EventArgs e)
+        private void btSave_Click_1(object sender, EventArgs e)
+        {
+            var studentName = txtName.Text;
+            var gender = genderCheckBox.Checked;
+            var classId = int.Parse(comboBoxClassId.Text);
+            var birthdate = birthdateTimePicker.Value;
+
+            StudentScope.Update(Id, studentName, birthdate, gender, classId);
+
+            this.Close();
+        }
+
+        private void btClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

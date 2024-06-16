@@ -18,10 +18,12 @@ namespace QLHS
         {
             var className = txtTenlop.Text;
             var grade = (int)numericUpDownGrade.Value;
-            var schoolYear = txtNienKhoa.Text;
+            var schoolYear = comboBoxSchoolYear.Text;
 
             ClassScope.Create(className, grade, schoolYear);
             this.Close();
         }
+
+        
     }
 }

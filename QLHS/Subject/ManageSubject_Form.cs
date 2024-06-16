@@ -1,4 +1,7 @@
-﻿using QLHS.Subject;
+﻿using Functions;
+using QLHS.Subject;
+using WinRT;
+
 
 namespace QLHS.Student
 {
@@ -11,19 +14,36 @@ namespace QLHS.Student
 
         private void ManageSubject_Form_Load(object sender, EventArgs e)
         {
-            // Load danh sách môn học
+            OutputTable.DataSource = SubjectScope.FindByName(null);
+
+            comboBoxClassName.Items.Clear();
+            comboBoxClassName.Items.AddRange(SubjectScope.GetNames().ToArray());
+
         }
 
-        private void btNew_Click(object sender, EventArgs e)
-        {
-            var createSubjectForm = new CreateSubject_Form();
-            createSubjectForm.ShowDialog();
-            // Load danh sách môn học sau khi tạo môn học mới
-        }
+
 
         private void OutputTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Thực hiện hành động Xóa hoặc Sửa
+            if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Edit")
+            {
+                DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
+                if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                {
+                    DataGridViewCell cell = row.Cells["SubjectId"];
+
+                    var fEdit = new UpdateSubject_Form((int)cell.Value);
+                    fEdit.ShowDialog();
+                    OutputTable.DataSource = SubjectScope.FindByName( short.Parse(comboBoxSemester.Text), comboBoxClassName.Text);
+                }
+            }
         }
+
+        private void btFind_Click(object sender, EventArgs e)
+        {
+            OutputTable.DataSource = SubjectScope.FindByName(short.Parse(comboBoxSemester.Text), comboBoxClassName.Text);
+        }
+
+
     }
 }

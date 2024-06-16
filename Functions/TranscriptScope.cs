@@ -43,6 +43,25 @@ namespace Functions
                 GradeType = transcript.GradeType
             };
         }
+        public static TranscriptDTO FindTypeOf(string gradeType)
+        {
+            var type = Db.Transcript.FirstOrDefault(type => type.GradeType == gradeType);
+            return new TranscriptDTO
+            {
+                Id = type.Id,
+                StudentName = type.Student.Name,
+                SubjectName = type.Subject.Name,
+                MidtermGradeI = type.MidtermGradeI,
+                MidtermGradeII = type.MidtermGradeII,
+                FinalGradeI = type.FinalGradeI,
+                FinalGradeII = type.FinalGradeII,
+                AverageGradeI = type.AverageGradeI,
+                AverageGradeII = type.AverageGradeII,
+                FinalAverageGrade = type.FinalAverageGrade,
+                GradeType = type.GradeType
+            };
+
+        }
 
         public static void Create(string studentName, string subjectName, double mid1Grade, double final1Grade, double mid2Grade, double final2Grade)
         {

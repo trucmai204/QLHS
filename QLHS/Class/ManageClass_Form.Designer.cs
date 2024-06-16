@@ -32,12 +32,9 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             label3 = new Label();
-            txtFind = new TextBox();
             btNew = new Button();
             label4 = new Label();
             btFind = new Button();
-            txtNienKhoa = new TextBox();
-            btNienkhoa = new Button();
             OutputTable = new DataGridView();
             ClassId = new DataGridViewTextBoxColumn();
             ClassName = new DataGridViewTextBoxColumn();
@@ -45,6 +42,8 @@
             SchoolYear = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            comboBoxGrade = new ComboBox();
+            comboBoxSchoolYear = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)OutputTable).BeginInit();
             SuspendLayout();
             // 
@@ -54,86 +53,58 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold);
             label1.ForeColor = Color.Blue;
-            label1.Location = new Point(344, 15);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(418, 7);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(418, 60);
+            label1.Size = new Size(277, 40);
             label1.TabIndex = 0;
             label1.Text = "QUẢN LÝ LỚP HỌC";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(11, 102);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Font = new Font("Segoe UI", 10F);
+            label3.Location = new Point(299, 49);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(113, 32);
+            label3.Size = new Size(66, 19);
             label3.TabIndex = 3;
             label3.Text = "Khối Lớp:";
-            // 
-            // txtFind
-            // 
-            txtFind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtFind.Location = new Point(712, 104);
-            txtFind.Margin = new Padding(4, 5, 4, 5);
-            txtFind.Name = "txtFind";
-            txtFind.Size = new Size(136, 31);
-            txtFind.TabIndex = 2;
             // 
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(975, 99);
-            btNew.Margin = new Padding(4, 5, 4, 5);
+            btNew.Location = new Point(936, 43);
+            btNew.Margin = new Padding(2);
             btNew.Name = "btNew";
-            btNew.Size = new Size(116, 40);
+            btNew.Size = new Size(131, 25);
             btNew.TabIndex = 0;
-            btNew.Text = "New";
+            btNew.Text = "Thêm lớp học";
             btNew.UseVisualStyleBackColor = true;
             btNew.Click += btNew_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(499, 102);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Font = new Font("Segoe UI", 10F);
+            label4.Location = new Point(511, 49);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(205, 32);
+            label4.Size = new Size(75, 19);
             label4.TabIndex = 7;
-            label4.Text = "Tìm kiếm lớp học:";
+            label4.Text = "Niên Khóa:";
             // 
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(860, 99);
-            btFind.Margin = new Padding(4, 5, 4, 5);
+            btFind.Location = new Point(761, 46);
+            btFind.Margin = new Padding(2);
             btFind.Name = "btFind";
-            btFind.Size = new Size(108, 40);
+            btFind.Size = new Size(64, 25);
             btFind.TabIndex = 3;
             btFind.Text = "Tìm";
             btFind.UseVisualStyleBackColor = true;
             btFind.Click += btFind_Click;
-            // 
-            // txtNienKhoa
-            // 
-            txtNienKhoa.Location = new Point(132, 104);
-            txtNienKhoa.Margin = new Padding(4, 5, 4, 5);
-            txtNienKhoa.Name = "txtNienKhoa";
-            txtNienKhoa.Size = new Size(213, 31);
-            txtNienKhoa.TabIndex = 1;
-            // 
-            // btNienkhoa
-            // 
-            btNienkhoa.Location = new Point(353, 102);
-            btNienkhoa.Margin = new Padding(4, 5, 4, 5);
-            btNienkhoa.Name = "btNienkhoa";
-            btNienkhoa.Size = new Size(84, 34);
-            btNienkhoa.TabIndex = 8;
-            btNienkhoa.Text = "Lọc";
-            btNienkhoa.UseVisualStyleBackColor = true;
-            btNienkhoa.Click += btNienkhoa_Click;
             // 
             // OutputTable
             // 
@@ -162,14 +133,13 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             OutputTable.DefaultCellStyle = dataGridViewCellStyle2;
-            OutputTable.Location = new Point(11, 146);
-            OutputTable.Margin = new Padding(2);
+            OutputTable.Location = new Point(10, 74);
+            OutputTable.Margin = new Padding(1);
             OutputTable.Name = "OutputTable";
             OutputTable.ReadOnly = true;
             OutputTable.RowHeadersWidth = 51;
-            OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(1085, 414);
+            OutputTable.Size = new Size(1058, 430);
             OutputTable.TabIndex = 16;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
@@ -215,7 +185,7 @@
             Edit.SortMode = DataGridViewColumnSortMode.Automatic;
             Edit.Text = "Sửa";
             Edit.UseColumnTextForButtonValue = true;
-            Edit.Width = 143;
+            Edit.Width = 93;
             // 
             // Delete
             // 
@@ -227,26 +197,42 @@
             Delete.SortMode = DataGridViewColumnSortMode.Automatic;
             Delete.Text = "Xóa";
             Delete.UseColumnTextForButtonValue = true;
-            Delete.Width = 143;
+            Delete.Width = 93;
+            // 
+            // comboBoxGrade
+            // 
+            comboBoxGrade.FormattingEnabled = true;
+            comboBoxGrade.Items.AddRange(new object[] { "10", "11", "12" });
+            comboBoxGrade.Location = new Point(370, 46);
+            comboBoxGrade.Name = "comboBoxGrade";
+            comboBoxGrade.Size = new Size(121, 23);
+            comboBoxGrade.TabIndex = 17;
+            // 
+            // comboBoxSchoolYear
+            // 
+            comboBoxSchoolYear.FormattingEnabled = true;
+            comboBoxSchoolYear.Items.AddRange(new object[] { "2021-2022", "2022-2023", "2023-2024" });
+            comboBoxSchoolYear.Location = new Point(606, 46);
+            comboBoxSchoolYear.Name = "comboBoxSchoolYear";
+            comboBoxSchoolYear.Size = new Size(121, 23);
+            comboBoxSchoolYear.TabIndex = 18;
             // 
             // ManageClass_Form
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1107, 571);
+            ClientSize = new Size(1078, 507);
+            Controls.Add(comboBoxSchoolYear);
+            Controls.Add(comboBoxGrade);
             Controls.Add(OutputTable);
-            Controls.Add(btNienkhoa);
-            Controls.Add(txtNienKhoa);
             Controls.Add(btFind);
             Controls.Add(label4);
             Controls.Add(btNew);
-            Controls.Add(txtFind);
             Controls.Add(label3);
             Controls.Add(label1);
             DoubleBuffered = true;
             ForeColor = SystemColors.ActiveCaptionText;
-            Margin = new Padding(5, 6, 5, 6);
             Name = "ManageClass_Form";
             ShowIcon = false;
             ShowInTaskbar = false;
@@ -263,12 +249,9 @@
 
         private Label label1;
         private Label label3;
-        private TextBox txtFind;
         private Button btNew;
         private Label label4;
         private Button btFind;
-        private TextBox txtNienKhoa;
-        private Button btNienkhoa;
         private DataGridView OutputTable;
         private DataGridViewTextBoxColumn ClassId;
         private DataGridViewTextBoxColumn ClassName;
@@ -276,5 +259,7 @@
         private DataGridViewTextBoxColumn SchoolYear;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
+        private ComboBox comboBoxGrade;
+        private ComboBox comboBoxSchoolYear;
     }
 }

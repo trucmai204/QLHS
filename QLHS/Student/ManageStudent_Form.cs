@@ -33,7 +33,7 @@ namespace QLHS.Student
                     {
                         DataGridViewCell cell = row.Cells["StudentId"];
 
-                        ClassScope.Delete((int)cell.Value);
+                        StudentScope.Delete((int)cell.Value);
                         OutputTable.DataSource = StudentScope.FindByName();
                     }
                 }
@@ -52,7 +52,9 @@ namespace QLHS.Student
             }
         }
 
-        private void btFind_Click(object sender, EventArgs e)
+     
+
+        private void btFind_Click_1(object sender, EventArgs e)
         {
             if (txtfind.Text.Trim() != string.Empty)
             {

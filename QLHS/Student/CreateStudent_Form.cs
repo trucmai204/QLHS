@@ -13,7 +13,7 @@ namespace QLHS.Student
         {
             var studentName = txtName.Text;
             var gender = genderCheckBox.Checked;
-            var classId = int.Parse(txtClassId.Text);
+            var classId = int.Parse(comboBoxClassId.Text);
             var birthdate = birthdateTimePicker.Value;
 
             StudentScope.Create(studentName, birthdate, gender, classId);

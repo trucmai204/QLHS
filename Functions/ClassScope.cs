@@ -12,6 +12,10 @@ namespace Functions
             return Db.Class.Where(classes => classes.Name.Contains(name)).ToList();
 
         }
+        public static List<Class> FindBySchoolYear(string schoolYear)
+        {
+            return Db.Class.Where(classes => classes.SchoolYear == schoolYear).ToList();
+        }
         public static List<Class> FindByGrade(int grade)
         {
             return Db.Class.Where(classes => classes.Grade == grade).ToList();

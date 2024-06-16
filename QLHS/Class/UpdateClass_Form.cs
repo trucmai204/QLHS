@@ -11,16 +11,12 @@ namespace QLHS
             Id = id;
         }
 
-        private void btClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void btSave_Click(object sender, EventArgs e)
         {
             var name = txtTenlop.Text;
             var grade = (int)numericUpDownGrade.Value;
-            var schoolYear = txtNienKhoa.Text;
+            var schoolYear = comboBoxSchoolYear.Text;
 
             ClassScope.Update(Id, name, grade, schoolYear);
             this.Close();
@@ -30,8 +26,13 @@ namespace QLHS
         {
             var classes = ClassScope.FindById(Id);
             txtTenlop.Text = classes.Name;
-            txtNienKhoa.Text = classes.SchoolYear;
+            comboBoxSchoolYear.Text = classes.SchoolYear;
             numericUpDownGrade.Value = classes.Grade;
+        }
+
+        private void btClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

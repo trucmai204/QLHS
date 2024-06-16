@@ -63,5 +63,12 @@ namespace QLHS
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var type = comboBox1.Text;
+            var transcripts = TranscriptScope.FindTypeOf(type);
+            OutputTable.DataSource = transcripts;
+        }
     }
 }

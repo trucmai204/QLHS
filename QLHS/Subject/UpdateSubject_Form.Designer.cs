@@ -31,17 +31,17 @@
             label6 = new Label();
             btClose = new Button();
             btSave = new Button();
-            semesterNumericUpDown = new NumericUpDown();
+            numericUpDownSe = new NumericUpDown();
             label4 = new Label();
-            finalWeightNumericUpDown = new NumericUpDown();
-            midtermWeightNumericUpDown = new NumericUpDown();
-            txtSubjectName = new TextBox();
+            numericUpDownFinal = new NumericUpDown();
+            numericUpDownMid = new NumericUpDown();
+            txtName = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)semesterNumericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)finalWeightNumericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)midtermWeightNumericUpDown).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSe).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownFinal).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMid).BeginInit();
             SuspendLayout();
             // 
             // label6
@@ -49,10 +49,10 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label6.Location = new Point(243, 24);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(103, 11);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(331, 41);
+            label6.Size = new Size(220, 28);
             label6.TabIndex = 59;
             label6.Text = "THÊM MÔN HỌC MỚI";
             label6.TextAlign = ContentAlignment.MiddleCenter;
@@ -62,10 +62,10 @@
             btClose.Anchor = AnchorStyles.None;
             btClose.BackColor = Color.FromArgb(255, 192, 192);
             btClose.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            btClose.Location = new Point(418, 231);
-            btClose.Margin = new Padding(4, 5, 4, 5);
+            btClose.Location = new Point(225, 108);
+            btClose.Margin = new Padding(2);
             btClose.Name = "btClose";
-            btClose.Size = new Size(143, 55);
+            btClose.Size = new Size(77, 26);
             btClose.TabIndex = 58;
             btClose.Text = "Đóng";
             btClose.UseVisualStyleBackColor = false;
@@ -76,74 +76,81 @@
             btSave.Anchor = AnchorStyles.None;
             btSave.BackColor = Color.FromArgb(192, 255, 192);
             btSave.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            btSave.Location = new Point(249, 231);
-            btSave.Margin = new Padding(4, 5, 4, 5);
+            btSave.Location = new Point(134, 108);
+            btSave.Margin = new Padding(2);
             btSave.Name = "btSave";
-            btSave.Size = new Size(143, 55);
+            btSave.Size = new Size(77, 26);
             btSave.TabIndex = 57;
             btSave.Text = "Lưu";
             btSave.UseVisualStyleBackColor = false;
             btSave.Click += btSave_Click;
             // 
-            // semesterNumericUpDown
+            // numericUpDownSe
             // 
-            semesterNumericUpDown.Anchor = AnchorStyles.Right;
-            semesterNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-            semesterNumericUpDown.Location = new Point(593, 102);
-            semesterNumericUpDown.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
-            semesterNumericUpDown.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            semesterNumericUpDown.Name = "semesterNumericUpDown";
-            semesterNumericUpDown.Size = new Size(89, 31);
-            semesterNumericUpDown.TabIndex = 56;
-            semesterNumericUpDown.TextAlign = HorizontalAlignment.Center;
-            semesterNumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownSe.Anchor = AnchorStyles.Right;
+            numericUpDownSe.Increment = new decimal(new int[] { 5, 0, 0, 0 });
+            numericUpDownSe.Location = new Point(342, 48);
+            numericUpDownSe.Margin = new Padding(1);
+            numericUpDownSe.Maximum = new decimal(new int[] { 4, 0, 0, 0 });
+            numericUpDownSe.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownSe.Name = "numericUpDownSe";
+            numericUpDownSe.Size = new Size(48, 23);
+            numericUpDownSe.TabIndex = 56;
+            numericUpDownSe.TextAlign = HorizontalAlignment.Center;
+            numericUpDownSe.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Location = new Point(512, 105);
+            label4.Location = new Point(276, 49);
+            label4.Margin = new Padding(1, 0, 1, 0);
             label4.Name = "label4";
-            label4.Size = new Size(71, 25);
+            label4.Size = new Size(47, 15);
             label4.TabIndex = 55;
             label4.Text = "Học kỳ:";
             label4.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // finalWeightNumericUpDown
+            // numericUpDownFinal
             // 
-            finalWeightNumericUpDown.Anchor = AnchorStyles.Right;
-            finalWeightNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-            finalWeightNumericUpDown.Location = new Point(593, 154);
-            finalWeightNumericUpDown.Name = "finalWeightNumericUpDown";
-            finalWeightNumericUpDown.Size = new Size(89, 31);
-            finalWeightNumericUpDown.TabIndex = 54;
-            finalWeightNumericUpDown.TextAlign = HorizontalAlignment.Center;
+            numericUpDownFinal.Anchor = AnchorStyles.Right;
+            numericUpDownFinal.Increment = new decimal(new int[] { 5, 0, 0, 0 });
+            numericUpDownFinal.Location = new Point(342, 72);
+            numericUpDownFinal.Margin = new Padding(1);
+            numericUpDownFinal.Name = "numericUpDownFinal";
+            numericUpDownFinal.Size = new Size(48, 23);
+            numericUpDownFinal.TabIndex = 54;
+            numericUpDownFinal.TextAlign = HorizontalAlignment.Center;
             // 
-            // midtermWeightNumericUpDown
+            // numericUpDownMid
             // 
-            midtermWeightNumericUpDown.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            midtermWeightNumericUpDown.Increment = new decimal(new int[] { 5, 0, 0, 0 });
-            midtermWeightNumericUpDown.Location = new Point(289, 154);
-            midtermWeightNumericUpDown.Name = "midtermWeightNumericUpDown";
-            midtermWeightNumericUpDown.Size = new Size(107, 31);
-            midtermWeightNumericUpDown.TabIndex = 53;
-            midtermWeightNumericUpDown.TextAlign = HorizontalAlignment.Center;
+            numericUpDownMid.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            numericUpDownMid.Increment = new decimal(new int[] { 5, 0, 0, 0 });
+            numericUpDownMid.Location = new Point(155, 72);
+            numericUpDownMid.Margin = new Padding(1);
+            numericUpDownMid.Name = "numericUpDownMid";
+            numericUpDownMid.Size = new Size(57, 23);
+            numericUpDownMid.TabIndex = 53;
+            numericUpDownMid.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtSubjectName
+            // txtName
             // 
-            txtSubjectName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtSubjectName.Location = new Point(254, 102);
-            txtSubjectName.Name = "txtSubjectName";
-            txtSubjectName.Size = new Size(236, 31);
-            txtSubjectName.TabIndex = 52;
+            txtName.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtName.Location = new Point(136, 48);
+            txtName.Margin = new Padding(1);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(129, 23);
+            txtName.TabIndex = 52;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Location = new Point(434, 157);
+            label3.Location = new Point(234, 74);
+            label3.Margin = new Padding(1, 0, 1, 0);
             label3.Name = "label3";
-            label3.Size = new Size(149, 25);
+            label3.Size = new Size(100, 15);
             label3.TabIndex = 51;
             label3.Text = "Điểm cuối kỳ (%):";
             label3.TextAlign = ContentAlignment.MiddleRight;
@@ -152,9 +159,10 @@
             // 
             label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new Point(128, 157);
+            label2.Location = new Point(47, 74);
+            label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
-            label2.Size = new Size(151, 25);
+            label2.Size = new Size(100, 15);
             label2.TabIndex = 50;
             label2.Text = "Điểm giữa kỳ (%):";
             label2.TextAlign = ContentAlignment.MiddleRight;
@@ -163,37 +171,40 @@
             // 
             label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(130, 105);
+            label1.Location = new Point(48, 49);
+            label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
-            label1.Size = new Size(118, 25);
+            label1.Size = new Size(79, 15);
             label1.TabIndex = 49;
             label1.Text = "Tên môn học:";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // CreateSubject_Form
+            // UpdateSubject_Form
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(811, 310);
+            ClientSize = new Size(437, 145);
             Controls.Add(label6);
             Controls.Add(btClose);
             Controls.Add(btSave);
-            Controls.Add(semesterNumericUpDown);
+            Controls.Add(numericUpDownSe);
             Controls.Add(label4);
-            Controls.Add(finalWeightNumericUpDown);
-            Controls.Add(midtermWeightNumericUpDown);
-            Controls.Add(txtSubjectName);
+            Controls.Add(numericUpDownFinal);
+            Controls.Add(numericUpDownMid);
+            Controls.Add(txtName);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "CreateSubject_Form";
+            Margin = new Padding(1);
+            Name = "UpdateSubject_Form";
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Thêm môn học";
-            ((System.ComponentModel.ISupportInitialize)semesterNumericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)finalWeightNumericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)midtermWeightNumericUpDown).EndInit();
+            Text = "Sửa đổi môn học";
+            Load += UpdateSubject_Form_Load;
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSe).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownFinal).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownMid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,11 +214,11 @@
         private Label label6;
         private Button btClose;
         private Button btSave;
-        private NumericUpDown semesterNumericUpDown;
+        private NumericUpDown numericUpDownSe;
         private Label label4;
-        private NumericUpDown finalWeightNumericUpDown;
-        private NumericUpDown midtermWeightNumericUpDown;
-        private TextBox txtSubjectName;
+        private NumericUpDown numericUpDownFinal;
+        private NumericUpDown numericUpDownMid;
+        private TextBox txtName;
         private Label label3;
         private Label label2;
         private Label label1;

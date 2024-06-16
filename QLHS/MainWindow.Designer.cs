@@ -122,7 +122,7 @@
             thêmMônHọcToolStripMenuItem.Name = "thêmMônHọcToolStripMenuItem";
             thêmMônHọcToolStripMenuItem.Size = new Size(271, 36);
             thêmMônHọcToolStripMenuItem.Text = "Thêm môn học";
-            thêmMônHọcToolStripMenuItem.Click += thêmMônHọcToolStripMenuItem_Click;
+
             // 
             // điểmToolStripMenuItem
             // 

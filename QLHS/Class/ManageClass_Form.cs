@@ -16,18 +16,18 @@ namespace QLHS
 
         private void btFind_Click(object sender, EventArgs e)
         {
-            string classby = txtFind.Text;
-            var classes = ClassScope.FindByName(classby);
-            OutputTable.DataSource = classes;
-
-        }
-
-        private void btNienkhoa_Click(object sender, EventArgs e)
-        {
-            var grade = int.Parse(txtNienKhoa.Text);
+            var grade = int.Parse(comboBoxGrade.Text);
             var classes = ClassScope.FindByGrade(grade);
-            OutputTable.DataSource = classes;
+            
+            string schoolYear = comboBoxSchoolYear.Text;
+            var classess = ClassScope.FindBySchoolYear(schoolYear);
+
+            var finalSearch = classes.Intersect(classess);
+            OutputTable.DataSource = finalSearch.ToList();
+
         }
+
+      
 
         private void btNew_Click(object sender, EventArgs e)
         {

@@ -52,20 +52,20 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(10, 95);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(6, 49);
+            label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
-            label2.Size = new Size(174, 30);
+            label2.Size = new Size(120, 20);
             label2.TabIndex = 17;
             label2.Text = "Tra cứu học sinh";
             // 
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(710, 91);
-            btNew.Margin = new Padding(2);
+            btNew.Location = new Point(718, 47);
+            btNew.Margin = new Padding(1);
             btNew.Name = "btNew";
-            btNew.Size = new Size(158, 38);
+            btNew.Size = new Size(138, 22);
             btNew.TabIndex = 16;
             btNew.Text = "Thêm học sinh";
             btNew.UseVisualStyleBackColor = true;
@@ -98,14 +98,13 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             OutputTable.DefaultCellStyle = dataGridViewCellStyle2;
-            OutputTable.Location = new Point(8, 142);
-            OutputTable.Margin = new Padding(2);
+            OutputTable.Location = new Point(4, 82);
+            OutputTable.Margin = new Padding(1);
             OutputTable.Name = "OutputTable";
             OutputTable.ReadOnly = true;
             OutputTable.RowHeadersWidth = 51;
-            OutputTable.RowTemplate.Height = 25;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(862, 384);
+            OutputTable.Size = new Size(852, 305);
             OutputTable.TabIndex = 15;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
@@ -188,23 +187,24 @@
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(974, 116);
-            btFind.Margin = new Padding(4);
+            btFind.Location = new Point(650, 47);
+            btFind.Margin = new Padding(2);
             btFind.Name = "btFind";
-            btFind.Size = new Size(119, 46);
+            btFind.Size = new Size(64, 22);
             btFind.TabIndex = 14;
             btFind.Text = "Tìm";
             btFind.UseVisualStyleBackColor = true;
+            btFind.Click += btFind_Click_1;
             // 
             // txtfind
             // 
             txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtfind.Font = new Font("Segoe UI", 11F);
-            txtfind.Location = new Point(190, 92);
-            txtfind.Margin = new Padding(4);
+            txtfind.Location = new Point(146, 46);
+            txtfind.Margin = new Padding(2);
             txtfind.Name = "txtfind";
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
-            txtfind.Size = new Size(499, 37);
+            txtfind.Size = new Size(500, 27);
             txtfind.TabIndex = 13;
             // 
             // label1
@@ -213,20 +213,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(234, 18);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(286, 8);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(410, 55);
+            label1.Size = new Size(271, 37);
             label1.TabIndex = 12;
             label1.Text = "QUẢN LÝ HỌC SINH";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ManageStudent_Form
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(878, 544);
+            ClientSize = new Size(860, 395);
             Controls.Add(label2);
             Controls.Add(btNew);
             Controls.Add(OutputTable);
@@ -234,7 +234,7 @@
             Controls.Add(txtfind);
             Controls.Add(label1);
             DoubleBuffered = true;
-            Margin = new Padding(2);
+            Margin = new Padding(1);
             Name = "ManageStudent_Form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý học sinh";

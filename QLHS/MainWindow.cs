@@ -122,21 +122,6 @@ namespace QLHS
             form.Show();
         }
 
-        private void thêmMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var openingForm = this.MdiChildren.FirstOrDefault(form => form is ManageSubject_Form);
-            if (openingForm != null)
-            {
-                openingForm.BringToFront();
-                return;
-            }
-
-            var form = new ManageTranscript_Form();
-            form.MdiParent = this;
-            form.Show();
-
-            var createForm = new CreateSubject_Form();
-            createForm.ShowDialog();
-        }
+       
     }
 }
