@@ -62,6 +62,7 @@
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btNew.Enabled = false;
             btNew.Location = new Point(718, 47);
             btNew.Margin = new Padding(1);
             btNew.Name = "btNew";

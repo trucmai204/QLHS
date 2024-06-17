@@ -38,10 +38,10 @@
             thêmLớpHọcToolStripMenuItem = new ToolStripMenuItem();
             mônHọcToolStripMenuItem = new ToolStripMenuItem();
             quảnLýMônHọcToolStripMenuItem = new ToolStripMenuItem();
-            thêmMônHọcToolStripMenuItem = new ToolStripMenuItem();
             điểmToolStripMenuItem = new ToolStripMenuItem();
             fDiem = new ToolStripMenuItem();
-            fNewDiem = new ToolStripMenuItem();
+            nhapDiem = new ToolStripMenuItem();
+            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,11 +50,11 @@
             menuStrip1.AutoSize = false;
             menuStrip1.BackColor = Color.FromArgb(128, 128, 255);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { họcSinhToolStripMenuItem, lớpHọcToolStripMenuItem, mônHọcToolStripMenuItem, điểmToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { họcSinhToolStripMenuItem, lớpHọcToolStripMenuItem, mônHọcToolStripMenuItem, điểmToolStripMenuItem, đăngXuấtToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(9, 4, 0, 4);
-            menuStrip1.Size = new Size(1821, 50);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(981, 23);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -63,20 +63,21 @@
             họcSinhToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýHọcSinhToolStripMenuItem, thêmHọcSinhToolStripMenuItem });
             họcSinhToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             họcSinhToolStripMenuItem.Name = "họcSinhToolStripMenuItem";
-            họcSinhToolStripMenuItem.Size = new Size(108, 42);
+            họcSinhToolStripMenuItem.Size = new Size(73, 19);
             họcSinhToolStripMenuItem.Text = "&Học sinh";
             // 
             // quảnLýHọcSinhToolStripMenuItem
             // 
             quảnLýHọcSinhToolStripMenuItem.Name = "quảnLýHọcSinhToolStripMenuItem";
-            quảnLýHọcSinhToolStripMenuItem.Size = new Size(267, 36);
+            quảnLýHọcSinhToolStripMenuItem.Size = new Size(178, 22);
             quảnLýHọcSinhToolStripMenuItem.Text = "Quản lý học sinh";
             quảnLýHọcSinhToolStripMenuItem.Click += quảnLýHọcSinhToolStripMenuItem_Click;
             // 
             // thêmHọcSinhToolStripMenuItem
             // 
+            thêmHọcSinhToolStripMenuItem.Enabled = false;
             thêmHọcSinhToolStripMenuItem.Name = "thêmHọcSinhToolStripMenuItem";
-            thêmHọcSinhToolStripMenuItem.Size = new Size(267, 36);
+            thêmHọcSinhToolStripMenuItem.Size = new Size(178, 22);
             thêmHọcSinhToolStripMenuItem.Text = "Thêm học sinh";
             thêmHọcSinhToolStripMenuItem.Click += thêmHọcSinhToolStripMenuItem_Click;
             // 
@@ -85,81 +86,84 @@
             lớpHọcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fPhanLopHoc, thêmLớpHọcToolStripMenuItem });
             lớpHọcToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             lớpHọcToolStripMenuItem.Name = "lớpHọcToolStripMenuItem";
-            lớpHọcToolStripMenuItem.Size = new Size(101, 42);
+            lớpHọcToolStripMenuItem.Size = new Size(68, 19);
             lớpHọcToolStripMenuItem.Text = "&Lớp học";
             // 
             // fPhanLopHoc
             // 
             fPhanLopHoc.Name = "fPhanLopHoc";
-            fPhanLopHoc.Size = new Size(258, 36);
+            fPhanLopHoc.Size = new Size(172, 22);
             fPhanLopHoc.Text = "Quản lý lớp học";
             fPhanLopHoc.Click += fPhanLopHoc_Click;
             // 
             // thêmLớpHọcToolStripMenuItem
             // 
+            thêmLớpHọcToolStripMenuItem.Enabled = false;
             thêmLớpHọcToolStripMenuItem.Name = "thêmLớpHọcToolStripMenuItem";
-            thêmLớpHọcToolStripMenuItem.Size = new Size(258, 36);
+            thêmLớpHọcToolStripMenuItem.Size = new Size(172, 22);
             thêmLớpHọcToolStripMenuItem.Text = "Thêm lớp học";
             thêmLớpHọcToolStripMenuItem.Click += thêmLớpHọcToolStripMenuItem_Click;
             // 
             // mônHọcToolStripMenuItem
             // 
-            mônHọcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýMônHọcToolStripMenuItem, thêmMônHọcToolStripMenuItem });
+            mônHọcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýMônHọcToolStripMenuItem });
             mônHọcToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             mônHọcToolStripMenuItem.Name = "mônHọcToolStripMenuItem";
-            mônHọcToolStripMenuItem.Size = new Size(109, 42);
+            mônHọcToolStripMenuItem.Size = new Size(74, 19);
             mônHọcToolStripMenuItem.Text = "&Môn học";
             // 
             // quảnLýMônHọcToolStripMenuItem
             // 
             quảnLýMônHọcToolStripMenuItem.Name = "quảnLýMônHọcToolStripMenuItem";
-            quảnLýMônHọcToolStripMenuItem.Size = new Size(271, 36);
+            quảnLýMônHọcToolStripMenuItem.Size = new Size(181, 22);
             quảnLýMônHọcToolStripMenuItem.Text = "Quản lý môn học";
             quảnLýMônHọcToolStripMenuItem.Click += quảnLýMônHọcToolStripMenuItem_Click;
             // 
-            // thêmMônHọcToolStripMenuItem
-            // 
-            thêmMônHọcToolStripMenuItem.Name = "thêmMônHọcToolStripMenuItem";
-            thêmMônHọcToolStripMenuItem.Size = new Size(271, 36);
-            thêmMônHọcToolStripMenuItem.Text = "Thêm môn học";
-
-            // 
             // điểmToolStripMenuItem
             // 
-            điểmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fDiem, fNewDiem });
+            điểmToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fDiem, nhapDiem });
             điểmToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             điểmToolStripMenuItem.ForeColor = SystemColors.ControlText;
             điểmToolStripMenuItem.Name = "điểmToolStripMenuItem";
-            điểmToolStripMenuItem.Size = new Size(76, 42);
+            điểmToolStripMenuItem.Size = new Size(51, 19);
             điểmToolStripMenuItem.Text = "&Điểm";
             // 
             // fDiem
             // 
             fDiem.Name = "fDiem";
-            fDiem.Size = new Size(236, 36);
+            fDiem.Size = new Size(180, 22);
             fDiem.Text = "Quản lý điểm";
             fDiem.Click += fDiem_Click;
             // 
-            // fNewDiem
+            // nhapDiem
             // 
-            fNewDiem.Name = "fNewDiem";
-            fNewDiem.Size = new Size(236, 36);
-            fNewDiem.Text = "Nhập điểm";
-            fNewDiem.Click += fNewDiem_Click;
+            nhapDiem.Enabled = false;
+            nhapDiem.Name = "nhapDiem";
+            nhapDiem.Size = new Size(180, 22);
+            nhapDiem.Text = "Nhập điểm";
+            nhapDiem.Click += fNewDiem_Click;
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            đăngXuấtToolStripMenuItem.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            đăngXuấtToolStripMenuItem.Size = new Size(83, 19);
+            đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
             // MainWindow
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Background;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1821, 941);
+            ClientSize = new Size(981, 441);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(2);
             Name = "MainWindow";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản lý chung";
@@ -182,7 +186,7 @@
         private ToolStripMenuItem fDiem;
         private ToolStripMenuItem thêmHọcSinhToolStripMenuItem;
         private ToolStripMenuItem thêmLớpHọcToolStripMenuItem;
-        private ToolStripMenuItem thêmMônHọcToolStripMenuItem;
-        private ToolStripMenuItem fNewDiem;
+        private ToolStripMenuItem nhapDiem;
+        private ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }

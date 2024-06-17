@@ -1,4 +1,5 @@
-﻿using Functions;
+﻿using Entities;
+using Functions;
 
 namespace QLHS
 {
@@ -7,6 +8,12 @@ namespace QLHS
         public ManageClass_Form()
         {
             InitializeComponent();
+            switch (CacheScope.RoleId)
+            {
+                case EnumRole.Admin:
+                    btNew.Enabled = true;
+                    break;
+            }
         }
 
         private void fPhanLopHoc_Load(object sender, EventArgs e)
@@ -18,7 +25,7 @@ namespace QLHS
         {
             var grade = int.Parse(comboBoxGrade.Text);
             var classes = ClassScope.FindByGrade(grade);
-            
+
             string schoolYear = comboBoxSchoolYear.Text;
             var classess = ClassScope.FindBySchoolYear(schoolYear);
 
@@ -27,7 +34,7 @@ namespace QLHS
 
         }
 
-      
+
 
         private void btNew_Click(object sender, EventArgs e)
         {
@@ -41,30 +48,45 @@ namespace QLHS
         {
             if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Delete")
             {
-                DataGridViewRow row = OutputTable.Rows[e.RowIndex];
-                if (row.Cells.Count > 0)
+                if (CacheScope.RoleId == EnumRole.Admin)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa lớp không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    DataGridViewRow row = OutputTable.Rows[e.RowIndex];
+                    if (row.Cells.Count > 0)
                     {
-                        DataGridViewCell cell = row.Cells["ClassId"];
+                        DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa lớp không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            DataGridViewCell cell = row.Cells["ClassId"];
 
-                        ClassScope.Delete((int)cell.Value);
-                        OutputTable.DataSource = ClassScope.FindByName();
+                            ClassScope.Delete((int)cell.Value);
+                            OutputTable.DataSource = ClassScope.FindByName();
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn không có quyền xóa", "Cấm", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
             else if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Edit")
             {
-                DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
-                if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                if (CacheScope.RoleId == EnumRole.Admin || CacheScope.RoleId == EnumRole.ClassTeacher)
                 {
-                    DataGridViewCell cell = row.Cells["ClassId"];
+                    DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
+                    if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                    {
+                        DataGridViewCell cell = row.Cells["ClassId"];
 
-                    var fEdit = new UpdateClass_Form((int)cell.Value);
-                    fEdit.ShowDialog();
-                    OutputTable.DataSource = ClassScope.FindByName();
+                        var fEdit = new UpdateClass_Form((int)cell.Value);
+                        fEdit.ShowDialog();
+                        OutputTable.DataSource = ClassScope.FindByName();
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Bạn không có quyền sửa", "Cấm", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+
             }
         }
     }

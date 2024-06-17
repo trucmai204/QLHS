@@ -14,7 +14,8 @@ DROP TABLE IF EXISTS Class;
 CREATE TABLE [User] (
     Id INT IDENTITY PRIMARY KEY,
     Username VARCHAR(255),
-    Password VARCHAR(255)
+    Password VARCHAR(255),
+    RoleId INT
 );
 
 -- Lớp
@@ -63,23 +64,13 @@ CREATE TABLE Transcript (
 
 ------------ FAKE DATA ------------
 
-INSERT INTO [User] (Username, Password) VALUES
-	('admin', 'maidethuong'),
-	('quang', 'maidethuong'),
-	('mai', 'maidethuong'),
-	('user3', 'maidethuong'),
-	('user4', 'maidethuong'),
-	('user5', 'maidethuong'),
-	('user6', 'maidethuong'),
-	('user7', 'maidethuong'),
-	('user8', 'maidethuong'),
-	('user9', 'maidethuong'),
-	('user10', 'maidethuong'),
-	('user11', 'maidethuong'),
-	('user12', 'maidethuong'),
-	('user13', 'maidethuong'),
-	('user14', 'maidethuong'),
-	('user15', 'maidethuong');
+INSERT INTO [User] (Username, Password, RoleId) VALUES
+	('admin', '1111', 1),
+	('user1', '1111', 2),
+	('user2', '1111', 3),
+	('user53', '1111', 4),
+    ('user5', '1111', 3);
+	
 
 -- Chèn 25 dòng cho niên khóa 2023-2024
 INSERT INTO Class (Name, Grade, SchoolYear) VALUES

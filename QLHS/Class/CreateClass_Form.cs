@@ -24,6 +24,6 @@ namespace QLHS
             this.Close();
         }
 
-        
+
     }
 }

@@ -1,5 +1,6 @@
-﻿using QLHS.Student;
-using QLHS.Subject;
+﻿using Entities;
+using Functions;
+using QLHS.Student;
 
 namespace QLHS
 {
@@ -8,6 +9,23 @@ namespace QLHS
         public MainWindow()
         {
             InitializeComponent();
+            switch (CacheScope.RoleId)
+            {
+                case EnumRole.Admin:
+                    nhapDiem.Enabled = true;
+                    thêmHọcSinhToolStripMenuItem.Enabled = true;
+                    thêmLớpHọcToolStripMenuItem.Enabled = true;
+                    break;
+                case EnumRole.Inputer:
+                    nhapDiem.Enabled = true;
+                    break;
+                case EnumRole.ClassTeacher:
+                    thêmHọcSinhToolStripMenuItem.Enabled = true;
+                    break;
+                case EnumRole.SubjectTeacher:
+                    nhapDiem.Enabled = true;
+                    break;
+            }
         }
 
         private void fPhanLopHoc_Click(object sender, EventArgs e)
@@ -122,6 +140,12 @@ namespace QLHS
             form.Show();
         }
 
-       
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CacheScope.RoleId = EnumRole.None;
+            var form = new LoginWindow();
+            this.Hide();
+            form.ShowDialog();
+        }
     }
 }

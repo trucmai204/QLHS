@@ -64,7 +64,7 @@ namespace QLHS
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(0, 0, 192);
-            label1.Location = new Point(299, 10);
+            label1.Location = new Point(299, 17);
             label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
             label1.Size = new Size(347, 37);
@@ -76,20 +76,20 @@ namespace QLHS
             // 
             txtfind.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtfind.Font = new Font("Segoe UI", 11F);
-            txtfind.Location = new Point(485, 50);
+            txtfind.Location = new Point(485, 71);
             txtfind.Margin = new Padding(1);
             txtfind.Name = "txtfind";
             txtfind.PlaceholderText = "  Tìm học sinh . . .";
-            txtfind.Size = new Size(320, 27);
+            txtfind.Size = new Size(319, 27);
             txtfind.TabIndex = 1;
             // 
             // btFind
             // 
             btFind.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btFind.Location = new Point(806, 50);
+            btFind.Location = new Point(808, 72);
             btFind.Margin = new Padding(1);
             btFind.Name = "btFind";
-            btFind.Size = new Size(64, 27);
+            btFind.Size = new Size(64, 25);
             btFind.TabIndex = 2;
             btFind.Text = "Tìm";
             btFind.UseVisualStyleBackColor = true;
@@ -122,13 +122,13 @@ namespace QLHS
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             OutputTable.DefaultCellStyle = dataGridViewCellStyle2;
-            OutputTable.Location = new Point(4, 81);
+            OutputTable.Location = new Point(4, 108);
             OutputTable.Margin = new Padding(1);
             OutputTable.Name = "OutputTable";
             OutputTable.ReadOnly = true;
             OutputTable.RowHeadersWidth = 51;
             OutputTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            OutputTable.Size = new Size(954, 357);
+            OutputTable.Size = new Size(954, 394);
             OutputTable.TabIndex = 15;
             OutputTable.CellContentClick += OutputTable_CellContentClick;
             // 
@@ -241,10 +241,10 @@ namespace QLHS
             // btNew
             // 
             btNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btNew.Location = new Point(874, 50);
+            btNew.Location = new Point(874, 72);
             btNew.Margin = new Padding(1);
             btNew.Name = "btNew";
-            btNew.Size = new Size(85, 27);
+            btNew.Size = new Size(85, 25);
             btNew.TabIndex = 4;
             btNew.Text = "Nhập điểm";
             btNew.UseVisualStyleBackColor = true;
@@ -253,37 +253,40 @@ namespace QLHS
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(350, 53);
+            label2.Font = new Font("Segoe UI", 11F);
+            label2.Location = new Point(367, 74);
             label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
-            label2.Size = new Size(120, 20);
+            label2.Size = new Size(115, 20);
             label2.TabIndex = 5;
             label2.Text = "Tra cứu học sinh";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(8, 54);
+            label3.Font = new Font("Segoe UI", 11F);
+            label3.Location = new Point(8, 74);
             label3.Name = "label3";
-            label3.Size = new Size(49, 15);
+            label3.Size = new Size(64, 20);
             label3.TabIndex = 16;
             label3.Text = "Xếp loại";
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Segoe UI", 10F);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Giỏi", "Khá", "Trung Bình", "Kém" });
-            comboBox1.Location = new Point(63, 50);
+            comboBox1.Location = new Point(72, 72);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(121, 25);
             comboBox1.TabIndex = 17;
             // 
             // btFindTypeOf
             // 
-            btFindTypeOf.Location = new Point(190, 50);
+            btFindTypeOf.Location = new Point(199, 72);
             btFindTypeOf.Name = "btFindTypeOf";
-            btFindTypeOf.Size = new Size(64, 23);
+            btFindTypeOf.Size = new Size(85, 25);
             btFindTypeOf.TabIndex = 18;
             btFindTypeOf.Text = "Lọc";
             btFindTypeOf.UseVisualStyleBackColor = true;
@@ -294,7 +297,7 @@ namespace QLHS
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(965, 446);
+            ClientSize = new Size(965, 510);
             Controls.Add(btFindTypeOf);
             Controls.Add(comboBox1);
             Controls.Add(label3);

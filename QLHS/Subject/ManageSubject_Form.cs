@@ -1,6 +1,5 @@
 ﻿using Functions;
 using QLHS.Subject;
-using WinRT;
 
 
 namespace QLHS.Student
@@ -16,34 +15,46 @@ namespace QLHS.Student
         {
             OutputTable.DataSource = SubjectScope.FindByName(null);
 
-            comboBoxClassName.Items.Clear();
-            comboBoxClassName.Items.AddRange(SubjectScope.GetNames().ToArray());
+            comboBoxSubjectName.Items.Clear();
+            comboBoxSubjectName.Items.AddRange(SubjectScope.GetNames().ToArray());
+
+            comboBoxSemester.Items.Clear();
+            comboBoxSemester.Items.AddRange(SubjectScope.GetSemesters().ToArray());
 
         }
 
-
-
         private void OutputTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Edit")
             {
-                DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
-                if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                if (CacheScope.RoleId == Entities.EnumRole.Admin || CacheScope.RoleId == Entities.EnumRole.SubjectTeacher)
                 {
-                    DataGridViewCell cell = row.Cells["SubjectId"];
+                    DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
+                    if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                    {
+                        DataGridViewCell cell = row.Cells["SubjectId"];
 
-                    var fEdit = new UpdateSubject_Form((int)cell.Value);
-                    fEdit.ShowDialog();
-                    OutputTable.DataSource = SubjectScope.FindByName( short.Parse(comboBoxSemester.Text), comboBoxClassName.Text);
+                        var fEdit = new UpdateSubject_Form((int)cell.Value);
+                        fEdit.ShowDialog();
+
+                        ManageSubject_Form_Load(sender, e);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn không có quyền sửa", "Cấm", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
+
         }
 
         private void btFind_Click(object sender, EventArgs e)
         {
-            OutputTable.DataSource = SubjectScope.FindByName(short.Parse(comboBoxSemester.Text), comboBoxClassName.Text);
+            OutputTable.DataSource = SubjectScope.FindByName(short.Parse(comboBoxSemester.Text), comboBoxSubjectName.Text);
         }
 
 
     }
 }
+

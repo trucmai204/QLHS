@@ -1,4 +1,5 @@
-﻿using Functions;
+﻿using Entities;
+using Functions;
 
 namespace QLHS
 {
@@ -31,9 +32,11 @@ namespace QLHS
         {
             if (txtUserName.Text.Trim() != string.Empty && txtPassWord.Text.Trim() != string.Empty)
             {
-
-                if (UserScope.IsValid(txtUserName.Text, txtPassWord.Text))
+                var user = UserScope.GetByInfo(txtUserName.Text, txtPassWord.Text);
+                if (user != null)
                 {
+                    CacheScope.RoleId = (EnumRole)user.RoleId;
+
                     this.Hide();
                     var fmain = new MainWindow();
                     fmain.ShowDialog(); // ShowDialog() bắt buộc user phải đóng form được mở để thực hiện tiếp logic trên form hiện tại, còn với Show() thì không bắt buộc 

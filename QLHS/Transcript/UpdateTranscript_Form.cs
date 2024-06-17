@@ -4,7 +4,7 @@ namespace QLHS
 {
     public partial class UpdateTranscript_Form : Form
     {
-        int Id;
+        private int Id;
         public UpdateTranscript_Form(int id)
         {
             InitializeComponent();

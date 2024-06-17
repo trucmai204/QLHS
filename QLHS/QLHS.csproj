@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.21" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Functions\Functions.csproj" />
   </ItemGroup>
 

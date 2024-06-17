@@ -1,5 +1,4 @@
 ﻿using Functions;
-using System.Windows.Forms;
 
 namespace QLHS.Subject
 {
@@ -35,7 +34,7 @@ namespace QLHS.Subject
             txtName.Text = subjects.Name;
             numericUpDownMid.Value = (decimal)subjects.MidtermWeight * 100;
             numericUpDownFinal.Value = (decimal)subjects.FinalWeight * 100;
-            numericUpDownSe.Value = (decimal)subjects.Semester;
+            numericUpDownSe.Value = subjects.Semester;
         }
     }
 }

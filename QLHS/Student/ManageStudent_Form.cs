@@ -1,4 +1,5 @@
-﻿using Functions;
+﻿using Entities;
+using Functions;
 
 namespace QLHS.Student
 {
@@ -7,6 +8,15 @@ namespace QLHS.Student
         public ManageStudent_Form()
         {
             InitializeComponent();
+            switch (CacheScope.RoleId)
+            {
+                case EnumRole.Admin:
+                    btNew.Enabled = true;
+                    break;
+                case EnumRole.ClassTeacher:
+                    btNew.Enabled = true;
+                    break;
+            }
         }
 
         private void ManageStudent_Form_Load(object sender, EventArgs e)
@@ -25,34 +35,51 @@ namespace QLHS.Student
         {
             if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Delete")
             {
-                DataGridViewRow row = OutputTable.Rows[e.RowIndex];
-                if (row.Cells.Count > 0)
+                if (CacheScope.RoleId == EnumRole.Admin || CacheScope.RoleId == EnumRole.ClassTeacher)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa học sinh này không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    DataGridViewRow row = OutputTable.Rows[e.RowIndex];
+                    if (row.Cells.Count > 0)
                     {
-                        DataGridViewCell cell = row.Cells["StudentId"];
+                        DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa học sinh này không?", "Yes/No Confirmation", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            DataGridViewCell cell = row.Cells["StudentId"];
 
-                        StudentScope.Delete((int)cell.Value);
-                        OutputTable.DataSource = StudentScope.FindByName();
+                            StudentScope.Delete((int)cell.Value);
+                            OutputTable.DataSource = StudentScope.FindByName();
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn không có quyền xóa", "Cấm", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
             else if (e.RowIndex >= 0 && OutputTable.Columns[e.ColumnIndex].Name == "Edit")
             {
-                DataGridViewRow row = OutputTable.Rows[e.RowIndex];
-                if (row.Cells.Count > 0)
-                {
-                    DataGridViewCell cell = row.Cells["StudentId"];
 
-                    var fEdit = new UpdateStudent_Form((int)cell.Value);
-                    fEdit.ShowDialog();
-                    OutputTable.DataSource = StudentScope.FindByName();
+                if (CacheScope.RoleId == EnumRole.Admin || CacheScope.RoleId == EnumRole.ClassTeacher)
+                {
+                    DataGridViewRow row = OutputTable.Rows[e.RowIndex];
+                    if (row.Cells.Count > 0)
+                    {
+                        DataGridViewCell cell = row.Cells["StudentId"];
+
+                        var fEdit = new UpdateStudent_Form((int)cell.Value);
+                        fEdit.ShowDialog();
+                        OutputTable.DataSource = StudentScope.FindByName();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn không có quyền sửa", "Cấm", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
+
+
         }
 
-     
+
 
         private void btFind_Click_1(object sender, EventArgs e)
         {
@@ -61,5 +88,6 @@ namespace QLHS.Student
                 OutputTable.DataSource = StudentScope.FindByName(txtfind.Text);
             }
         }
+
     }
 }
