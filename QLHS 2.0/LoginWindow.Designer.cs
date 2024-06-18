@@ -147,7 +147,6 @@
             Controls.Add(label1);
             DoubleBuffered = true;
             Name = "LoginWindow";
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
             ResumeLayout(false);
