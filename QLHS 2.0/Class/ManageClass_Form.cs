@@ -92,7 +92,7 @@ namespace QLHS_2._0.Class
             int? grade;
             string? schoolYear;
 
-            if (comboBoxGrade.Text == "")
+            if (comboBoxGrade.Text == "" || comboBoxGrade.Text == "Tất cả")
             {
                 grade = 0;
             }
@@ -101,7 +101,7 @@ namespace QLHS_2._0.Class
                 grade = int.Parse(comboBoxGrade.Text);
             }
 
-            if (comboBoxSchoolYear.Text == "")
+            if (comboBoxSchoolYear.Text == "" || comboBoxSchoolYear.Text == "Tất cả")
             {
                 schoolYear = "";
             }
