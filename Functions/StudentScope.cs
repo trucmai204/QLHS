@@ -21,13 +21,20 @@ namespace Functions
                 SchoolYear = student.Class.SchoolYear,
             }).ToList();
         }
+
+        public static List<string> GetNames()
+        {
+            return Db.Student.Select(student => student.Name).ToList();
+        }
         public static Student FindById(int id)
         {
             return Db.Student.FirstOrDefault(x => x.Id == id);
         }
 
-        public static void Create(string name, DateTime birthdate, bool gender, int classId)
+        public static void Create(string name, DateTime birthdate, bool gender, string className)
         {
+            var classId = ClassScope.FindByName(className).First().Id;
+
             var student = new Student
             {
                 Name = name,

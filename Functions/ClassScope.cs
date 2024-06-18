@@ -10,15 +10,33 @@ namespace Functions
         public static List<Class> FindByName(string name = "")
         {
             return Db.Class.Where(classes => classes.Name.Contains(name)).ToList();
+        }
 
+        public static List<string> GetNames()
+        {
+            return Db.Class.Select(classes => classes.Name).Distinct().ToList();
+        }
+
+        public static List<int> GetGrades()
+        {
+            return Db.Class.Select(classes => classes.Grade).Distinct().ToList();
+        }
+
+        public static List<string> GetSchoolYears()
+        {
+            return Db.Class.Select(classes => classes.SchoolYear).Distinct().ToList();
         }
 
         public static List<Class> FindBySchoolYear(string schoolYear)
         {
-            return Db.Class.Where(classes => classes.SchoolYear == schoolYear).ToList();
+            return Db.Class.Where(classes => classes.SchoolYear.Contains(schoolYear)).ToList();
         }
-        public static List<Class> FindByGrade(int grade)
+        public static List<Class> FindByGrade(int? grade)
         {
+            if (grade == null)
+            {
+                return Db.Class.ToList();
+            }
             return Db.Class.Where(classes => classes.Grade == grade).ToList();
         }
         public static Class FindById(int id)

@@ -6,7 +6,7 @@ namespace Functions
     public static class SubjectScope
     {
         private static AppDbContext Db { get; set; } = new AppDbContext();
-        public static List<Subject> FindByName(short? semester, string name = "")
+        public static List<Subject> Find(short? semester, string name = "")
         {
             if (semester == null)
             {

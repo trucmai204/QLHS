@@ -45,7 +45,7 @@ namespace Functions
         }
         public static List<TranscriptDTO> FindTypeOf(string gradeType)
         {
-            return Db.Transcript.Where(search => search.GradeType == gradeType).Select(transcript => new TranscriptDTO
+            return Db.Transcript.Where(search => search.GradeType.Contains(gradeType)).Select(transcript => new TranscriptDTO
             {
                 Id = transcript.Id,
                 StudentName = transcript.Student.Name,
