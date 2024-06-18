@@ -69,8 +69,8 @@ namespace QLHS_2._0.Class
             {
                 if (CacheScope.RoleId == EnumRole.Admin || CacheScope.RoleId == EnumRole.ClassTeacher)
                 {
-                    DataGridViewRow row = OutputTable.Rows[e.RowIndex]; // Lấy row hiện tại
-                    if (row.Cells.Count > 0) // Kiểm tra xem row có cell nào không
+                    DataGridViewRow row = OutputTable.Rows[e.RowIndex]; 
+                    if (row.Cells.Count > 0) 
                     {
                         DataGridViewCell cell = row.Cells["ClassId"];
 

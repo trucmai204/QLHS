@@ -18,10 +18,10 @@ namespace QLHS_2._0.Transcript
         {
             try
             {
-                var midGradeI = double.Parse(txtDiemGK1.Text);
-                var finalGradeI = double.Parse(txtDiemCK1.Text);
-                var midGradeII = double.Parse(txtDiemGK2.Text);
-                var finalGradeII = double.Parse(txtDiemCK2.Text);
+                var midGradeI = (double)txtDiemGK1.Value;
+                var finalGradeI = (double)txtDiemCK1.Value;
+                var midGradeII = (double)txtDiemGK2.Value;
+                var finalGradeII = (double)txtDiemCK2.Value;
 
                 TranscriptScope.Create(txtTenhs.Text, txtTenMonHoc.Text, midGradeI, finalGradeI, midGradeII, finalGradeII);
 

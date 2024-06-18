@@ -91,6 +91,10 @@ namespace Functions
                 gradeType = "Xuất sắc";
             }
 
+            averGradeI = Math.Round(averGradeI, 2);
+            averGradeII = Math.Round(averGradeII, 2);
+            finalAverageGrade = Math.Round(finalAverageGrade, 2);
+
             var transcript = new Transcript
             {
                 StudentId = studentId,
@@ -118,7 +122,12 @@ namespace Functions
 
             transcript.AverageGradeI = (mid1Grade + final1Grade) / 2;
             transcript.AverageGradeII = (mid2Grade + final2Grade) / 2;
-            transcript.FinalAverageGrade = (transcript.AverageGradeII + transcript.AverageGradeI);
+            transcript.FinalAverageGrade = (transcript.AverageGradeII + transcript.AverageGradeI) /2 ;
+
+            transcript.AverageGradeI = Math.Round(transcript.AverageGradeI, 2);
+            transcript.AverageGradeII = Math.Round(transcript.AverageGradeII, 2);
+            transcript.FinalAverageGrade = Math.Round(transcript.FinalAverageGrade, 2);
+
             string gradeType;
 
             if (transcript.FinalAverageGrade >= 0 && transcript.FinalAverageGrade < 5)

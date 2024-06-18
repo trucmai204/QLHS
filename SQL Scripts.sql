@@ -232,28 +232,44 @@ INSERT INTO Subject (Name, MidtermWeight, FinalWeight, Semester) VALUES
 	(N'Giáo dục quốc phòng', 0.3, 0.7, 1),
 	(N'Thể dục', 0.1, 0.9, 1);
 
-DECLARE @transcriptCounter INT
-SET @transcriptCounter = 0
+DECLARE @transcriptCounter INT;
+SET @transcriptCounter = 0;
+
 WHILE @transcriptCounter < 400
 BEGIN
-    INSERT INTO Transcript (StudentId, SubjectId, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType)
-    SELECT TOP 1
-        FLOOR(RAND()*(2250-1+1)+1) AS StudentId,
-        FLOOR(RAND()*(13-1+1)+1) AS SubjectId,
-        ROUND(RAND()*(10-1+1)+1, 2) AS MidtermGradeI,
-        ROUND(RAND()*(10-1+1)+1, 2) AS FinalGradeI,
-        ROUND((ROUND(RAND()*(10-1+1)+1, 2) + ROUND(RAND()*(10-1+1)+1, 2)) / 2, 2) AS AverageGradeI,
-        ROUND(RAND()*(10-1+1)+1, 2) AS MidtermGradeII,
-        ROUND(RAND()*(10-1+1)+1, 2) AS FinalGradeII,
-        ROUND((ROUND(RAND()*(10-1+1)+1, 2) + ROUND(RAND()*(10-1+1)+1, 2)) / 2, 2) AS AverageGradeII,
-        ROUND((((ROUND(RAND()*(10-1+1)+1, 2) + ROUND(RAND()*(10-1+1)+1, 2)) / 2) + ((ROUND(RAND()*(10-1+1)+1, 2) + ROUND(RAND()*(10-1+1)+1, 2)) / 2)) / 2, 2) AS FinalAverageGrade,
-        CASE 
-            WHEN RAND() < 0.1 THEN N'Xuất sắc'
-            WHEN RAND() < 0.3 THEN N'Giỏi'
-            WHEN RAND() < 0.6 THEN N'Khá'
-            ELSE N'Trung bình'
-        END AS GradeType
-    FROM INFORMATION_SCHEMA.COLUMNS a, INFORMATION_SCHEMA.COLUMNS b;
+    -- Generate random grades
+    DECLARE @MidtermGradeI FLOAT = ROUND(RAND(CHECKSUM(NEWID())) * 10 + 1, 2);
+    DECLARE @FinalGradeI FLOAT = ROUND(RAND(CHECKSUM(NEWID())) * 10 + 1, 2);
+    DECLARE @MidtermGradeII FLOAT = ROUND(RAND(CHECKSUM(NEWID())) * 10 + 1, 2);
+    DECLARE @FinalGradeII FLOAT = ROUND(RAND(CHECKSUM(NEWID())) * 10 + 1, 2);
 
-    SET @transcriptCounter = @transcriptCounter + 1
-END
+    -- Calculate average grades
+    DECLARE @AverageGradeI FLOAT = ROUND((@MidtermGradeI + @FinalGradeI) / 2, 2);
+    DECLARE @AverageGradeII FLOAT = ROUND((@MidtermGradeII + @FinalGradeII) / 2, 2);
+    DECLARE @FinalAverageGrade FLOAT = ROUND((@AverageGradeI + @AverageGradeII) / 2, 2);
+
+    -- Determine GradeType
+    DECLARE @RandomGradeType FLOAT = RAND(CHECKSUM(NEWID()));
+    DECLARE @GradeType NVARCHAR(50);
+    IF @RandomGradeType < 0.1 SET @GradeType = N'Xuất sắc';
+    ELSE IF @RandomGradeType < 0.3 SET @GradeType = N'Giỏi';
+    ELSE IF @RandomGradeType < 0.6 SET @GradeType = N'Khá';
+    ELSE SET @GradeType = N'Trung bình';
+
+    -- Insert into Transcript table
+    INSERT INTO Transcript (StudentId, SubjectId, MidtermGradeI, FinalGradeI, AverageGradeI, MidtermGradeII, FinalGradeII, AverageGradeII, FinalAverageGrade, GradeType)
+    VALUES (
+        FLOOR(RAND(CHECKSUM(NEWID())) * 2250 + 1),
+        FLOOR(RAND(CHECKSUM(NEWID())) * 13 + 1),
+        @MidtermGradeI,
+        @FinalGradeI,
+        @AverageGradeI,
+        @MidtermGradeII,
+        @FinalGradeII,
+        @AverageGradeII,
+        @FinalAverageGrade,
+        @GradeType
+    );
+
+    SET @transcriptCounter = @transcriptCounter + 1;
+END;

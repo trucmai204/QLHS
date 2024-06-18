@@ -19,7 +19,7 @@ namespace QLHS_2._0.Transcript
         {
             var addDiem = new CreateTranscript_Form();
             addDiem.ShowDialog();
-            OutputTable.DataSource = TranscriptScope.FindByStudentName();
+            ManageTranscript_Form_Load(sender, e);
         }
 
         private void OutputTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -33,7 +33,7 @@ namespace QLHS_2._0.Transcript
 
                     var editDiem = new UpdateTranscript_Form((int)cell.Value);
                     editDiem.ShowDialog();
-                    OutputTable.DataSource = TranscriptScope.FindByStudentName();
+                    ManageTranscript_Form_Load(sender, e);
                 }
 
             }
@@ -48,7 +48,7 @@ namespace QLHS_2._0.Transcript
                         DataGridViewCell cell = row.Cells["Id"];
 
                         TranscriptScope.Delete((int)cell.Value);
-                        OutputTable.DataSource = TranscriptScope.FindByStudentName();
+                        ManageTranscript_Form_Load(sender, e);
                     }
                 }
             }
