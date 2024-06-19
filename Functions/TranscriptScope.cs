@@ -122,7 +122,7 @@ namespace Functions
 
             transcript.AverageGradeI = (mid1Grade + final1Grade) / 2;
             transcript.AverageGradeII = (mid2Grade + final2Grade) / 2;
-            transcript.FinalAverageGrade = (transcript.AverageGradeII + transcript.AverageGradeI) /2 ;
+            transcript.FinalAverageGrade = (transcript.AverageGradeII + transcript.AverageGradeI) / 2;
 
             transcript.AverageGradeI = Math.Round(transcript.AverageGradeI, 2);
             transcript.AverageGradeII = Math.Round(transcript.AverageGradeII, 2);

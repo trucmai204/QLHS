@@ -38,6 +38,8 @@ namespace QLHS_2._0.Class
 
         private void btNew_Click(object sender, EventArgs e)
         {
+            var form = new CreateClass_Form();
+            form.ShowDialog();
             ManageClass_Form_Load(sender, e);
         }
 
@@ -69,8 +71,8 @@ namespace QLHS_2._0.Class
             {
                 if (CacheScope.RoleId == EnumRole.Admin || CacheScope.RoleId == EnumRole.ClassTeacher)
                 {
-                    DataGridViewRow row = OutputTable.Rows[e.RowIndex]; 
-                    if (row.Cells.Count > 0) 
+                    DataGridViewRow row = OutputTable.Rows[e.RowIndex];
+                    if (row.Cells.Count > 0)
                     {
                         DataGridViewCell cell = row.Cells["ClassId"];
 
